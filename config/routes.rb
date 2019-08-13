@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   resources :challenges, only: [:index, :show] do
     resources :questions, only: [:show]
   end
-  resources :user_challenges, only: [:index, :show, :create]
-  resources :game_fishes, except: [:destroy]
+  resources :my_challenges, only: [:index, :show, :create]
+  resources :my_fish, except: [:index, :new, :destroy]
   resources :fishes, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :admin do
+    resources :challenges, except: [:index, :show]
+    resources :fishes, except: [:index, :show]
 end

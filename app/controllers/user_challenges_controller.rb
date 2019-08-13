@@ -1,2 +1,0 @@
-class UserChallengesController < ApplicationController
-end

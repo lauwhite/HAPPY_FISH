@@ -1,8 +1,9 @@
 class FishesController < ApplicationController
   def index
-    @fishes = Fishes.all
+    @fishes = Fish.all
   end
 
   def show
+    @fishes = Fish.find(params[:id])
   end
 end
