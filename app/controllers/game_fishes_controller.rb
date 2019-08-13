@@ -1,0 +1,2 @@
+class GameFishesController < ApplicationController
+end
