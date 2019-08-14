@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :challenges, except: [:index, :show]
     resources :fishes, except: [:index, :show]
+  end
 end
