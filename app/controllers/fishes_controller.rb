@@ -4,6 +4,6 @@ class FishesController < ApplicationController
   end
 
   def show
-    @fishes = Fish.find(params[:id])
+    @fish = Fish.find(params[:id])
   end
 end
