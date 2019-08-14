@@ -1,6 +1,6 @@
 .answer {
   border: 2px solid $blue;
-  padding: 8px ;
+  padding: 16px;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
   margin: 8px 16px;
@@ -9,9 +9,9 @@
   }
 }
 .right-answer {
-  padding: 8px ;
+  padding: 16px;
   border-radius: 4px;
-  background-color: $blue;
+  background-image: linear-gradient(to right, $dark-blue 0%, $gradient-blue 30%);
   margin: 8px;
   p {
     color: white;
@@ -19,7 +19,7 @@
   }
 }
 .wrong-answer {
-  padding: 8px ;
+  padding: 16px;
   background-color: $orange;
   border-radius: 4px;
   margin: 8px;
@@ -35,4 +35,25 @@
 
 .collection_check_boxes {
   margin: 0;
+}
+.question_label {
+  margin: 16px;
+}
+
+.question-container {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 600px;
+  min-height: 500px;
+  margin: 32px auto;
+  // margin:auto;
+}
+
+.question_label,.motivation_message {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: $dark-blue;
 }

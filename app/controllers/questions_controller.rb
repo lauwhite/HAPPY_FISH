@@ -7,5 +7,4 @@ class QuestionsController < ApplicationController
     @answers = @question.answers
     @last_question_id = @challenge.questions.last.id
   end
-
 end
