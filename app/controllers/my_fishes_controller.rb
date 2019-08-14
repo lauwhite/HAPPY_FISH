@@ -5,6 +5,7 @@ class MyFishesController < ApplicationController
 
   def show
     @my_fish = MyFish.find(params[:id])
+    @my_fish.update_age
   end
 
   def create
@@ -28,7 +29,6 @@ class MyFishesController < ApplicationController
 
   def update
     @my_fish = MyFish.find(params[:id])
-    @my_fish.update_age
     if @my_fish.update(my_fish_params)
       redirect_to @my_fish
     else
