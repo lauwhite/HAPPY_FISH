@@ -1,0 +1,14 @@
+<h1>Adoption</h1>
+<p>Step 2: name your fish</p>
+
+<h2>Your Fish</h2>
+
+<p>Species: <%= @fish.breed %></p>
+<p>Location: <%= @fish.location %></p>
+<p>Age: 1 year old</p>
+
+
+<%= simple_form_for [@fish, @gamefish] do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit %>
+<% end %>

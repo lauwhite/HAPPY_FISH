@@ -1,0 +1,15 @@
+<h1>Adoption</h1>
+<p>Step 1: pick a fish</p>
+
+<h2>Available Fishes</h2>
+
+<ol>
+<% @fishes.each do |fish| %>
+  <ul><%= image_tag fish.fish_avatar %></ul>
+<% end %>
+</ol>
+
+<h2>Locked Fishes</h2>
+<ol>
+  <ul></ul>
+</ol>
