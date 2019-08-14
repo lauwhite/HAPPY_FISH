@@ -12,3 +12,5 @@ Rails.application.routes.draw do
     resources :challenges, except: [:index, :show]
     resources :fishes, except: [:index, :show]
 end
+
+end
