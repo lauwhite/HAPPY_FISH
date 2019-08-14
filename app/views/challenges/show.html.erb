@@ -1,0 +1,12 @@
+<h1><%= @challenge.name %></h1>
+<p><%= @challenge.challenge_category.name %></p>
+
+<%#= " This challenge will bring you #{@challenge.health_score} points"  %>
+
+<%= @challenge.description %>
+
+<br>
+
+<%= link_to "No thanks", challenges_path %>
+
+<%#= link_to "Let's do it !" my_challenges_path, method: :post %>
