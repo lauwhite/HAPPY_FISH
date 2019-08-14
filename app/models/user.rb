@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :game_fishes
   has_many :game_challenges, through: :game_fishes
   validates :score, numericality: { only_integer: true }
-  validates :first_name, :last_name, :country, :avatar, :level_id, :admin, :score, precense: true
+  validates :first_name, :last_name, :country, :avatar, :level_id, :admin, :score, presence: true
 end
