@@ -1,2 +1,6 @@
-<h1>Profile#show</h1>
-<p>Find me in app/views/profile/show.html.erb</p>
+<div class="container">
+  <h1>Hi <%= @user.first_name %> <%= @user.last_name  %></h1>
+  <p><%= @user.avatar %></p>
+  <p><%= @user.level_id %></p>
+  <h1>Score = <%= @user.score %></h1>
+</div>

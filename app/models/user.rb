@@ -7,6 +7,11 @@ class User < ApplicationRecord
   has_many :game_challenges, through: :game_fishes
   validates :first_name, :last_name, :country, presence: true
   devise :omniauthable, omniauth_providers: %i[facebook]
+
+  after_create :default_score
+
+  def default_score
+    self.score = 0
+    save
+  end
 end
-
-
