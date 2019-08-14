@@ -21,6 +21,17 @@ challenges:
       score_health: 0
       score_happiness: 1
       challenge_type_slug: quizz
+  quizz_three:
+      slug: "coralquizz"
+      name: "Coral Quizz"
+      min_score: 20
+      duration: "Daily"
+      challenge_category_slug: allcategories
+      description: |
+        Take this quizz to test your knowledge about Corals!
+      score_health: 0
+      score_happiness: 1
+      challenge_type_slug: quizz
 
 questions:
   quizz_one_question_one:
@@ -77,6 +88,11 @@ questions:
           content: |
             How many eggs are released everytime a seahorse gives birth?
           challenge_slug: whiteseahorsequizz
+  quizz_three_question_one:
+          slug: coralanemonejellyfish
+          content: |
+            What is common to the Jellyfish, the anemone and the coral?
+          challenge_slug: coralquizz
 
 answers:
   quizz_one_question_one_answer_one:
@@ -199,6 +215,18 @@ answers:
     content: "250 – 500"
     status: false
     question_slug: whiteseahorseeggs
+  quizz_three_question_one_answer_one:
+    content: "carnivorous"
+    status: true
+    question_slug: coralanemonejellyfish
+  quizz_three_question_one_answer_two:
+    content: "exclusively exist in tropical waters"
+    status: false
+    question_slug: coralanemonejellyfish
+  quizz_three_question_one_answer_three:
+    content: "protected species"
+    status: false
+    question_slug: coralanemonejellyfish
 
 
 
