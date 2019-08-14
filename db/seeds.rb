@@ -10,26 +10,63 @@
 puts "Cleaning data base..."
 Answer.destroy_all
 Question.destroy_all
+Challenge.destroy_all
 ChallengeType.destroy_all
 ChallengeCategory.destroy_all
 Level.destroy_all
 Fish.destroy_all
-Challenge.destroy_all
 
-puts "Creating Challenge Types"
 
-ChallengeType.create(name: "Quizz")
-ChallengeType.create(name: "Others")
 
-puts "Challenge Types complete"
 
-puts "Creating Challenge Categories"
+file_path = Rails.root.join("db", "challenges.yml")
+seed_file = YAML::load_file(file_path)
 
-ChallengeCategory.create(name: "Global Warming")
-ChallengeCategory.create(name: "Pollution")
-ChallengeCategory.create(name: "Overfishing")
+challenge_types = {}
+seed_file['challenge_types'].each do |key, value|
+  puts "creating challenge type!"
+  challenge_types[value['slug']] = ChallengeType.create!(name: value['name'])
+end
 
-puts "Challenge Categories done"
+challenge_categories = {}
+seed_file['challenge_categories'].each do |key, value|
+  puts "creating challenge category!"
+  challenge_categories[value['slug']] = ChallengeCategory.create!(name: value['name'])
+end
+
+challenges = {}
+seed_file['challenges'].each do |key, value|
+  puts "creating challenge!"
+  challenges[value['slug']] = Challenge.create!(
+    name: value['name'],
+    min_score: value['min_score'],
+    duration: value['duration'],
+    description: value['description'],
+    score_health: value['score_health'],
+    score_happiness: value['score_happiness'],
+    challenge_type: challenge_types[value['challenge_type_slug']],
+    challenge_category: challenge_categories[value['challenge_category_slug']]
+  )
+end
+
+questions = {}
+seed_file['questions'].each do |key, value|
+  puts "creating questions!"
+  questions[value['slug']] = Question.create!(
+    content: value['content'],
+    challenge: challenges[value['challenge_slug']]
+    )
+end
+
+  # seed_file['answers'].each do |key, value|
+  #   puts "creating answers"
+  #   Answer.create!(
+  #     content: value['content'],
+  #     status: value['status'],
+  #     question: questions[value['question_slug']]
+  #     )
+  # end
+
 
 puts "Creating Levels"
 

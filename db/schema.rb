@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_14_081002) do
-
+ActiveRecord::Schema.define(version: 2019_08_14_055934) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -83,6 +82,7 @@ ActiveRecord::Schema.define(version: 2019_08_14_081002) do
     t.boolean "alive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "age"
     t.index ["fish_id"], name: "index_game_fishes_on_fish_id"
     t.index ["user_id"], name: "index_game_fishes_on_user_id"
   end
