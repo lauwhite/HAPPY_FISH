@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :my_fishes
   has_many :game_challenges, through: :my_fishes
   validates :first_name, :last_name, :country, presence: true
-  validates :score, numericality: { only_integer: true }
+  devise :omniauthable, omniauth_providers: %i[facebook]
 end
 
 
