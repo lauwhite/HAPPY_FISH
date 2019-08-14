@@ -13,3 +13,5 @@ Rails.application.routes.draw do
     resources :fishes, except: [:index, :show]
   end
 end
+
+end
