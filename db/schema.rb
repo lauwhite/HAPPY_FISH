@@ -89,6 +89,8 @@ ActiveRecord::Schema.define(version: 2019_08_12_095113) do
     t.integer "score_happiness"
     t.boolean "alive"
     t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["fish_id"], name: "index_my_fishes_on_fish_id"
     t.index ["user_id"], name: "index_my_fishes_on_user_id"
   end
