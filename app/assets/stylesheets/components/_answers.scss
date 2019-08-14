@@ -9,7 +9,7 @@
   }
 }
 .right-answer {
-  padding: 4px 8px ;
+  padding: 8px ;
   border-radius: 4px;
   background-color: $blue;
   margin: 8px;
@@ -19,7 +19,7 @@
   }
 }
 .wrong-answer {
-  padding: 4px 8px ;
+  padding: 8px ;
   background-color: $orange;
   border-radius: 4px;
   margin: 8px;
@@ -31,4 +31,8 @@
 
 .hidden-checkbox {
   visibility: hidden;
+}
+
+.collection_check_boxes {
+  margin: 0;
 }
