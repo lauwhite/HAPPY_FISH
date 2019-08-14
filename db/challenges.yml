@@ -1,0 +1,226 @@
+challenges:
+  quizz_one:
+      slug: tunaquizz
+      name: "Tuna Quizz"
+      min_score: 0
+      duration: "Daily"
+      challenge_category_slug: allcategories
+      description: |
+        Take this quizz to test your knowledge about Tunas!
+      score_health: 0
+      score_happiness: 1
+      challenge_type_slug: quizz
+  quizz_two:
+      slug: whiteseahorsequizz
+      name: "White Seahorse Quizz"
+      min_score: 0
+      duration: "Daily"
+      challenge_category_slug: allcategories
+      description: |
+        Take this quizz to test your knowledge about the White Seahorse!
+      score_health: 0
+      score_happiness: 1
+      challenge_type_slug: quizz
+
+questions:
+  quizz_one_question_one:
+          slug: ageoftuna
+          content: |
+            Bubble is just 3 year old, but do you know how
+            long the largest tunas can live up to ?
+          challenge_slug: tunaquizz
+  quizz_one_question_two:
+          slug: reproductiontuna
+          content: |
+            Do you know when a bluefin tuna reaches it’s sexual
+            maturity and is able to reproduce?
+          challenge_slug: tunaquizz
+  quizz_one_question_three:
+          slug: reproductionnotabletuna
+          content: |
+            Do you know what is the percentage of tunas
+            caught by the fishing industry that did not have the time to reproduce?
+          challenge_slug: tunaquizz
+  quizz_one_question_four:
+          slug: tunaclassification
+          content: |
+            According to IUCN what is the classification of the
+            bluefin tuna species
+          challenge_slug: tunaquizz
+  quizz_one_question_five:
+          slug: tunasustainablycaught
+          content: |
+            What percentage of tuna is sutainably caught?
+          challenge_slug: tunaquizz
+  quizz_two_question_one:
+          slug: whiteseahorsethreat
+          content: |
+            What is the main threat the White Sea Horse is facing ?
+          challenge_slug: whiteseahorsequizz
+  quizz_two_question-two:
+          slug: seahorsefacts
+          content: |
+            Which of these affirmation is true?
+          challenge_slug: whiteseahorsequizz
+  quizz_two_question-three:
+          slug: seahorsefactsfalse
+          content: |
+            Which of these affirmation is false?
+          challenge_slug: whiteseahorsequizz
+  quizz_two_question-four:
+          slug: whiteseahorselocation
+          content: |
+            The White Sea Horse is an endemic specie that can only be found in …
+          challenge_slug: whiteseahorsequizz
+  quizz_two_question-five:
+          slug: whiteseahorseeggs
+          content: |
+            How many eggs are released everytime a seahorse gives birth?
+          challenge_slug: whiteseahorsequizz
+
+answers:
+  quizz_one_question_one_answer_one:
+    content: "20 years"
+    status: false
+    question_slug: ageoftuna
+  quizz_one_question_one_answer_two:
+    content: "30 years"
+    status: false
+    question_slug: ageoftuna
+  quizz_one_question_one_answer_three:
+    content: "40 years"
+    status: true
+    question_slug: ageoftuna
+  quizz_one_question_two_answer_one:
+    content: "2 - 3 years"
+    status: false
+    question_slug: reproductiontuna
+  quizz_one_question_two_answer_two:
+    content: "5 - 8 years"
+    status: true
+    question_slug: reproductiontuna
+  quizz_one_question_two_answer_three:
+    content: "12 - 15 years"
+    status: false
+    question_slug: reproductiontuna
+  quizz_one_question_three_answer_one:
+    content: "55%"
+    status: false
+    question_slug: reproductionnotabletuna
+  quizz_one_question_three_answer_two:
+    content: "75%"
+    status: false
+    question_slug: reproductionnotabletuna
+  quizz_one_question_three_answer_three:
+    content: "90%"
+    status: true
+    question_slug: reproductionnotabletuna
+  quizz_one_question_four_answer_one:
+    content: "Vulnerable"
+    status: false
+    question_slug: tunaclassification
+  quizz_one_question_four_answer_two:
+    content: "Endangered"
+    status: true
+    question_slug: tunaclassification
+  quizz_one_question_four_answer_three:
+    content: "Critically Endangered"
+    status: false
+    question_slug: tunaclassification
+  quizz_one_question_five_answer_one:
+    content: "2%"
+    status: true
+    question_slug: tunasustainablycaught
+  quizz_one_question_five_answer_two:
+    content: "10%"
+    status: false
+    question_slug: tunasustainablycaught
+  quizz_one_question_five_answer_three:
+    content: "15%"
+    status: false
+    question_slug: tunasustainablycaught
+  quizz_two_question_one_answer_one:
+    content: "Global Warming"
+    status: false
+    question_slug: whiteseahorsethreat
+  quizz_two_question_one_answer_two:
+    content: "Pollution"
+    status: true
+    question_slug: whiteseahorsethreat
+  quizz_two_question_one_answer_three:
+    content: "Overfishing"
+    status: false
+    question_slug: whiteseahorsethreat
+  quizz_two_question_two_answer_one:
+    content: "The male cares for the eggs and gives birth."
+    status: true
+    question_slug: seahorsefacts
+  quizz_two_question_two_answer_two:
+    content: "White sea horse can be found in depths down to about 100 m."
+    status: false
+    question_slug: seahorsefacts
+  quizz_two_question_two_answer_three:
+    content: "They turn black when greeting each other."
+    status: false
+    question_slug: seahorsefacts
+  quizz_two_question_three_answer_one:
+    content: "Sea horse are victims of the pet industry."
+    status: true
+    question_slug: seahorsefactsfalse
+  quizz_two_question_three_answer_two:
+    content: "White sea horse is polygamous."
+    status: false
+    question_slug: seahorsefactsfalse
+  quizz_two_question_three_answer_three:
+    content: "Sea horse are hunted for chinese medicine"
+    status: false
+    question_slug: seahorsefactsfalse
+  quizz_two_question_four_answer_one:
+    content: "Thailand"
+    status: false
+    question_slug: whiteseahorselocation
+  quizz_two_question_four_answer_two:
+    content: "Bali"
+    status: false
+    question_slug: whiteseahorselocation
+  quizz_two_question_four_answer_three:
+    content: "Australia"
+    status: true
+    question_slug: whiteseahorselocation
+  quizz_two_question_five_answer_one:
+    content: "50 - 100"
+    status: false
+    question_slug: whiteseahorseeggs
+  quizz_two_question_five_answer_two:
+    content: "100 - 250"
+    status: true
+    question_slug: whiteseahorseeggs
+  quizz_two_question_five_answer_three:
+    content: "250 – 500"
+    status: false
+    question_slug: whiteseahorseeggs
+
+
+
+
+challenge_types:
+  ct_one:
+    slug: quizz
+    name: "Quizz"
+  ct_two:
+    slug: others
+    name: "Others"
+
+challenge_categories:
+  cc_one:
+    slug: globalwarming
+    name: "Global Warming"
+  cc_two:
+    slug: pollution
+    name: "Pollution"
+  cc_three:
+    slug: overfishing
+    name: "Overfishing"
+  cc_four:
+    slug: allcategories
+    name: "All Categories"
