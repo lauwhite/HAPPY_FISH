@@ -22,7 +22,7 @@ challenges:
       score_happiness: 1
       challenge_type_slug: quizz
   quizz_three:
-      slug: "coralquizz"
+      slug: coralquizz
       name: "Coral Quizz"
       min_score: 20
       duration: "Daily"
@@ -32,6 +32,197 @@ challenges:
       score_health: 0
       score_happiness: 1
       challenge_type_slug: quizz
+  quizz_four:
+      slug: pollutionquizz
+      name: "Pollution Quizz"
+      min_score: 20
+      duration: "Daily"
+      challenge_category_slug: allcategories
+      description: |
+        Take this quizz to test your knowledge about Pollution and how it affects our oceans!
+      score_health: 0
+      score_happiness: 1
+      challenge_type_slug: quizz
+  daily_challenge_one:
+      name: "Searching with a conscience"
+      min_score: 0
+      duration: "Daily"
+      challenge_category_slug: globalwarming
+      description: |
+        Change your current search engine for a more eco friendly one. For example Ecosia, which plants trees while you search the web!
+      score_health: 10
+      score_happiness: 0
+      challenge_type_slug: others
+  daily_challenge_two:
+      name: "Donate"
+      min_score: 0
+      duration: "Daily"
+      challenge_category_slug: allcategories
+      description: |
+        Donate 5 dollars to the charity of your choice : Sea shepperd, Greenpeace, IUCN, WWF
+      score_health: 40
+      score_happiness: 0
+      challenge_type_slug: others
+  daily_challenge_three:
+      name: "Support Ocean Sanctuary"
+      min_score: 0
+      duration: "Daily"
+      challenge_category_slug: overfishing
+      description: |
+        Nowadays less than 2 % of the ocean surface is protected despite the fact that it covers 70 % of the planet. In comparison 7 % of the earth surface is protected. By signing the petition to support the creation of an antarctic marine sanctuary you are making an impact : https://act.greenpeace.org/page/18001/petition/1
+      score_health: 30
+      score_happiness: 0
+      challenge_type_slug: others
+  daily_challenge_four:
+      name: "Toothbrush Switch"
+      min_score: 20
+      duration: "Daily"
+      challenge_category_slug: pollution
+      description: |
+        Replace your plastic toothbrush with a bamboo toothbrush. Make sure you compost the handle after removing the nylon bristles or find a way to upcycle them, for example as a plant marker
+      score_health: 40
+      score_happiness: 0
+      challenge_type_slug: others
+  weekly_challenge_one:
+      name: "FreshAirWeek"
+      min_score: 0
+      duration: "Weekly"
+      challenge_category_slug: pollution
+      description: |
+        Replace your plastic toothbrush with a bamboo toothbrush. Make sure you compost the handle after removing the nylon bristles or find a way to upcycle them, for example as a plant marker
+      score_health: 80
+      score_happiness: 0
+      challenge_type_slug: others
+  weekly_challenge_two:
+      name: "PublicTransitWeek"
+      min_score: 0
+      duration: "Weekly"
+      challenge_category_slug: globalwarming
+      description: |
+        A single person who switches from a 20-mile(32km) commuting by car to public transportation, can reduce their annual CO2 emissions by more than 4,000 pounds(1800 kg) per week. That is equal to 10% reduction in all greenhouse gases produced by a typical two-adult, two-car household.
+      score_health: 120
+      score_happiness: 0
+      challenge_type_slug: others
+  weekly_challenge_three:
+      name: "FeelsLikeSpring"
+      min_score: 50
+      duration: "Weekly"
+      challenge_category_slug: globalwarming
+      description: |
+        Running your air conditioner at no lower than 78 ºF (25.5 °C) to maximum your home’s energy efficiency, which also means good for your electricity costs. This temperature can make you feel like a pleasant spring day!
+      score_health: 100
+      score_happiness: 0
+      challenge_type_slug: others
+  weekly_challenge_four:
+      name: "NoElevatorWeek"
+      min_score: 50
+      duration: "Weekly"
+      challenge_category_slug: globalwarming
+      description: |
+        Walk to yout office/apartment. By taking small steps every day to reduce our energy intake, we will make thisn planet a healthier and happier place!
+      score_health: 60
+      score_happiness: 0
+      challenge_type_slug: others
+  weekly_challenge_five:
+      name: "NatureDryWeek"
+      min_score: 100
+      duration: "Weekly"
+      challenge_category_slug: globalwarming
+      description: |
+        Your washer and dryer are the third biggest consumers of energy in your home. They use about 13% of your home's total energy on average. Let's nature dry your clothes for a week, save the planet and save your wallet!
+      score_health: 100
+      score_happiness: 0
+      challenge_type_slug: others
+  monthly_challenge_one:
+      name: "NoBeefMonth"
+      min_score: 200
+      duration: "Monthly"
+      challenge_category_slug: globalwarming
+      description: |
+        There are more than 550 dead zones across the world today, the great majority due to agricultural and industrial pollution. Moreover roducing beef, for example, uses 20 times the land and emits 20 times the emissions as growing beans, per gram of protein, and requires more than 10 times more resources than producing chicken. Not eating beef for a month will make a significant impact on your footprint!
+      score_health: 500
+      score_happiness: 0
+      challenge_type_slug: others
+  monthly_challenge_two:
+      name: "NoFishMonth"
+      min_score: 200
+      duration: "Monthly"
+      challenge_category_slug: overfishing
+      description: |
+        Today, each person eats on average 19.2kg of fish a year, twice as much as 50 years ago. To keep up with the demand we have put a lot of pressure on marine ecosystems. As a result, 90 % of the world’s fish stocks are described as either fully fished or over-exploited. Reducing yout fish consumption is a huge way to contibute by not feeding the demand!
+      score_health: 500
+      score_happiness: 0
+      challenge_type_slug: others
+  monthly_challenge_three:
+      name: "VeganMonth"
+      min_score: 500
+      duration: "Monthly"
+      challenge_category_slug: globalwarming
+      description: |
+        By 2050, there will be an 80% increase in global greenhouse gas emissions from food production mostly due to meat and dairy industries. Going vegan for a month is a way to make a difference !
+      score_health: 1000
+      score_happiness: 0
+      challenge_type_slug: others
+  monthly_challenge_four:
+      name: "SolidShampooMonth"
+      min_score: 50
+      duration: "Monthly"
+      challenge_category_slug: pollution
+      description: |
+        The cosmetic plastic footprint is huge. An estimated 120 billion units of packaging are produced every year by the global cosmetics industry. Solid Shampoo Bar look small, but they can do the job of 4 to 5 bottles of commercial liquid shampoo, which means they can last several months and they are plastic free. Save the ocean by trying solid shampoo for a month.
+      score_health: 150
+      score_happiness: 0
+      challenge_type_slug: others
+  monthly_challenge_five:
+      name: "SolidShampooMonth"
+      min_score: 50
+      duration: "Monthly"
+      challenge_category_slug: pollution
+      description: |
+        The cosmetic plastic footprint is huge. An estimated 120 billion units of packaging are produced every year by the global cosmetics industry. Solid Shampoo Bar look small, but they can do the job of 4 to 5 bottles of commercial liquid shampoo, which means they can last several months and they are plastic free. Save the ocean by trying solid shampoo for a month.
+      score_health: 150
+      score_happiness: 0
+      challenge_type_slug: others
+  monthly_challenge_six:
+      name: "NoTakeAway"
+      min_score: 40
+      duration: "Monthly"
+      challenge_category_slug: pollution
+      description: |
+        Takeaway meals generate a lot of waste. For a whole month try not to order take away at the restaurant of if you want to make sure you bring your own box !
+      score_health: 400
+      score_happiness: 0
+      challenge_type_slug: others
+  monthly_challenge_seven:
+      name: "StrawFighter"
+      min_score: 0
+      duration: "Monthly"
+      challenge_category_slug: pollution
+      description: |
+        Plastic straws are one of the most common wate we pick up from the ocean. It takes up to 200 years to decompose and they can’t be recycled. By saying no to plastic straws you can make the ocean a safer place for a lot of species.
+      score_health: 80
+      score_happiness: 0
+      challenge_type_slug: others
+  monthly_challenge_eight:
+      name: "BringYourBottle"
+      min_score: 0
+      duration: "Monthly"
+      challenge_category_slug: pollution
+      description: |
+        The plastic botle is a serial polluter. It will take 1000 years to disapear and it endenger 690 marine species. By replacing single use plastic bottles by a reusable bottle you can make a difference.
+      score_health: 120
+      score_happiness: 0
+      challenge_type_slug: others
+  monthly_challenge_nine:
+      name: "BringYourBottle"
+      min_score: 0
+      duration: "Monthly"
+      challenge_category_slug: pollution
+      description: |
+        Used for 20 minutes single use plastic bags will stay in the environment for hundreds of years and will seriously damage the ocean. 1 million mamals die each year because they ingested plastic. This small gesture can have a huge impact on the ocean.
+      score_health: 80
+      score_happiness: 0
+      challenge_type_slug: others
 
 questions:
   quizz_one_question_one:
@@ -93,6 +284,51 @@ questions:
           content: |
             What is common to the Jellyfish, the anemone and the coral?
           challenge_slug: coralquizz
+  quizz_three_question_two:
+          slug: coralsunscreen
+          content: |
+            What type of chemical found in sunscreen affects the coral reproduction and growth cycle?
+          challenge_slug: coralquizz
+  quizz_three_question_three:
+          slug: coralslost
+          content: |
+            What percentage of corals will be lost by 2030?
+          challenge_slug: coralquizz
+  quizz_three_question_four:
+          slug: coralsbleaching
+          content: |
+            What is the major cause of coral bleaching?
+          challenge_slug: coralquizz
+  quizz_three_question_five:
+          slug: coralgreatbarrierreef
+          content: |
+            How many species of fish live into the great barrier reef?
+          challenge_slug: coralquizz
+  quizz_four_question_one:
+          slug: noisepollution
+          content: |
+            Human-generated ocean noise pollution is altering the underwater acoustic landscape and can cause acoustic trauma to dolphin and whales. Which one of these affirmation is false?
+          challenge_slug: pollutionquizz
+  quizz_four_question_two:
+          slug: plasticdebrispieces
+          content: |
+            How many pieces of plastic debris are there in the ocean?
+          challenge_slug: pollutionquizz
+  quizz_four_question_three:
+          slug: pollutiondeadzones
+          content: |
+            A dead zones are low-oxygen, or hypoxic, areas in the world’s oceans and lakes. Because most organisms need oxygen to live, few organisms can survive in hypoxic conditions. Do you know how many dead zones are currently identified?
+          challenge_slug: pollutionquizz
+  quizz_four_question_four:
+          slug: pollutionoilspills
+          content: |
+            What percentage of Oil in the Ocean comes from Oil spills?
+          challenge_slug: pollutionquizz
+  quizz_four_question_five:
+          slug: pollutioncountrywastemismanagement
+          content: |
+            Which countries are the champions of plastic waste mismanagement?
+          challenge_slug: pollutionquizz
 
 answers:
   quizz_one_question_one_answer_one:
@@ -227,6 +463,114 @@ answers:
     content: "protected species"
     status: false
     question_slug: coralanemonejellyfish
+  quizz_three_question_two_answer_one:
+    content: "zinc oxyde"
+    status: false
+    question_slug: coralsunscreen
+  quizz_three_question_two_answer_two:
+    content: "oxybenzone"
+    status: true
+    question_slug: coralsunscreen
+  quizz_three_question_two_answer_three:
+    content: "titanium oxyde"
+    status: false
+    question_slug: coralsunscreen
+  quizz_three_question_three_answer_one:
+    content: "40%"
+    status: false
+    question_slug: coralslost
+  quizz_three_question_three_answer_two:
+    content: "50%"
+    status: false
+    question_slug: coralslost
+  quizz_three_question_three_answer_three:
+    content: "60%"
+    status: true
+    question_slug: coralslost
+  quizz_three_question_four_answer_one:
+    content: "Global Warming"
+    status: true
+    question_slug: coralsbleaching
+  quizz_three_question_four_answer_two:
+    content: "Fossil Fuel"
+    status: false
+    question_slug: coralsbleaching
+  quizz_three_question_four_answer_three:
+    content: "Mass tourism"
+    status: false
+    question_slug: coralsbleaching
+  quizz_three_question_five_answer_one:
+    content: "Over 500"
+    status: false
+    question_slug: coralgreatbarrierreef
+  quizz_three_question_five_answer_two:
+    content: "Over 1000"
+    status: false
+    question_slug: coralgreatbarrierreef
+  quizz_three_question_five_answer_three:
+    content: "Over 15000"
+    status: true
+    question_slug: coralgreatbarrierreef
+  quizz_four_question_one_answer_one:
+    content: "Ocean noise can prevent some species to mate"
+    status: false
+    question_slug: noisepollution
+  quizz_four_question_one_answer_two:
+    content: "Ocean noise disrupt some species ability to find food"
+    status: false
+    question_slug: noisepollution
+  quizz_four_question_one_answer_three:
+    content: "Ocean noise enables some species to avoid predators"
+    status: true
+    question_slug: noisepollution
+  quizz_four_question_two_answer_one:
+    content: "25 trillion"
+    status: true
+    question_slug: plasticdebrispieces
+  quizz_four_question_two_answer_two:
+    content: "25 billions"
+    status: false
+    question_slug: plasticdebrispieces
+  quizz_four_question_two_answer_three:
+    content: "25 millions"
+    status: false
+    question_slug: plasticdebrispieces
+  quizz_four_question_three_answer_one:
+    content: "100"
+    status: false
+    question_slug: pollutiondeadzones
+  quizz_four_question_three_answer_two:
+    content: "500"
+    status: true
+    question_slug: pollutiondeadzones
+  quizz_four_question_three_answer_three:
+    content: "750"
+    status: false
+    question_slug: pollutiondeadzones
+  quizz_four_question_four_answer_one:
+    content: "5%"
+    status: false
+    question_slug: pollutionoilspills
+  quizz_four_question_four_answer_two:
+    content: "12%"
+    status: true
+    question_slug: pollutionoilspills
+  quizz_four_question_four_answer_three:
+    content: "25%"
+    status: false
+    question_slug: pollutionoilspills
+  quizz_four_question_five_answer_one:
+    content: "China"
+    status: true
+    question_slug: pollutioncountrywastemismanagement
+  quizz_four_question_five_answer_two:
+    content: "USA"
+    status: false
+    question_slug: pollutioncountrywastemismanagement
+  quizz_four_question_five_answer_three:
+    content: "Germany"
+    status: false
+    question_slug: pollutioncountrywastemismanagement
 
 
 
