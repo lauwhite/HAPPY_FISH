@@ -1,0 +1,26 @@
+<h1>CHALLENGES</h1>
+
+<h2>ONE DAY</h2>
+
+  <% @daily_challenges.each do |daily_challenge| %>
+    <ul>
+      <li><h3><%= daily_challenge.name %></h3> </li> <%= link_to 'details', challenge_path(daily_challenge) %>
+    </ul>
+  <% end %>
+
+<h2>ONE WEEK</h2>
+
+  <% @weekly_challenges.each do |weekly_challenge| %>
+    <ul>
+      <li><h3><%= weekly_challenge.name %></h3> </li> <%= link_to 'details', challenge_path(weekly_challenge) %>
+    </ul>
+  <% end %>
+
+<h2>ONE MONTH</h2>
+
+  <% @monthly_challenges.each do |monthly_challenge| %>
+    <ul>
+      <li><h3><%= monthly_challenge.name %></h3> </li> <%= link_to 'details', challenge_path(monthly_challenge) %>
+    </ul>
+  <% end %>
+
