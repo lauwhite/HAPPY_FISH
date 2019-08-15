@@ -6,5 +6,6 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answers = @question.answers
     @last_question_id = @challenge.questions.last.id
+    raise
   end
 end
