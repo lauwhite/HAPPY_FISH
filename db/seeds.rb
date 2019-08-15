@@ -77,14 +77,15 @@ seed_file['questions'].each do |key, value|
     )
 end
 
-  seed_file['answers'].each do |key, value|
-    puts "creating answers"
-    Answer.create!(
-      content: value['content'],
-      status: value['status'],
-      question: questions[value['question_slug']]
-      )
-  end
+seed_file['answers'].each do |key, value|
+  puts "creating answers"
+  Answer.create!(
+    content: value['content'],
+    status: value['status'],
+    question: questions[value['question_slug']]
+    )
+end
+
 
 
 puts "Creating Levels"

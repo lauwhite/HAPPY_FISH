@@ -1,12 +1,38 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .navbar-collapse .nav-item {
+}
+
+.navbar-lewagon .navbar-collapse .nav-item a:hover {
+  text-decoration: none;
+  color: #248EA9
+}
+
+.navbar-lewagon p {
+  color: #979797;
+}
+
+.navbar-lewagon .navbar-collapse .nav-item a:hover p {
+  color: #248EA9
+}
+
+
+svg {
+  fill: #979797;
+}
+
+
+
+// Mobile Devices
+@media (min-width: 100px) and (max-width: 767px) {
+
+}
+
+// Desktop
+@media (min-width: 768px) {
+
 }

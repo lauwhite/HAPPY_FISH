@@ -8,5 +8,6 @@ class ChallengesController < ApplicationController
 
   def show
     @challenge = Challenge.find(params[:id])
+    @my_challenge = GameChallenge.new
   end
 end

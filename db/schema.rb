@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 2019_08_15_035017) do
     t.boolean "alive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "age"
+
     t.index ["fish_id"], name: "index_game_fishes_on_fish_id"
     t.index ["user_id"], name: "index_game_fishes_on_user_id"
   end
