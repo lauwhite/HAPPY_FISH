@@ -1,0 +1,17 @@
+#new_my_fish{
+  label{
+    color: #28C3D4;
+    font-family: 'Raleway', sans-serif;
+    margin-left: 10px;
+  }
+  input[type=text]{
+    width: 92%;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px grey;
+  }
+}
+
+#your-fish-form{
+  margin-top: 15px;
+}
