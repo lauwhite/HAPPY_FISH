@@ -1,7 +1,7 @@
 <div class="question-container">
 
   <div>
-    <p class="question_label"><%="#{@question.content} ?" %></p>
+    <p class="question_label"><%= @question.content %></p>
   </div>
 
   <div>
@@ -23,7 +23,7 @@
     <% if @last_question_id != @question.id %>
     <%= link_to "Next question", challenge_question_path(@challenge, @question.id + 1), class: "next-q-btn btn-gradient centered", style: "display: none"  %>
     <% else %>
-    <%= link_to "Next", challenges_path %>
+    <%= link_to "Next", challenges_path, class: "next-q-btn btn-gradient centered" %>
     <% end %>
   </div>
 
