@@ -5,10 +5,15 @@
   <h2 class="section-title">ONE DAY</h2>
 
   <div class="scrolling-wrapper">
+
     <% @daily_challenges.each do |daily_challenge| %>
-      <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= daily_challenge.challenge_category.image %>)">
-        <%= daily_challenge.name %>
-      </div>
+
+      <%= link_to challenge_path(daily_challenge.id) do %>
+        <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= daily_challenge.challenge_category.image %>)">
+          <%= daily_challenge.name %>
+        </div>
+      <% end %>
+    <% end %>
     <% end %>
   </div>
 
@@ -16,9 +21,11 @@
 
   <div class="scrolling-wrapper">
     <% @weekly_challenges.each do |weekly_challenge| %>
-      <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= weekly_challenge.challenge_category.image %>)">
-        <%= weekly_challenge.name %>
-      </div>
+      <%= link_to challenge_path(weekly_challenge.id) do %>
+        <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= weekly_challenge.challenge_category.image %>)">
+          <%= weekly_challenge.name %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
@@ -26,9 +33,11 @@
 
   <div class="scrolling-wrapper">
     <% @monthly_challenges.each do |monthly_challenge| %>
-      <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= monthly_challenge.challenge_category.image %>)">
-        <%= monthly_challenge.name %>
-      </div>
+      <%= link_to challenge_path(monthly_challenge.id) do %>
+        <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= monthly_challenge.challenge_category.image %>)">
+          <%= monthly_challenge.name %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 

@@ -1,14 +1,30 @@
-<h1>Adoption</h1>
-<p>Step 2: name your fish</p>
+<div class="fishes-container">
 
-<h2>Your Fish</h2>
+  <div class="banner-container text-center">
+    <a><%= image_tag "arrow.png", class: "arrow-icon"%></a>
+    <h1>Adoption</h1>
+    <p>Step 2: Name your fish</p>
+  </div>
 
-<p>Species: <%= @fish.breed %></p>
-<p>Location: <%= @fish.location %></p>
-<p>Age: 1 year old</p>
+  <div class="container">
+    <div class="your-fish-title" style="color: #28C3D4"><h5>Your Fish</h5></div>
+      <div class="fish-show-card card">
+        <%= image_tag @fish.fish_avatar, class: "centered", width:"50%"%>
+        <div class="fish-show-card-body">
+          <div><p><strong>Species:</strong><br><%= @fish.breed %></p></div>
+          <div><p><strong>Location:</strong><br><%= @fish.location %></p></div>
+          <div><p><strong>Age:</strong><br>1 year old</p></div>
+        </div>
+      </div>
+  </div>
+      <div id="your-fish-form">
+        <%= simple_form_for [@fish, @my_fish] do |f| %>
+          <%= f.input :name, label:"Fish Name"%>
+          <%= f.button :submit, "Next", class: "btn-gradient" %>
+        <% end %>
+      </div>
+
+</div>
 
 
-<%= simple_form_for [@fish, @my_fish] do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
+
