@@ -8,6 +8,4 @@ class QuestionsController < ApplicationController
     @last_question_id = @challenge.questions.last.id
 
   end
-
-
 end

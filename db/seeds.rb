@@ -28,6 +28,7 @@
 puts "Cleaning data base..."
 Answer.destroy_all
 Question.destroy_all
+GameChallenge.destroy_all
 Challenge.destroy_all
 ChallengeType.destroy_all
 ChallengeCategory.destroy_all
