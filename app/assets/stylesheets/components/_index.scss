@@ -2,3 +2,15 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+@import "buttons";
+@import "answers";
+
+.centered {
+  text-align: center;
+}
+
+.centered-element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -10,5 +10,4 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     @my_challenge = GameChallenge.new
   end
-
 end

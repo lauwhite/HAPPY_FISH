@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'users/registrations'}
-  get 'profile', to: 'users#show'
+  get 'profile', to: 'profile#show'
   resources :challenges, only: [:index, :show] do
     resources :my_challenges, only: [:create]
     resources :questions, only: [:show]
@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   resources :my_challenges, only: [:index, :show]
 
   resources :fishes, only: [:index, :show] do
-    resources :game_fishes, only: [:create]
+    resources :my_fishes, only: [:create]
   end
 
-  resources :game_fishes, except: [:destroy, :create, :new]
+  resources :my_fishes, except: [:destroy, :create, :new]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
