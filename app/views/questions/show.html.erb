@@ -23,7 +23,7 @@
     <% if @last_question_id != @question.id %>
     <%= link_to "Next question", challenge_question_path(@challenge, @question.id + 1), class: "next-q-btn btn-gradient centered", style: "display: none"  %>
     <% else %>
-    <%= link_to "Next", challenges_path, class: "next-q-btn btn-gradient centered" %>
+    <%= link_to "Next", challenges_path, class: "next-q-btn btn-gradient centered", style: "display: none" %>
     <% end %>
   </div>
 
