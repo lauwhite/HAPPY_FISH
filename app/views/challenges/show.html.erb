@@ -9,10 +9,8 @@
 
 <%= link_to "No thanks", challenges_path %>
 
-<%#= link_to "Let's do it !" my_challenges_path, method: :post %>
-
 <% if   @challenge.challenge_type.name == "Quizz" %>
   <%= link_to " Let's do it!", challenge_question_path(@challenge.id,@challenge.questions.first.id)  %>
-  <%# else %>
-  <%#= link_to " Let's do it!", challenge_question_path(@challenge.id,@challenge.questions.first.id)  %>
+  <% else %>
+  <%= link_to "Let's do it !", challenge_my_challenges_path(@challenge), method: :post%>
 <% end %>
