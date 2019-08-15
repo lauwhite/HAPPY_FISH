@@ -5,7 +5,7 @@ class FishesController < ApplicationController
 
   def show
     @fish = Fish.find(params[:id])
-    @gamefish = GameFish.new
+    @my_fish = MyFish.new
     # create a function: one day = one year of fish
   end
 end
