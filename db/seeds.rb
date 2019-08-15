@@ -50,7 +50,7 @@ end
 challenge_categories = {}
 seed_file['challenge_categories'].each do |key, value|
   puts "creating challenge category!"
-  challenge_categories[value['slug']] = ChallengeCategory.create!(name: value['name'])
+  challenge_categories[value['slug']] = ChallengeCategory.create!(name: value['name'], image: value['image'])
 end
 
 challenges = {}

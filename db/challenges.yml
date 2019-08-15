@@ -4,7 +4,7 @@ challenges:
       name: "Tuna Quizz"
       min_score: 0
       duration: "Daily"
-      challenge_category_slug: allcategories
+      challenge_category_slug: overfishing
       description: |
         Take this quizz to test your knowledge about Tunas!
       score_health: 0
@@ -37,7 +37,7 @@ challenges:
       name: "Pollution Quizz"
       min_score: 20
       duration: "Daily"
-      challenge_category_slug: allcategories
+      challenge_category_slug: pollution
       description: |
         Take this quizz to test your knowledge about Pollution and how it affects our oceans!
       score_health: 0
@@ -247,7 +247,7 @@ questions:
           slug: tunaclassification
           content: |
             According to IUCN what is the classification of the
-            bluefin tuna species
+            bluefin tuna species ?
           challenge_slug: tunaquizz
   quizz_one_question_five:
           slug: tunasustainablycaught
@@ -587,12 +587,16 @@ challenge_categories:
   cc_one:
     slug: globalwarming
     name: "Global Warming"
+    image: "https://images.unsplash.com/photo-1537442306189-534b8fbf6639?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
   cc_two:
     slug: pollution
     name: "Pollution"
+    image: "https://images.unsplash.com/photo-1534962303837-2edd16492781?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
   cc_three:
     slug: overfishing
     name: "Overfishing"
+    image: "https://images.unsplash.com/photo-1462040015891-7c792246b10e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80"
   cc_four:
     slug: allcategories
     name: "All Categories"
+    image: "https://images.unsplash.com/photo-1551244072-5d12893278ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"

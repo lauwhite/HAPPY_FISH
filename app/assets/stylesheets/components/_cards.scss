@@ -1,0 +1,30 @@
+
+.challenge-card {
+  background-size: cover;
+  background-position: center;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: ExtraBold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  box-shadow: 0 0 14px rgba(0,0,0,0.2);
+  display: inline-block;
+  padding: 16px;
+}
+
+.ongoing-challenge-card {
+
+}
+
+// horizontal scrolling
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+}
