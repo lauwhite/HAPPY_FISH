@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'users/registrations'}
   get 'profile', to: 'users#show'
   resources :challenges, only: [:index, :show] do
+    resources :my_challenges, only: [:create]
     resources :questions, only: [:show]
   end
-  resources :my_challenges, only: [:index, :show, :create]
+  resources :my_challenges, only: [:index, :show]
 
   resources :fishes, only: [:index, :show] do
     resources :game_fishes, only: [:create]
