@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'users/registrations'}
-  get 'profile', to: 'users#show'
+  get 'profile', to: 'profile#show'
   resources :challenges, only: [:index, :show] do
     resources :questions, only: [:show]
   end
