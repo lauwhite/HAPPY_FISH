@@ -19,11 +19,11 @@
     <p class="motivation_message centered"></p>
   </div>
 
-  <div>
+  <div class="centered-element">
     <% if @last_question_id != @question.id %>
-    <%= link_to "Next question", challenge_question_path(@challenge, @question.id + 1), class: "next-q-btn btn-gradient", style: "display: none"  %>
+    <%= link_to "Next question", challenge_question_path(@challenge, @question.id + 1), class: "next-q-btn btn-gradient centered", style: "display: none"  %>
     <% else %>
-    <%= link_to "End the quizz", challenges_path %>
+    <%= link_to "Next", challenges_path %>
     <% end %>
   </div>
 

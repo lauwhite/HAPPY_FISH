@@ -1,6 +1,14 @@
 .btn-gradient {
 height: 54px;
+min-width: 330px;
+max-width: 450px;
 border-radius: 30px;
-background-image: linear-gradient(to right, $dark-blue 0%, $gradient-blue 30%);
+background-image: linear-gradient(to right, $dark-blue 0%, $gradient-blue 40%);
 margin: 16px;
+padding: 8px;
+font-weight: 600;
+font-size: 24px;
+color: white;
 }
+
+
