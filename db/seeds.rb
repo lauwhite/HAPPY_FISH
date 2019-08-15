@@ -87,6 +87,7 @@ seed_file['answers'].each do |key, value|
 end
 
 
+
 puts "Creating Levels"
 
 level_attributes = [
