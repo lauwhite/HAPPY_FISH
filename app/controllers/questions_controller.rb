@@ -7,4 +7,10 @@ class QuestionsController < ApplicationController
     @answers = @question.answers
     @last_question_id = @challenge.questions.last.id
   end
+
+  def complete_quiz
+    render "/challenges"
+    raise
+  end
+
 end
