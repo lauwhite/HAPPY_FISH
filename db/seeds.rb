@@ -32,6 +32,7 @@ Challenge.destroy_all
 ChallengeType.destroy_all
 ChallengeCategory.destroy_all
 Level.destroy_all
+MyFish.destroy_all
 Fish.destroy_all
 
 
