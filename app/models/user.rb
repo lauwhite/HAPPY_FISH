@@ -15,7 +15,7 @@ class User < ApplicationRecord
   end
 
   def default_level
-    self.level = 1
+    self.level_id = 1
     save
   end
 end

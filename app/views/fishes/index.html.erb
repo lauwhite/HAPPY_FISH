@@ -8,9 +8,12 @@
   <div class="fish-grid">
     <% @available_fishes.each do |available_fish| %>
       <%= link_to fish_path(available_fish.id) do %>
-        <div class="fish-index-card" style="max-width: 100px; background-image: url(<%= available_fish.fish_avatar %>)">
-           <%= available_fish.breed %>
-          <!--  <%= image_tag "fish_#{fish.id}.svg" %> -->
+        <div class="fish-index-card">
+          <div class="fish-wrapper">
+            <%= available_fish.breed %>
+            <%= cl_image_tag "Happy_Fish/fish_#{available_fish.id}", class: "fish-img" %>
+          </div>
+
         </div>
       <% end %>
     <% end %>
@@ -20,11 +23,12 @@
 
   <div class="fish-grid">
     <% @blocked_fishes.each do |blocked_fish| %>
-      <%#= link_to fish_path(blocked_fish.id) do %>
-        <div class="blocked-fish-index-card" style="max-width: 100px; background-image: url(<%= blocked_fish.fish_avatar %>)">
-           <%= blocked_fish.breed %>
+        <div class="blocked-fish-index-card">
+          <div class="fish-wrapper">
+            <%= blocked_fish.breed %>
+            <%= cl_image_tag "Happy_Fish/fish_#{blocked_fish.id}", class: "fish-img" %>
+          </div>
         </div>
-      <%# end %>
     <% end %>
   </div>
 </div>
