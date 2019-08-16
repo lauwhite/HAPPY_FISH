@@ -32,6 +32,45 @@
   }
 }
 
+.fish-show-card {
+  width: 100%;
+  height: 60%;
+  margin: 5 auto;
+  margin-top: 15px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px grey;
+  img{
+    margin: 20px auto;
+  }
+}
+
+.your-fish-title {
+  margin-top: 7%;
+}
+
+.fish-show-card-body {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  div {
+    width: 30%
+  }
+}
+
+.my-fish-show-card {
+  height: 65vh;
+  margin: 0px auto;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px grey;
+  img{
+    margin: 20px auto;
+  }
+}
+
+.my-fish-bar {
+  padding: 0 20px;
+  margin-bottom: 15px;
+
 .fish-grid {
   display: grid;
   width: 321px;
