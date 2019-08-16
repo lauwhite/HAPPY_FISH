@@ -19,6 +19,8 @@ class MyChallengesController < ApplicationController
     if @my_challenge.save
       current_user.score += (@my_challenge.challenge.score_health) / 2
       current_user.my_fishes.first.score_health += (@my_challenge.challenge.score_health) / 2
+      current_user.save!
+      current_user.my_fishes.first.save!
       redirect_to my_challenges_path
     else
       redirect_to challenge_path(@my_challenge.challenge_id)
@@ -30,14 +32,21 @@ class MyChallengesController < ApplicationController
     if @my_challenge.end_time.to_datetime >= DateTime.now
       @my_challenge.status = "Abandoned"
       current_user.score -= (@my_challenge.challenge.score_health) / 2
-      current_user.my_fishes.first.score_health -= (@my_challenge.challenge.score_health) / 2
+      current_user.score = 0 if current_user.score.negative?
+      my_fish = current_user.my_fishes.first
+      my_fish.score_health -= (@my_challenge.challenge.score_health) / 2
+      my_fish.score_health = 0 if my_fish.score_health.negative?
+      current_user.save!
+      my_fish.save!
+      @my_challenge.save!
       redirect_to my_challenges_path
     else
       @my_challenge.status = "Completed"
+      current_user.save!
+      current_user.my_fishes.first.save!
+      @my_challenge.save!
       redirect_to completed_challenge_path(@my_challenge.challenge)
     end
-    current_user.save!
-    current_user.my_fishes.first.save!
   end
 
   private
