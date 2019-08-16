@@ -25,7 +25,12 @@ svg {
   fill: #979797;
 }
 
-
+.active-tab {
+  color: #28C3D4;
+}
+.inactive-tab {
+  color: #979797;
+}
 
 // Mobile Devices
 @media (min-width: 100px) and (max-width: 767px) {

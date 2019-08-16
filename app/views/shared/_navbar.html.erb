@@ -1,26 +1,27 @@
 <div class="footer-navbar">
   <div class="nav-item">
-    <%= link_to "#", class: "d-flex justify-content-center align-items-center flex-column" do %>
-    <%= image_tag "my-fish.svg", alt: "alttext", class: "mt-2 menu-svg"%>
+    <%= link_to "#", class: "#{ controller_name == "my_fishes" ? 'active-tab' : "inactive-tab" } yo d-flex justify-content-center align-items-center flex-column" do %>
+    <i class="fas fa-fish"></i>
     <p class="nav-link py-0">My Fish</p>
     <% end %>
   </div>
   <div class="nav-item">
-    <%= link_to "#", class: "d-flex justify-content-center align-items-center flex-column" do %>
-    <%= image_tag "my-fish.svg", alt: "alttext", class: "mt-2 menu-svg" %>
+    <%= link_to "#", class: "#{ controller_name == "my_challenges" ? 'active-tab' : "inactive-tab" } d-flex justify-content-center align-items-center flex-column" do %>
+    <i class="fas fa-tasks"></i>
     <p class="nav-link py-0">Challenges</p>
     <% end %>
   </div>
   <div class="nav-item">
-    <%= link_to "#", class: "d-flex justify-content-center align-items-center flex-column" do %>
-    <%= image_tag "my-fish.svg", alt: "alttext", class: "mt-2 menu-svg" %>
-    <p class="nav-link py-0">Impact</p>
+    <%= link_to "#", class: "#{ controller_name == "impact" ? 'active-tab' : "inactive-tab" } d-flex justify-content-center align-items-center flex-column" do %>
+      <i class="fas fa-tree"></i>
+      <p class="nav-link py-0">Impact</p>
     <% end %>
   </div>
   <div class="nav-item">
-    <%= link_to "#", class: "d-flex justify-content-center align-items-center flex-column" do %>
-    <%= image_tag "my-fish.svg", alt: "alttext", class: "mt-2 menu-svg" %>
-    <p class="nav-link py-0">Profile</p>
+    <%= link_to "#", class: "#{ controller_name == "users" ? 'active-tab' : "inactive-tab" } d-flex justify-content-center align-items-center flex-column" do %>
+      <i class="fas fa-user"></i>
+      <p class="nav-link py-0">Profile</p>
     <% end %>
   </div>
 </div>
+      <%#= image_tag "my-fish.svg", alt: "alttext", class: "mt-2 menu-svg"%>
