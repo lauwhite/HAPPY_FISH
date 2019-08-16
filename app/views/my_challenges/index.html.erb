@@ -1,6 +1,7 @@
 <h1>Here are your current challenges</h1>
+<h2>Ongoing Challenges</h2>
 
-<% @my_challenges.each do |my_challenge| %>
+<% @my_ongoing_challenges.each do |my_challenge| %>
 <p>
 <%= my_challenge.challenge.description %>
 </p>
@@ -17,10 +18,17 @@
     %
 </p>
 
-
-
-
-
 <%= link_to "More info", my_challenge_path(my_challenge) %>
 
+<% end %>
+
+<h2>Completed Challenges</h2>
+
+<% @my_completed_challenges.each do |my_challenge| %>
+<p>
+<%= my_challenge.challenge.description %>
+</p>
+<p> Completed at:
+<%= my_challenge.end_time %>
+</p>
 <% end %>
