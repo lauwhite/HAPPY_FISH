@@ -5,7 +5,9 @@
 
 <ol>
 <% @fishes.each do |fish| %>
+  <%= link_to fish_path(fish) do %>
   <ul><%= image_tag fish.fish_avatar %></ul>
+  <% end %>
 <% end %>
 </ol>
 

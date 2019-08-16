@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   end
 
-  resources :my_challenges, only: [:index, :show]
+  resources :my_challenges, only: [:index, :show, :update]
 
 
   resources :fishes, only: [:index, :show] do
