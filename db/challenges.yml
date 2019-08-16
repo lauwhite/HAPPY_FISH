@@ -10,6 +10,7 @@ challenges:
       score_health: 0
       score_happiness: 1
       challenge_type_slug: quizz
+      repeatable: false
   quizz_two:
       slug: whiteseahorsequizz
       name: "White Seahorse Quizz"
@@ -21,6 +22,7 @@ challenges:
       score_health: 0
       score_happiness: 1.0
       challenge_type_slug: quizz
+      repeatable: false
   quizz_three:
       slug: coralquizz
       name: "Coral Quizz"
@@ -32,6 +34,7 @@ challenges:
       score_health: 0
       score_happiness: 1.0
       challenge_type_slug: quizz
+      repeatable: false
   quizz_four:
       slug: pollutionquizz
       name: "Pollution Quizz"
@@ -43,6 +46,7 @@ challenges:
       score_health: 0
       score_happiness: 1.0
       challenge_type_slug: quizz
+      repeatable: false
   daily_challenge_one:
       name: "Searching with a conscience"
       min_score: 0
@@ -53,6 +57,7 @@ challenges:
       score_health: 10
       score_happiness: 1.0
       challenge_type_slug: others
+      repeatable: false
   daily_challenge_two:
       name: "Donate"
       min_score: 0
@@ -63,6 +68,7 @@ challenges:
       score_health: 40
       score_happiness: 1.0
       challenge_type_slug: others
+      repeatable: true
   daily_challenge_three:
       name: "Support Ocean Sanctuary"
       min_score: 0
@@ -73,6 +79,7 @@ challenges:
       score_health: 30
       score_happiness: 1.0
       challenge_type_slug: others
+      repeatable: false
   daily_challenge_four:
       name: "Toothbrush Switch"
       min_score: 20
@@ -83,6 +90,7 @@ challenges:
       score_health: 40
       score_happiness: 1.0
       challenge_type_slug: others
+      repeatable: false
   weekly_challenge_one:
       name: "FreshAirWeek"
       min_score: 0
@@ -93,6 +101,7 @@ challenges:
       score_health: 80
       score_happiness: 2.0
       challenge_type_slug: others
+      repeatable: true
   weekly_challenge_two:
       name: "PublicTransitWeek"
       min_score: 0
@@ -103,6 +112,7 @@ challenges:
       score_health: 120
       score_happiness: 2.0
       challenge_type_slug: others
+      repeatable: true
   weekly_challenge_three:
       name: "FeelsLikeSpring"
       min_score: 50
@@ -113,6 +123,7 @@ challenges:
       score_health: 100
       score_happiness: 2.0
       challenge_type_slug: others
+      repeatable: true
   weekly_challenge_four:
       name: "NoElevatorWeek"
       min_score: 50
@@ -123,6 +134,7 @@ challenges:
       score_health: 60
       score_happiness: 2.0
       challenge_type_slug: others
+      repeatable: true
   weekly_challenge_five:
       name: "NatureDryWeek"
       min_score: 100
@@ -133,6 +145,7 @@ challenges:
       score_health: 100
       score_happiness: 2.0
       challenge_type_slug: others
+      repeatable: true
   monthly_challenge_one:
       name: "NoBeefMonth"
       min_score: 200
@@ -143,6 +156,7 @@ challenges:
       score_health: 500
       score_happiness: 3.0
       challenge_type_slug: others
+      repeatable: true
   monthly_challenge_two:
       name: "NoFishMonth"
       min_score: 200
@@ -153,6 +167,7 @@ challenges:
       score_health: 500
       score_happiness: 3.0
       challenge_type_slug: others
+      repeatable: true
   monthly_challenge_three:
       name: "VeganMonth"
       min_score: 500
@@ -163,6 +178,7 @@ challenges:
       score_health: 1000
       score_happiness: 3.0
       challenge_type_slug: others
+      repeatable: true
   monthly_challenge_four:
       name: "SolidShampooMonth"
       min_score: 50
@@ -173,16 +189,7 @@ challenges:
       score_health: 150
       score_happiness: 3.0
       challenge_type_slug: others
-  monthly_challenge_five:
-      name: "SolidShampooMonth"
-      min_score: 50
-      duration: "Monthly"
-      challenge_category_slug: pollution
-      description: |
-        The cosmetic plastic footprint is huge. An estimated 120 billion units of packaging are produced every year by the global cosmetics industry. Solid Shampoo Bar look small, but they can do the job of 4 to 5 bottles of commercial liquid shampoo, which means they can last several months and they are plastic free. Save the ocean by trying solid shampoo for a month.
-      score_health: 150
-      score_happiness: 3.0
-      challenge_type_slug: others
+      repeatable: true
   monthly_challenge_six:
       name: "NoTakeAway"
       min_score: 40
@@ -193,6 +200,7 @@ challenges:
       score_health: 400
       score_happiness: 3.0
       challenge_type_slug: others
+      repeatable: true
   monthly_challenge_seven:
       name: "StrawFighter"
       min_score: 0
@@ -203,6 +211,7 @@ challenges:
       score_health: 80
       score_happiness: 3.0
       challenge_type_slug: others
+      repeatable: true
   monthly_challenge_eight:
       name: "BringYourBottle"
       min_score: 0
@@ -213,6 +222,7 @@ challenges:
       score_health: 120
       score_happiness: 3.0
       challenge_type_slug: others
+      repeatable: true
   monthly_challenge_nine:
       name: "BringYourBottle"
       min_score: 0
@@ -223,6 +233,7 @@ challenges:
       score_health: 80
       score_happiness: 3.0
       challenge_type_slug: others
+      repeatable: true
 
 questions:
   quizz_one_question_one:

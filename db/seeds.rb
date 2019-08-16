@@ -62,6 +62,7 @@ seed_file['challenges'].each do |key, value|
     min_score: value['min_score'],
     duration: value['duration'],
     description: value['description'],
+    repeatable: value['repeatable'],
     score_health: value['score_health'],
     score_happiness: value['score_happiness'].to_f,
     challenge_type: challenge_types[value['challenge_type_slug']],
