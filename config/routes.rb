@@ -4,8 +4,14 @@ Rails.application.routes.draw do
   resources :challenges, only: [:index, :show] do
     resources :my_challenges, only: [:create]
     resources :questions, only: [:show]
+    member do
+      get 'completed'
+    end
+
   end
-  resources :my_challenges, only: [:index, :show]
+
+  resources :my_challenges, only: [:index, :show, :update]
+
 
   resources :fishes, only: [:index, :show] do
     resources :my_fishes, only: [:create]

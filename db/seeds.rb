@@ -28,6 +28,7 @@
 puts "Cleaning data base..."
 Answer.destroy_all
 Question.destroy_all
+GameChallenge.destroy_all
 Challenge.destroy_all
 ChallengeType.destroy_all
 ChallengeCategory.destroy_all
@@ -87,6 +88,7 @@ seed_file['answers'].each do |key, value|
 end
 
 
+
 puts "Creating Levels"
 
 level_attributes = [
@@ -125,21 +127,55 @@ puts "Levels done"
 puts "Creating Fishes"
 
 fish_attributes = [
+
   {
+    breed: "White's Seahorse",
+    location: "Pacific"  ,
+    endangered_status:"Endangered",
+    fish_avatar: "https://image.flaticon.com/icons/svg/991/991819.svg" ,
+    min_score: 0,
+    max_age: 10,
+  },
+    {
+    breed: "Clown Fish",
+    location: "Great Barrier Reef"  ,
+    endangered_status:"Endangered",
+    fish_avatar: "https://image.flaticon.com/icons/svg/1998/1998605.svg" ,
+    min_score: 0,
+    max_age: 8,
+  },
+    {
+    breed: "Puffer Fish",
+    location: "Great Barrier Reef"  ,
+    endangered_status:"Vulnerable",
+    fish_avatar: "https://image.flaticon.com/icons/svg/1998/1998763.svg" ,
+    min_score: 100,
+    max_age: 10,
+  },
+   {
     breed: "Atlantic Bluefin Tuna" ,
     location: "Atlantic",
     endangered_status: "Endangered" ,
     fish_avatar: "https://image.flaticon.com/icons/svg/1728/1728782.svg" ,
-    min_score: 0,
+    min_score: 100,
     max_age: 50,
   },
-    {
-    breed: "White's Seahorse",
-    location: "Pacific"  ,
+
+  {
+    breed: "Green Turtle",
+    location: "Caribean Sea"  ,
     endangered_status:"Endangered",
-    fish_avatar: "https://image.flaticon.com/icons/svg/1997/1997024.svg" ,
-    min_score: 0,
-    max_age: 10,
+    fish_avatar: "https://image.flaticon.com/icons/svg/1998/1998805.svg" ,
+    min_score: 500,
+    max_age: 90,
+  },
+  {
+    breed: "White Shark",
+    location: "Pacific"  ,
+    endangered_status:"Vulnerable",
+    fish_avatar: "https://image.flaticon.com/icons/svg/1998/1998785.svg" ,
+    min_score: 500,
+    max_age: 100,
   }
 ]
 

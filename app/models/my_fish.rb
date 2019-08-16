@@ -3,15 +3,41 @@ class MyFish < ApplicationRecord
   belongs_to :user
   belongs_to :fish
   has_many :game_challenges
-  validates :score_happiness, numericality: true, inclusion: { in: [0, 1, 2, 3, 4, 5] }
+  validates :score_happiness, numericality: true, inclusion: { in: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5] }
+  validates :score_health, numericality: true, inclusion: { in: (0..100) }
   validates :user_id, :fish_id, :name, :start_date, :score_health, :score_happiness, presence: true
 
-  after_create :update_age
+  after_create :initial_age
 
-  def update_age
+  def initial_age
     new_age = (Date.today - self.created_at.to_date).to_i + 1
     self.age = new_age
-    self.alive = false if self.age > self.fish.max_age
     self.save
+  end
+
+  def update_fish_stats
+    new_age = (Date.today - self.start_date.to_date).to_i + 1
+    if new_age > self.age
+      (new_age - self.age).times do
+        self.score_health -= 5
+        self.score_happiness -= 0.5
+      end
+      dead_or_alive
+    end
+    self.age = new_age
+    self.save!
+  end
+
+  def death_probability
+    death_probability = 100
+    death_probability = death_probability - self.score_health
+    death_probability = death_probability - (self.score_happiness * 9)
+    return death_probability
+  end
+
+  def dead_or_alive
+  self.alive = false if self.age > self.fish.max_age
+  self.alive = false if self.score_health <= 0
+  self.alive = false if rand(200) < death_probability
   end
 end
