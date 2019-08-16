@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'users/registrations'}
   get 'profile', to: 'profile#show'
+  root to: 'my_fishes#show'
   resources :challenges, only: [:index, :show] do
     resources :my_challenges, only: [:create]
     resources :questions, only: [:show]
@@ -8,7 +9,6 @@ Rails.application.routes.draw do
       get 'completed'
     end
 
-  end
 
   resources :my_challenges, only: [:index, :show, :update]
 
@@ -25,4 +25,3 @@ Rails.application.routes.draw do
     resources :fishes, except: [:index, :show]
   end
 end
-
