@@ -16,7 +16,16 @@
           </div>
         </div>
       </div>
-      <div class="happiness-bar"><p><strong>HAPPINESS</strong><br><%= @my_fish.score_happiness %></p></div>
+      <div class="happiness-bar"><p><strong>HAPPINESS</strong><br><%= @my_fish.score_happiness %></p>
+        <div class="happiness-stars">
+          <% @my_fish.score_happiness.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - @my_fish.score_happiness).times do %>
+            <i class="far fa-star"></i>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 
