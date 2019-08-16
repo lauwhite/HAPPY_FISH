@@ -1,17 +1,55 @@
 <h1>Adoption</h1>
 <p>Step 1: pick a fish</p>
 
-<h2>Available Fishes</h2>
 
-<ol>
-<% @fishes.each do |fish| %>
-  <%= link_to fish_path(fish) do %>
-  <ul><%= image_tag fish.fish_avatar %></ul>
-  <% end %>
-<% end %>
-</ol>
+<div class="container-fluid">
 
-<h2>Locked Fishes</h2>
-<ol>
-  <ul></ul>
-</ol>
+  <h2 class="section-title">AVAILABLE FISH</h2>
+
+  <div class="fish-grid">
+    <% @available_fishes.each do |available_fish| %>
+      <%= link_to fish_path(available_fish.id) do %>
+        <div class="fish-index-card">
+          <div class="fish-wrapper">
+            <%= available_fish.breed %>
+            <%= cl_image_tag "Happy_Fish/fish_#{available_fish.id}", class: "fish-img" %>
+          </div>
+
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <h2 class="section-title">LOCKED FISH</h2>
+
+  <div class="fish-grid">
+    <% @blocked_fishes.each do |blocked_fish| %>
+        <div class="blocked-fish-index-card">
+          <div class="fish-wrapper">
+            <%= blocked_fish.breed %>
+            <%= cl_image_tag "Happy_Fish/fish_#{blocked_fish.id}", class: "fish-img" %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
+<!--
+how do I do to make the alert pop when I clic on  a blocked fish? -->
+
+<div class="alert alert-warning blocked-fish alert-dismissible fade " role="alert">
+  <span><strong>OOoops!</strong> It seems that your level does not allow you to adopt this fish</span>
+  <a data-dismiss="alert" aria-label="Close">
+    <i class="fas fa-times"></i>
+  </a>
+</div>
+
+<script>
+  const blockedFishes = document.querySelectorAll(".blocked-fish-index-card")
+  const blockedFishAlert = document.querySelector(".blocked-fish")
+  blockedFishes.forEach((fish) => {
+    fish.addEventListener("click", (e) => {
+      blockedFishAlert.classList.add("show")
+    });
+  })
+</script>
+

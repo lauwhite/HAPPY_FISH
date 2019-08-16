@@ -1,6 +1,10 @@
 class FishesController < ApplicationController
   def index
     @fishes = Fish.all
+    @user_score = current_user.score
+    @available_fishes = Fish.where("min_score <= ?", @user_score)
+    @blocked_fishes = Fish.where("min_score > ?", @user_score)
+    # raise
   end
 
   def show

@@ -31,3 +31,51 @@
     display: none;
   }
 }
+
+.fish-grid {
+  display: grid;
+  width: 321px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.fish-index-card {
+  height:150px;
+  min-width:200px;
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 0 14px rgba(0,0,0,0.2);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  border-radius: 4px;
+}
+
+.blocked-fish-index-card {
+  height:150px;
+  min-width:200px;
+  background-color: $light-blue;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  border-radius: 4px;
+  color: $dark-blue;
+}
+
+.fish-wrapper {
+  display:flex;
+  flex-direction: column;
+}
+
+.fish-img {
+  max-height: 150px;
+  max-width: 75px;
+  position: absolute;
+  top: 40px;
+  left: 55px;
+}
