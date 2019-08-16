@@ -1,12 +1,11 @@
 class ChallengesController < ApplicationController
   def index
-    # @challenges = Challenge.all.where('id NOT IN (SELECT DISTINCT(challenge_id) FROM gamechallenges')
-    # @challenges = Challenge.includes(:gamechallenges).where( :gamechallenges => { :challenge_id => nil } )
-    @challenges = Challenge.all
+    @challenges = Challenge.includes(:game_challenges).where( :game_challenges => { :challenge_id => nil } )
     @daily_challenges = @challenges.where(duration: "Daily")
     @weekly_challenges = @challenges.where(duration: "Weekly")
     @monthly_challenges = @challenges.where(duration: "Monthly")
-    @repeatable
+    @abandoned_challenges = Challenge.joins(:game_challenges).where("game_challenges.status = ?", "Abandoned")
+    @repeatable_challenges = Challenge.joins(:game_challenges).where("game_challenges.status = ? AND challenges.repeatable = ? ", "Completed", true)
   end
 
   def show
