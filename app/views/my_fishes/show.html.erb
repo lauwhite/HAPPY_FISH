@@ -1,17 +1,27 @@
-<div class="container" style="background-color: #28C3D4">
+<div class="my-fish-container container">
 
   <div class="my-fish-show-card card">
     <%= image_tag @my_fish.fish.fish_avatar, class: "centered", width:"50%"%>
     <div class="fish-show-card-body">
       <div><p><strong>Species:</strong><br><%= @my_fish.fish.breed %></p></div>
       <div><p><strong>Location:</strong><br><%= @my_fish.fish.location %></p></div>
-      <div><p><strong>Age:</strong><br>1 year old</p></div>
+      <div><p><strong>Age:</strong><br><%= @my_fish.age %> year old</p></div>
     </div>
     <div class="my-fish-bar">
-      <div><p><strong>HEALTH</strong><br><%= @my_fish.breed %></p></div>
-      <div><p><strong>HAPPINESS</strong><br><%= @my_fish.fish.breed %></p></div>
+      <div>
+        <p><strong>HEALTH</strong></p>
+        <div class="container">
+          <div class="progress">
+            <div class="bar text-center health-bar" style="width: <%= @my_fish.score_health %>%"><%= @my_fish.score_health %>%</div>
+          </div>
+        </div>
+      </div>
+      <div class="happiness-bar"><p><strong>HAPPINESS</strong><br><%= @my_fish.score_happiness %></p></div>
     </div>
   </div>
 
+
 </div>
 
+
+<%= render "shared/navbar" %>
