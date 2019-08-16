@@ -1,6 +1,6 @@
 <div class="footer-navbar">
   <div class="nav-item">
-    <%= link_to my_fish_path(current_user.my_fish), class: "#{ controller_name == "my_fishes" ? 'active-tab' : "inactive-tab" } yo d-flex justify-content-center align-items-center flex-column" do %>
+    <%= link_to "#", class: "#{ controller_name == "my_fishes" ? 'active-tab' : "inactive-tab" } yo d-flex justify-content-center align-items-center flex-column" do %>
     <i class="fas fa-fish"></i>
     <p class="nav-link py-0">My Fish</p>
     <% end %>
@@ -24,6 +24,4 @@
     <% end %>
   </div>
 </div>
-
-
-
+      <%#= image_tag "my-fish.svg", alt: "alttext", class: "mt-2 menu-svg"%>
