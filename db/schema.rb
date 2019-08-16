@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_15_035017) do
+ActiveRecord::Schema.define(version: 2019_08_16_064022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_035017) do
     t.bigint "challenge_category_id"
     t.string "description"
     t.integer "score_health"
-    t.integer "score_happiness"
+    t.float "score_happiness"
     t.bigint "challenge_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -70,9 +70,11 @@ ActiveRecord::Schema.define(version: 2019_08_15_035017) do
     t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["challenge_id"], name: "index_game_challenges_on_challenge_id"
     t.index ["my_fish_id"], name: "index_game_challenges_on_my_fish_id"
   end
+
 
   create_table "levels", force: :cascade do |t|
     t.string "name"
@@ -87,7 +89,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_035017) do
     t.string "name"
     t.datetime "start_date"
     t.integer "score_health"
-    t.integer "score_happiness"
+    t.float "score_happiness"
     t.boolean "alive"
     t.integer "age"
     t.datetime "created_at", null: false

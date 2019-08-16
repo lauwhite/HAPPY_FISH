@@ -11,6 +11,8 @@
 
 <% if   @challenge.challenge_type.name == "Quizz" %>
   <%= link_to " Let's do it!", challenge_question_path(@challenge.id,@challenge.questions.first.id)  %>
+  <% elsif @challenge.duration == "Daily" %>
+  <%= link_to "I have completed this!", completed_challenge_path(@challenge.id)%>
   <% else %>
   <%= link_to "Let's do it !", challenge_my_challenges_path(@challenge), method: :post%>
 <% end %>

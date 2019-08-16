@@ -5,7 +5,8 @@ class MyFishesController < ApplicationController
 
   def show
     @my_fish = MyFish.find(params[:id])
-    @my_fish.update_age
+    @my_fish.update_fish_stats
+    @death_probability = @my_fish.death_probability
   end
 
   def create
@@ -14,7 +15,7 @@ class MyFishesController < ApplicationController
     @my_fish.user = current_user
     @my_fish.fish = Fish.find(params[:fish_id])
     @my_fish.start_date = DateTime.now
-    @my_fish.score_health = 1
+    @my_fish.score_health = 100
     @my_fish.alive = true
     if @my_fish.save
       redirect_to @my_fish
@@ -41,4 +42,5 @@ class MyFishesController < ApplicationController
   def my_fish_params
     params.require(:my_fish).permit(:name)
   end
+
 end

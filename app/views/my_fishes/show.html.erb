@@ -1,3 +1,4 @@
+
 <div class="my-fish-container container">
 
   <div class="my-fish-show-card card">
@@ -20,8 +21,23 @@
     </div>
   </div>
 
+<p>Life Expectancy: <%= @my_fish.fish.max_age %></p>
 
+<p>Alive?: <%= @my_fish.alive %></p>
+<p>Survival Probability:
+<% if @death_probability <= 0 %>
+100%
+<% else %>
+  <%=100 - @death_probability %>%</p>
+  <% end %>
+  
 </div>
 
 
 <%= render "shared/navbar" %>
+
+
+
+
+
+
