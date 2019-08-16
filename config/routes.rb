@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     member do
       get 'completed'
     end
+  end
 
 
   resources :my_challenges, only: [:index, :show, :update]
