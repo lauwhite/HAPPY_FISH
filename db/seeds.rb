@@ -63,10 +63,11 @@ seed_file['challenges'].each do |key, value|
     duration: value['duration'],
     description: value['description'],
     score_health: value['score_health'],
-    score_happiness: value['score_happiness'],
+    score_happiness: value['score_happiness'].to_f,
     challenge_type: challenge_types[value['challenge_type_slug']],
     challenge_category: challenge_categories[value['challenge_category_slug']]
   )
+  puts challenges[value['slug']].score_happiness
 end
 
 questions = {}
