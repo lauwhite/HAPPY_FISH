@@ -9,7 +9,7 @@
     <% @daily_challenges.each do |daily_challenge| %>
 
     <%= link_to challenge_path(daily_challenge.id) do %>
-    <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= daily_challenge.challenge_category.image %>)">
+    <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= daily_challenge.challenge_category.image %>)">
       <%= daily_challenge.name %>
     </div>
     <% end %>
@@ -21,7 +21,7 @@
   <div class="scrolling-wrapper">
     <% @weekly_challenges.each do |weekly_challenge| %>
     <%= link_to challenge_path(weekly_challenge.id) do %>
-    <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= weekly_challenge.challenge_category.image %>)">
+    <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= weekly_challenge.challenge_category.image %>)">
       <%= weekly_challenge.name %>
     </div>
     <% end %>
@@ -33,35 +33,35 @@
   <div class="scrolling-wrapper">
     <% @monthly_challenges.each do |monthly_challenge| %>
     <%= link_to challenge_path(monthly_challenge.id) do %>
-    <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= monthly_challenge.challenge_category.image %>)">
+    <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= monthly_challenge.challenge_category.image %>)">
       <%= monthly_challenge.name %>
     </div>
     <% end %>
     <% end %>
   </div>
 
-  <h2 class="section-title">Give these one another try?</h2>
+  <h2 class="section-title">ANOTHER TRY?</h2>
 
   <div class="scrolling-wrapper">
 
     <% @abandoned_challenges.each do |daily_challenge| %>
 
     <%= link_to challenge_path(daily_challenge.id) do %>
-    <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= daily_challenge.challenge_category.image %>)">
+    <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= daily_challenge.challenge_category.image %>)">
       <%= daily_challenge.name %>
     </div>
     <% end %>
     <% end %>
   </div>
 
-  <h2 class="section-title">Repetition makes you a master!</h2>
+  <h2 class="section-title">REPETITION MAKES YOU A MASTER!</h2>
 
   <div class="scrolling-wrapper">
 
     <% @repeatable_challenges.each do |daily_challenge| %>
 
     <%= link_to challenge_path(daily_challenge.id) do %>
-    <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= daily_challenge.challenge_category.image %>)">
+    <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= daily_challenge.challenge_category.image %>)">
       <%= daily_challenge.name %>
     </div>
     <% end %>

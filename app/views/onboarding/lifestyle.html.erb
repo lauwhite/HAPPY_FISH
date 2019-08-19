@@ -1,0 +1,46 @@
+<div class="question-container">
+  <h1>Lifestyle</h1>
+  <p>How green is your lifestyle?</p>
+  <!-- <p id="score">0</p> -->
+  <div>
+    <!-- question label -->
+    <p class="question_label">How would you describe your diet ?</p>
+  </div>
+
+  <div>
+    <fieldset class="form-group check_boxes answers">
+    <!-- all the answers have ids -->
+     <div class="form-check answer">
+        <input class="form-check-input check_boxes optional hidden-checkbox" type="checkbox" value="0" name="answer" id="q-1">
+        <label class="collection_check_boxes" id="answerOne" for="1"></label>
+      </div>
+     <div class="form-check answer">
+        <input class="form-check-input check_boxes optional hidden-checkbox" type="checkbox" value="5">
+        <label class="collection_check_boxes" id="answerTwo" for="1"></label>
+      </div>
+     <div class="form-check answer">
+        <input class="form-check-input check_boxes optional hidden-checkbox" type="checkbox" value="10" name="answer" id="1">
+        <label class="collection_check_boxes" id="answerThree" for="1"></label>
+      </div>
+     <div class="form-check answer">
+        <input class="form-check-input check_boxes optional hidden-checkbox" type="checkbox" value="15" name="answer" id="1">
+        <label class="collection_check_boxes" id="answerFour" for="1"></label>
+      </div>
+    </fieldset>
+  </div>
+
+   <div class="centered-element">
+    <% if @last_question_id != @question.id %>
+    <%= link_to "Next question", challenge_question_path(@challenge, @question.id + 1), class: "next-q-btn btn-gradient centered", style: "display: none"  %>
+    <% else %>
+    <%= link_to "Next", completed_challenge_path(@challenge.id), class: "next-q-btn btn-gradient centered", style: "display: none" %>
+    <% end %>
+  </div>
+
+
+
+
+
+</div>
+
+
