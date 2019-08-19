@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 2019_08_16_075548) do
     t.index ["my_fish_id"], name: "index_game_challenges_on_my_fish_id"
   end
 
-
   create_table "levels", force: :cascade do |t|
     t.string "name"
     t.integer "min_score"
