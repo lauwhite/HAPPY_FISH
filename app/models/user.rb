@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :country, presence: true
   devise :omniauthable, omniauth_providers: %i[facebook]
   after_create :default_score, :default_level
+  mount_uploader :avatar, PhotoUploader
 
   def default_score
     self.score = 0

@@ -1,27 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# # This file should contain all the record creation needed to seed the database with its default values.
+# # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# #
+# # Examples:
+# #
+# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+# #   Character.create(name: 'Luke', movie: movies.first)
 
-# 20190812093808_create_game_fishes
-# class CreateGameFishes < ActiveRecord::Migration[5.2]
-#   def change
-#     create_table :game_fishes do |t|
-#       t.references :user, foreign_key: true
-#       t.references :fish, foreign_key: true
-#       t.string :name
-#       t.datetime :start_date
-#       t.integer :score_health
-#       t.integer :score_happiness
-#       t.boolean :alive
+# # 20190812093808_create_game_fishes
+# # class CreateGameFishes < ActiveRecord::Migration[5.2]
+# #   def change
+# #     create_table :game_fishes do |t|
+# #       t.references :user, foreign_key: true
+# #       t.references :fish, foreign_key: true
+# #       t.string :name
+# #       t.datetime :start_date
+# #       t.integer :score_health
+# #       t.integer :score_happiness
+# #       t.boolean :alive
 
-#       t.timestamps
-#     end
-#   end
-# end
+# #       t.timestamps
+# #     end
+# #   end
+# # end
 
 
 
@@ -203,3 +203,16 @@ fish_attributes.each do |fish|
 end
 
 puts "Fishes done"
+
+# MyFish.delete_all
+# MyFish.create({
+#   user_id: 1,
+#  fish_id: 55,
+#  name: "Sushi",
+#  start_date: DateTime.now - 14,
+#  score_health: 95,
+#  score_happiness: 4.5,
+#  alive: true,
+#  age: 9
+# })
+

@@ -4,7 +4,7 @@ class MyFishesController < ApplicationController
   end
 
   def show
-    #@my_fish = MyFish.find(params[:id])
+    @my_fish = MyFish.find(current_user.my_fishes.find_by(alive: true).id)
     @my_fish.update_fish_stats
     @death_probability = @my_fish.death_probability
   end

@@ -16,16 +16,16 @@
           </div>
         </div>
       </div>
-      <div class="happiness-bar"><p><strong>HAPPINESS</strong><br><%#= @my_fish.score_happiness %></p><div class="happiness-stars">
+      <div class="happiness-bar"><p><strong>HAPPINESS</strong><br></p><div class="happiness-stars">
           <% @my_fish.score_happiness.to_i.times do %>
             <i class="fas fa-star"></i>
-      <% end %>
-        <% if @my_fish.score_happiness%1 > 0%>
-          <i class=" fas fa-star-half-o"></i>
-        <% end %>
-        <% (5 - @my_fish.score_happiness).to_i.times do %>
-          <i class="far fa-star"></i>
-        <% end %>
+          <% end %>
+          <% if @my_fish.score_happiness%1 > 0 %>
+            <i class="fas fa-star-half-alt"></i>
+          <% end %>
+          <% (5 - @my_fish.score_happiness).to_i.times do %>
+            <i class="far fa-star"></i>
+          <% end %>
         </div>
       </div>
     </div>
@@ -49,4 +49,12 @@
 <div class="bubbles bubble-8"></div>
 
 
+
+
+<% if MyFish.where(alive: true).count == 0 %>
+  <%= render "shared/msg_your_fish_died" %>
+  <script>
+    document.querySelector('.fish-modal').classList.toggle('show-modal')
+  </script>
+<% end %>
 

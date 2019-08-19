@@ -4,12 +4,17 @@ class FishesController < ApplicationController
     @user_score = current_user.score
     @available_fishes = Fish.where("min_score <= ?", @user_score)
     @blocked_fishes = Fish.where("min_score > ?", @user_score)
-    # raise
+    @my_fish = MyFish.find_by(alive: true)
   end
 
   def show
     @fish = Fish.find(params[:id])
     @my_fish = MyFish.new
-    # create a function: one day = one year of fish
   end
+
+  # def count_adopted_fishes
+  #   if MyFish.where(alive: true).count == 1
+  #     render js: "document.querySelector('.modal').classList.toggle('show-modal')"
+  #   end
+  # end
 end
