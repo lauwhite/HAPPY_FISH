@@ -10,6 +10,12 @@ Rails.application.routes.draw do
     end
   end
 
+  # create route for onboarding quiz
+
+  resources :onboarding, only: [:show] do
+    resources :onboarding_questions, only: [:show]
+  end
+
 
   resources :my_challenges, only: [:index, :show, :update]
 

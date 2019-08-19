@@ -37,6 +37,12 @@ class ChallengesController < ApplicationController
     @my_fish = my_fish.name
   end
 
+  def onboarding_challenge
+    # use params to get the score from each question
+    # sum them
+    # update current_score.score
+  end
+
 end
 
 

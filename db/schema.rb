@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_16_045737) do
+ActiveRecord::Schema.define(version: 2019_08_19_070202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2019_08_16_045737) do
   end
 
   create_table "game_challenges", force: :cascade do |t|
-    t.bigint "game_fish_id"
+    t.bigint "my_fish_id"
     t.bigint "challenge_id"
     t.datetime "start_time"
     t.datetime "end_time"
@@ -73,24 +73,8 @@ ActiveRecord::Schema.define(version: 2019_08_16_045737) do
     t.datetime "updated_at", null: false
     t.string "status"
     t.index ["challenge_id"], name: "index_game_challenges_on_challenge_id"
-    t.index ["game_fish_id"], name: "index_game_challenges_on_game_fish_id"
+    t.index ["my_fish_id"], name: "index_game_challenges_on_my_fish_id"
   end
-
-  create_table "game_fishes", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "fish_id"
-    t.string "name"
-    t.datetime "start_date"
-    t.integer "score_health"
-    t.integer "score_happiness"
-    t.boolean "alive"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "age"
-    t.index ["fish_id"], name: "index_game_fishes_on_fish_id"
-    t.index ["user_id"], name: "index_game_fishes_on_user_id"
-  end
-
 
   create_table "levels", force: :cascade do |t|
     t.string "name"
@@ -112,6 +96,20 @@ ActiveRecord::Schema.define(version: 2019_08_16_045737) do
     t.datetime "updated_at", null: false
     t.index ["fish_id"], name: "index_my_fishes_on_fish_id"
     t.index ["user_id"], name: "index_my_fishes_on_user_id"
+  end
+
+  create_table "onboarding_answers", force: :cascade do |t|
+    t.string "answer"
+    t.bigint "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_onboarding_answers_on_question_id"
+  end
+
+  create_table "onboarding_questions", force: :cascade do |t|
+    t.string "question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "questions", force: :cascade do |t|
@@ -148,11 +146,10 @@ ActiveRecord::Schema.define(version: 2019_08_16_045737) do
   add_foreign_key "challenges", "challenge_categories"
   add_foreign_key "challenges", "challenge_types"
   add_foreign_key "game_challenges", "challenges"
-  add_foreign_key "game_challenges", "game_fishes"
-  add_foreign_key "game_fishes", "fish"
-  add_foreign_key "game_fishes", "users"
+  add_foreign_key "game_challenges", "my_fishes"
   add_foreign_key "my_fishes", "fish"
   add_foreign_key "my_fishes", "users"
+  add_foreign_key "onboarding_answers", "questions"
   add_foreign_key "questions", "challenges"
   add_foreign_key "users", "levels"
 end

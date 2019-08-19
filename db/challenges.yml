@@ -583,9 +583,6 @@ answers:
     status: false
     question_slug: pollutioncountrywastemismanagement
 
-
-
-
 challenge_types:
   ct_one:
     slug: quizz
@@ -611,3 +608,332 @@ challenge_categories:
     slug: allcategories
     name: "All Categories"
     image: "https://images.unsplash.com/photo-1551244072-5d12893278ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"
+
+onboarding_questions:
+  onboarding_question_one:
+           slug: eating_habits_1
+           question: |
+            How would you describe your diet?
+  onboarding_question_two:
+           slug: eating_habits_2
+           question: |
+            What kind of food do you eat?
+  onboarding_question_three:
+           slug: eating_habits_3
+           question: |
+            What kind of coffee do you drink?
+  onboarding_question_four:
+           slug: eating_habits_4
+           question: |
+            Do you take a lot of take-away food?
+  onboarding_question_five:
+           slug: transport_habits_1
+           question: |
+            How many long haul flight do you take per year?
+  onboarding_question_six:
+           slug: transport_habits_2
+           question: |
+            How many Kilometers do you drive per week?
+  onboarding_question_seven:
+           slug: transport_habits_3
+           question: |
+            How many times per year do you take the train?
+  onboarding_question_eight:
+           slug: transport_habits_4
+           question: |
+            How often do you take public transport?
+  onboarding_question_nine:
+           slug: hbs_1
+           question: |
+            In a typical month how much do you spend on health, beauty and grooming products?
+  onboarding_question_ten:
+           slug: hbs_2
+           question: |
+            Have you bought a new Phone, TV, household appliance in the last year?
+  onboarding_question_eleven:
+           slug: hbs_3
+           question: |
+            How much do you shop?
+  onboarding_question_twelve:
+           slug: digital_habits_1
+           question: |
+            What is the brand of your smartphone?
+  onboarding_question_thirteen:
+           slug: digital_habits_2
+           question: |
+            What browser do you use for your internet searches?
+  onboarding_question_fourteen:
+           slug: digital_habits_3
+           question: |
+            Among those apps which one do you use the most?
+  onboarding_question_fifteen:
+           slug: main_concern_1
+           question: |
+            What do you want to tackle first?
+
+onboarding_answers:
+  onboarding_question_one_answer_one:
+    answer: "Omnivore"
+    score: 5
+    question_slug: eating_habits_1
+  onboarding_question_one_answer_two:
+    answer: "Pesco-Vegetarian"
+    score: 10
+    question_slug: eating_habits_1
+  onboarding_question_one_answer_three:
+    content: "Vegetarian"
+    score: 15
+    question_slug: eating_habits_1
+  onboarding_question_one_answer_four:
+    content: "Vegan"
+    score: 20
+    question_slug: eating_habits_1
+
+  onboarding_question_two_answer_one:
+    answer: "I love processed food"
+    score: 5
+    question_slug: eating_habits_2
+  onboarding_question_two_answer_two:
+    answer: "I eat a lot of frozen food"
+    score: 10
+    question_slug: eating_habits_2
+  onboarding_question_two_answer_three:
+    content: "I try to eat organic food"
+    score: 15
+    question_slug: eating_habits_2
+  onboarding_question_two_answer_four:
+    content: "I eat healthy local and seasonal food"
+    score: 20
+    question_slug: eating_habits_2
+
+  onboarding_question_three_answer_one:
+    answer: "Nespresso, in a disposable cup"
+    score: 5
+    question_slug: eating_habits_3
+  onboarding_question_three_answer_two:
+    answer: "I drink organic / Fairtrade coffee in a reusable cup"
+    score: 10
+    question_slug: eating_habits_3
+  onboarding_question_three_answer_three:
+    content: "I drink instant coffee"
+    score: 15
+    question_slug: eating_habits_3
+  onboarding_question_three_answer_four:
+    content: "I don’t drink coffee"
+    score: 20
+    question_slug: eating_habits_3
+
+  onboarding_question_four_answer_one:
+    answer: "a few times a week"
+    score: 5
+    question_slug: eating_habits_4
+  onboarding_question_four_answer_two:
+    answer: "once a week"
+    score: 10
+    question_slug: eating_habits_4
+  onboarding_question_four_answer_three:
+    content: "once or twice a month"
+    score: 15
+    question_slug: eating_habits_4
+  onboarding_question_four_answer_four:
+    content: "very occasionnally"
+    score: 20
+    question_slug: eating_habits_4
+
+  onboarding_question_five_answer_one:
+    answer: "more than  4"
+    score: 5
+    question_slug: transport_habits_1
+  onboarding_question_five_answer_two:
+    answer: "4"
+    score: 10
+    question_slug: transport_habits_1
+  onboarding_question_five_answer_four:
+    content: "2"
+    score: 15
+    question_slug: transport_habits_1
+  onboarding_question_five_answer_three:
+    content: "I don’t take the plane"
+    score: 20
+    question_slug: transport_habits_1
+
+  onboarding_question_six_answer_one:
+    answer: "over 100Km"
+    score: 5
+    question_slug: transport_habits_2
+  onboarding_question_six_answer_two:
+    answer: "less than 100Km"
+    score: 10
+    question_slug: transport_habits_2
+  onboarding_question_six_answer_four:
+    content: "less than 50 km"
+    score: 15
+    question_slug: transport_habits_2
+  onboarding_question_six_answer_three:
+    content: "I don’t have a car"
+    score: 20
+    question_slug: transport_habits_2
+
+  onboarding_question_seven_answer_one:
+    answer: "more than 10 times"
+    score: 5
+    question_slug: transport_habits_3
+  onboarding_question_seven_answer_two:
+    answer: "Between 5 and 10 times"
+    score: 10
+    question_slug: transport_habits_3
+  onboarding_question_seven_answer_four:
+    content: "between 1 and 5 times"
+    score: 15
+    question_slug: transport_habits_3
+  onboarding_question_seven_answer_three:
+    content: "I never take the train"
+    score: 20
+    question_slug: transport_habits_3
+
+  onboarding_question_eight_answer_one:
+    answer: "I never take public transport"
+    score: 5
+    question_slug: transport_habits_4
+  onboarding_question_eight_answer_two:
+    answer: "i cant find my car keys ( once or twice a month)"
+    score: 10
+    question_slug: transport_habits_4
+  onboarding_question_eight_answer_four:
+    content: "a few times a week"
+    score: 15
+    question_slug: transport_habits_4
+  onboarding_question_eight_answer_three:
+    content: "everyday"
+    score: 20
+    question_slug: transport_habits_4
+
+  onboarding_question_nine_answer_one:
+    answer: "more than 50 dollars"
+    score: 5
+    question_slug: hbs_1
+  onboarding_question_nine_answer_two:
+    answer: "25 to 50 dollars"
+    score: 10
+    question_slug: hbs_1
+  onboarding_question_nine_answer_four:
+    content: "10 to 25 dollars"
+    score: 15
+    question_slug: hbs_1
+  onboarding_question_nine_answer_three:
+    content: "0 to 10 dollars"
+    score: 20
+    question_slug: hbs_1
+
+  onboarding_question_ten_answer_one:
+    answer: "Yes I bought a lot of new electronic devices"
+    score: 5
+    question_slug: hbs_2
+  onboarding_question_ten_answer_two:
+    answer: "Yes I bought a phone and a Laptop/TV"
+    score: 10
+    question_slug: hbs_2
+  onboarding_question_ten_answer_four:
+    content: "Yes I bought a new phone"
+    score: 15
+    question_slug: hbs_2
+  onboarding_question_ten_answer_three:
+    content: "No I only bought second hand items"
+    score: 20
+    question_slug: hbs_2
+
+  onboarding_question_eleven_answer_one:
+    answer: "I am a shopaholic"
+    score: 5
+    question_slug: hbs_3
+  onboarding_question_eleven_answer_two:
+    answer: "I like to shop and sometimes buy more than I should"
+    score: 10
+    question_slug: hbs_3
+  onboarding_question_eleven_answer_four:
+    content: "I just shop for basics"
+    score: 15
+    question_slug: hbs_3
+  onboarding_question_eleven_answer_three:
+    content: "I am a zero waste shopper"
+    score: 20
+    question_slug: hbs_3
+
+  onboarding_question_twelve_answer_one:
+    answer: "Xiaomi or Samsung"
+    score: 5
+    question_slug: digital_habits_1
+  onboarding_question_twelve_answer_two:
+    answer: "Huawei/ LG / Sony"
+    score: 10
+    question_slug: digital_habits_1
+  onboarding_question_twelve_answer_four:
+    content: "Apple or Fairphone"
+    score: 15
+    question_slug: digital_habits_1
+  onboarding_question_twelve_answer_three:
+    content: "I have a refurbished phone"
+    score: 20
+    question_slug: digital_habits_1
+
+  onboarding_question_thirteen_answer_one:
+    answer: "Mozilla Firefox"
+    score: 5
+    question_slug: digital_habits_2
+  onboarding_question_thirteen_answer_two:
+    answer: "Google or Safari"
+    score: 10
+    question_slug: digital_habits_2
+  onboarding_question_thirteen_answer_four:
+    content: "Ecosia"
+    score: 15
+    question_slug: digital_habits_2
+  onboarding_question_thirteen_answer_three:
+    content: "Brave"
+    score: 20
+    question_slug: digital_habits_2
+
+  onboarding_question_fourteen_answer_one:
+    answer: "Pinterest"
+    score: 5
+    question_slug: digital_habits_2
+  onboarding_question_fourteen_answer_two:
+    answer: "Netflix"
+    score: 10
+    question_slug: digital_habits_2
+  onboarding_question_fourteen_answer_four:
+    content: "Linkedin"
+    score: 15
+    question_slug: digital_habits_2
+  onboarding_question_fourteen_answer_three:
+    content: "Whatsapp & Facebook"
+    score: 20
+    question_slug: digital_habits_2
+
+  onboarding_question_fithteen_answer_one:
+    answer: "pollution"
+    score: 5
+    question_slug: main_concern_1
+  onboarding_question_fithteen_answer_two:
+    answer: "global warming"
+    score: 10
+    question_slug: main_concern_1
+  onboarding_question_fithteen_answer_four:
+    content: "overfishing"
+    score: 15
+    question_slug: main_concern_1
+  onboarding_question_fithteen_answer_three:
+    content: "everything"
+    score: 20
+    question_slug: main_concern_1
+
+
+
+
+
+
+
+
+
+
+
