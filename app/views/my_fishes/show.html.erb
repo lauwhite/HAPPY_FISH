@@ -23,9 +23,11 @@
           <% @my_fish.score_happiness.to_i.times do %>
             <i class="fas fa-star"></i>
           <% end %>
+
           <% if @my_fish.score_happiness%1 > 0%>
             <i class=" fas fa-star-half-o"></i>
           <% end %>
+
           <% (5 - @my_fish.score_happiness).to_i.times do %>
             <i class="far fa-star"></i>
           <% end %>
