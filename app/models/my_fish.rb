@@ -16,15 +16,16 @@ class MyFish < ApplicationRecord
   end
 
   def update_fish_stats
-    new_age = (Date.today - self.start_date.to_date).to_i + 1
-    if new_age > self.age
-      (new_age - self.age).times do
+    new_age_helper = (Date.today - self.start_date.to_date).to_i
+    if new_age_helper > self.age
+      (new_age_helper - self.age).times do
+        self.age += 1
         self.score_health -= 5 unless self.score_health == 0
         self.score_happiness -= 0.5 unless self.score_happiness == 0.0
+        dead_or_alive
+        break unless self.alive?
       end
-      dead_or_alive
     end
-    self.age = new_age
     self.save!
   end
 
@@ -36,7 +37,7 @@ class MyFish < ApplicationRecord
   end
 
   def dead_or_alive
-  self.alive = false if self.age > self.fish.max_age
+  self.alive = false if self.age >= self.fish.max_age
   self.alive = false if self.score_health <= 0
   self.alive = false if rand(200) < death_probability
   end
