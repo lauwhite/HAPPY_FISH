@@ -681,11 +681,11 @@ onboarding_answers:
     score: 10
     question_slug: eating_habits_1
   onboarding_question_one_answer_three:
-    content: "Vegetarian"
+    answer: "Vegetarian"
     score: 15
     question_slug: eating_habits_1
   onboarding_question_one_answer_four:
-    content: "Vegan"
+    answer: "Vegan"
     score: 20
     question_slug: eating_habits_1
 
@@ -698,11 +698,11 @@ onboarding_answers:
     score: 10
     question_slug: eating_habits_2
   onboarding_question_two_answer_three:
-    content: "I try to eat organic food"
+    answer: "I try to eat organic food"
     score: 15
     question_slug: eating_habits_2
   onboarding_question_two_answer_four:
-    content: "I eat healthy local and seasonal food"
+    answer: "I eat healthy local and seasonal food"
     score: 20
     question_slug: eating_habits_2
 
@@ -715,11 +715,11 @@ onboarding_answers:
     score: 10
     question_slug: eating_habits_3
   onboarding_question_three_answer_three:
-    content: "I drink instant coffee"
+    answer: "I drink instant coffee"
     score: 15
     question_slug: eating_habits_3
   onboarding_question_three_answer_four:
-    content: "I don’t drink coffee"
+    answer: "I don’t drink coffee"
     score: 20
     question_slug: eating_habits_3
 
@@ -732,11 +732,11 @@ onboarding_answers:
     score: 10
     question_slug: eating_habits_4
   onboarding_question_four_answer_three:
-    content: "once or twice a month"
+    answer: "once or twice a month"
     score: 15
     question_slug: eating_habits_4
   onboarding_question_four_answer_four:
-    content: "very occasionnally"
+    answer: "very occasionnally"
     score: 20
     question_slug: eating_habits_4
 
@@ -749,11 +749,11 @@ onboarding_answers:
     score: 10
     question_slug: transport_habits_1
   onboarding_question_five_answer_four:
-    content: "2"
+    answer: "2"
     score: 15
     question_slug: transport_habits_1
   onboarding_question_five_answer_three:
-    content: "I don’t take the plane"
+    answer: "I don’t take the plane"
     score: 20
     question_slug: transport_habits_1
 
@@ -766,11 +766,11 @@ onboarding_answers:
     score: 10
     question_slug: transport_habits_2
   onboarding_question_six_answer_four:
-    content: "less than 50 km"
+    answer: "less than 50 km"
     score: 15
     question_slug: transport_habits_2
   onboarding_question_six_answer_three:
-    content: "I don’t have a car"
+    answer: "I don’t have a car"
     score: 20
     question_slug: transport_habits_2
 
@@ -783,11 +783,11 @@ onboarding_answers:
     score: 10
     question_slug: transport_habits_3
   onboarding_question_seven_answer_four:
-    content: "between 1 and 5 times"
+    answer: "between 1 and 5 times"
     score: 15
     question_slug: transport_habits_3
   onboarding_question_seven_answer_three:
-    content: "I never take the train"
+    answer: "I never take the train"
     score: 20
     question_slug: transport_habits_3
 
@@ -800,11 +800,11 @@ onboarding_answers:
     score: 10
     question_slug: transport_habits_4
   onboarding_question_eight_answer_four:
-    content: "a few times a week"
+    answer: "a few times a week"
     score: 15
     question_slug: transport_habits_4
   onboarding_question_eight_answer_three:
-    content: "everyday"
+    answer: "everyday"
     score: 20
     question_slug: transport_habits_4
 
@@ -817,11 +817,11 @@ onboarding_answers:
     score: 10
     question_slug: hbs_1
   onboarding_question_nine_answer_four:
-    content: "10 to 25 dollars"
+    answer: "10 to 25 dollars"
     score: 15
     question_slug: hbs_1
   onboarding_question_nine_answer_three:
-    content: "0 to 10 dollars"
+    answer: "0 to 10 dollars"
     score: 20
     question_slug: hbs_1
 
@@ -834,11 +834,11 @@ onboarding_answers:
     score: 10
     question_slug: hbs_2
   onboarding_question_ten_answer_four:
-    content: "Yes I bought a new phone"
+    answer: "Yes I bought a new phone"
     score: 15
     question_slug: hbs_2
   onboarding_question_ten_answer_three:
-    content: "No I only bought second hand items"
+    answer: "No I only bought second hand items"
     score: 20
     question_slug: hbs_2
 
@@ -851,11 +851,11 @@ onboarding_answers:
     score: 10
     question_slug: hbs_3
   onboarding_question_eleven_answer_four:
-    content: "I just shop for basics"
+    answer: "I just shop for basics"
     score: 15
     question_slug: hbs_3
   onboarding_question_eleven_answer_three:
-    content: "I am a zero waste shopper"
+    answer: "I am a zero waste shopper"
     score: 20
     question_slug: hbs_3
 
@@ -868,11 +868,11 @@ onboarding_answers:
     score: 10
     question_slug: digital_habits_1
   onboarding_question_twelve_answer_four:
-    content: "Apple or Fairphone"
+    answer: "Apple or Fairphone"
     score: 15
     question_slug: digital_habits_1
   onboarding_question_twelve_answer_three:
-    content: "I have a refurbished phone"
+    answer: "I have a refurbished phone"
     score: 20
     question_slug: digital_habits_1
 
@@ -885,11 +885,11 @@ onboarding_answers:
     score: 10
     question_slug: digital_habits_2
   onboarding_question_thirteen_answer_four:
-    content: "Ecosia"
+    answer: "Ecosia"
     score: 15
     question_slug: digital_habits_2
   onboarding_question_thirteen_answer_three:
-    content: "Brave"
+    answer: "Brave"
     score: 20
     question_slug: digital_habits_2
 
@@ -902,11 +902,11 @@ onboarding_answers:
     score: 10
     question_slug: digital_habits_2
   onboarding_question_fourteen_answer_four:
-    content: "Linkedin"
+    answer: "Linkedin"
     score: 15
     question_slug: digital_habits_2
   onboarding_question_fourteen_answer_three:
-    content: "Whatsapp & Facebook"
+    answer: "Whatsapp & Facebook"
     score: 20
     question_slug: digital_habits_2
 
@@ -919,11 +919,11 @@ onboarding_answers:
     score: 10
     question_slug: main_concern_1
   onboarding_question_fithteen_answer_four:
-    content: "overfishing"
+    answer: "overfishing"
     score: 15
     question_slug: main_concern_1
   onboarding_question_fithteen_answer_three:
-    content: "everything"
+    answer: "everything"
     score: 20
     question_slug: main_concern_1
 

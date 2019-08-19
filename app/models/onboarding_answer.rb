@@ -1,3 +1,3 @@
 class OnboardingAnswer < ApplicationRecord
-  belongs_to :question
+  belongs_to :onboarding_question
 end

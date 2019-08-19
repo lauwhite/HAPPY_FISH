@@ -1,3 +1,3 @@
 class OnboardingQuestion < ApplicationRecord
-  has_many :answers
+  has_many :onboarding_answers
 end

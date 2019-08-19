@@ -26,3 +26,35 @@ auestion2
 4. 20
 
 
+<div class="question-container">
+
+  <div>
+    <p class="question_label"><%= @question.content %></p>
+  </div>
+
+  <div>
+    <fieldset class="form-group check_boxes answers">
+      <% @answers.each do |answer| %>
+         <div class="form-check answer" data-id="<%= answer.id %>">
+            <input class="form-check-input check_boxes optional hidden-checkbox" type="checkbox" value="<%= answer.status %>" name="answer" id="<%= @challenge.name %>_answer_<%= answer.id %>">
+            <label class="collection_check_boxes" for="<%= @challenge.name %>_answer_<%= answer.id %>"><%= answer.content %></label>
+        </div>
+      <% end %>
+    </fieldset>
+  </div>
+
+  <div class="message">
+    <p class="motivation_message centered"></p>
+  </div>
+
+  <div class="centered-element">
+    <% if @last_question_id != @question.id %>
+    <%= link_to "Next question", challenge_question_path(@challenge, @question.id + 1), class: "next-q-btn btn-gradient centered", style: "display: none"  %>
+    <% else %>
+    <%= link_to "Next", completed_challenge_path(@challenge.id), class: "next-q-btn btn-gradient centered", style: "display: none" %>
+    <% end %>
+  </div>
+
+</div>
+
+

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'onboarding_question/show'
   devise_for :users, controllers: {registrations: 'users/registrations'}
   get 'profile', to: 'profile#show'
   root to: 'my_fishes#show'
@@ -12,9 +13,9 @@ Rails.application.routes.draw do
 
   # create route for onboarding quiz
 
-  resources :onboarding, only: [:show] do
+  # resources :onboarding, only: [:show] do
     resources :onboarding_questions, only: [:show]
-  end
+  # end
 
 
   resources :my_challenges, only: [:index, :show, :update]

@@ -100,10 +100,11 @@ ActiveRecord::Schema.define(version: 2019_08_19_070202) do
 
   create_table "onboarding_answers", force: :cascade do |t|
     t.string "answer"
-    t.bigint "question_id"
+    t.integer "score"
+    t.bigint "onboarding_question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_onboarding_answers_on_question_id"
+    t.index ["onboarding_question_id"], name: "index_onboarding_answers_on_onboarding_question_id"
   end
 
   create_table "onboarding_questions", force: :cascade do |t|
@@ -149,7 +150,7 @@ ActiveRecord::Schema.define(version: 2019_08_19_070202) do
   add_foreign_key "game_challenges", "my_fishes"
   add_foreign_key "my_fishes", "fish"
   add_foreign_key "my_fishes", "users"
-  add_foreign_key "onboarding_answers", "questions"
+  add_foreign_key "onboarding_answers", "onboarding_questions"
   add_foreign_key "questions", "challenges"
   add_foreign_key "users", "levels"
 end
