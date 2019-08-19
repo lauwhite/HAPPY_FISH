@@ -9,6 +9,8 @@ class MyChallengesController < ApplicationController
   def show
     @my_challenge = GameChallenge.find(params[:id])
     @progress = calculate_progress(@my_challenge)
+    # MyChallenge.all.length == 10
+    # Mychallenge.where(status: 'finished').length == 5
   end
 
   def create

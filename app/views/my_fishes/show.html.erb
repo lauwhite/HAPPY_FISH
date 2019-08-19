@@ -5,7 +5,7 @@
     <div class="fish-show-card-body">
       <div><p><strong>Species:</strong><br><%= @my_fish.fish.breed %></p></div>
       <div><p><strong>Location:</strong><br><%= @my_fish.fish.location %></p></div>
-      <div><p><strong>Age:</strong><br><%= @my_fish.age %> year old</p></div>
+      <div><p><strong>Age:</strong><br><%= pluralize(@my_fish.age, 'year') %> old</p></div>
     </div>
     <div class="my-fish-bar">
       <div>
