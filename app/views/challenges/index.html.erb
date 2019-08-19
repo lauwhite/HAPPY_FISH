@@ -40,4 +40,34 @@
     <% end %>
   </div>
 
+  <h2 class="section-title">Give these one another try?</h2>
+
+  <div class="scrolling-wrapper">
+
+    <% @abandoned_challenges.each do |daily_challenge| %>
+
+    <%= link_to challenge_path(daily_challenge.id) do %>
+    <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= daily_challenge.challenge_category.image %>)">
+      <%= daily_challenge.name %>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+
+  <h2 class="section-title">Repetition makes you a master!</h2>
+
+  <div class="scrolling-wrapper">
+
+    <% @repeatable_challenges.each do |daily_challenge| %>
+
+    <%= link_to challenge_path(daily_challenge.id) do %>
+    <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= daily_challenge.challenge_category.image %>)">
+      <%= daily_challenge.name %>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+
 </div>
+
+  <%= render 'shared/navbar' %>

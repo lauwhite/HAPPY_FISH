@@ -25,7 +25,12 @@ svg {
   fill: #979797;
 }
 
-
+.active-tab {
+  color: #28C3D4;
+}
+.inactive-tab {
+  color: #979797;
+}
 
 // Mobile Devices
 @media (min-width: 100px) and (max-width: 767px) {
@@ -36,3 +41,15 @@ svg {
 @media (min-width: 768px) {
 
 }
+
+.footer-navbar {
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  background-color: white;
+  width: 100%;
+  padding: 7px 0px;
+}
+
+
+
