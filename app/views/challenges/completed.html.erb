@@ -1,6 +1,8 @@
+<div class="congratulations-container">
 <h1>Congratulations !</h1>
 <% if @challenge.score_health > 0 %>
-<p> You won <%= @challenge.score_health %> points and made your fish happier ! </p>
+<p> You won <%= @challenge.score_health %> health points for <%= @my_fish %> and made it happier ! </p>
 <% else %>
-<p> You made your fish happier ! </p>
+<p> You made <%= @my_fish %> happier ! </p>
 <% end %>
+</div>

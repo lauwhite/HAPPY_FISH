@@ -1,0 +1,22 @@
+body {
+  background-color: white;
+  color: $dark-blue
+}
+
+.congratulations-container {
+  width: 60vw;
+  height: 50vw;
+  text-align: center;
+  margin: 48px auto;
+  padding: 24px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 300;
+}
