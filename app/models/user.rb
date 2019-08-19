@@ -16,7 +16,7 @@ class User < ApplicationRecord
   end
 
   def default_level
-    self.level_id = Level.first.id
+    self.level_id = Level.find_by(min_score: 0).id
     save
   end
 end

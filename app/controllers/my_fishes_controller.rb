@@ -42,5 +42,4 @@ class MyFishesController < ApplicationController
   def my_fish_params
     params.require(:my_fish).permit(:name)
   end
-
 end

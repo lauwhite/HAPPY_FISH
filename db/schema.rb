@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_16_075548) do
+ActiveRecord::Schema.define(version: 2019_08_19_070202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,21 @@ ActiveRecord::Schema.define(version: 2019_08_16_075548) do
     t.index ["user_id"], name: "index_my_fishes_on_user_id"
   end
 
+  create_table "onboarding_answers", force: :cascade do |t|
+    t.string "answer"
+    t.integer "score"
+    t.bigint "onboarding_question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["onboarding_question_id"], name: "index_onboarding_answers_on_onboarding_question_id"
+  end
+
+  create_table "onboarding_questions", force: :cascade do |t|
+    t.string "question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "content"
     t.bigint "challenge_id"
@@ -135,6 +150,7 @@ ActiveRecord::Schema.define(version: 2019_08_16_075548) do
   add_foreign_key "game_challenges", "my_fishes"
   add_foreign_key "my_fishes", "fish"
   add_foreign_key "my_fishes", "users"
+  add_foreign_key "onboarding_answers", "onboarding_questions"
   add_foreign_key "questions", "challenges"
   add_foreign_key "users", "levels"
 end

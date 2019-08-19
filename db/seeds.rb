@@ -32,10 +32,10 @@ GameChallenge.destroy_all
 Challenge.destroy_all
 ChallengeType.destroy_all
 ChallengeCategory.destroy_all
-Level.destroy_all
 MyFish.destroy_all
 Fish.destroy_all
-
+User.destroy_all
+Level.destroy_all
 
 
 
@@ -89,7 +89,24 @@ seed_file['answers'].each do |key, value|
     )
 end
 
+puts "Start creating onboarding questions"
 
+onboarding_questions = {}
+seed_file['onboarding_questions'].each do |key, value|
+  puts "creating onboarding questions!"
+  onboarding_questions[value['slug']] = OnboardingQuestion.create!(
+    question: value['question']
+    )
+end
+
+seed_file['onboarding_answers'].each do |key, value|
+  puts "creating onboarding answers"
+  OnboardingAnswer.create!(
+    answer: value['answer'],
+    score: value['score'],
+    onboarding_question: onboarding_questions[value['question_slug']]
+    )
+end
 
 puts "Creating Levels"
 
