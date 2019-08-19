@@ -1,18 +1,39 @@
-<h1><%= @challenge.name %></h1>
-<p><%= @challenge.challenge_category.name %></p>
+<div class="container-fluid">
+  <h1 class="main-title"><%= @challenge.name.upcase %></h1>
+  <p><%= @challenge.challenge_category.name %></p>
+  <h2 class="section-title">DESCRIPTION</h2>
 
-<%#= " This challenge will bring you #{@challenge.health_score} points"  %>
+    <div>
+      <%= @challenge.description %>
+    </div>
+    <div>
+      <h2 class="section-title">SCORING</h2>
+      <% if @challenge.score_health != 0 %>
+        <%= "Health points : #{@challenge.score_health}" %>
+      <% else %>
+        <p>Health points : none</p>
+      <% end %>
 
-<%= @challenge.description %>
+      <% if @challenge.score_happiness != 0 %>
+        <%= "Happiness points : #{@challenge.score_happiness}" %>
+      <% else %>
+        <p>Happiness points : none</p>
+      <% end %>
+    </div>
 
-<br>
+    <div class ="d-flex flex-column centered-element">
+      <div>
+         <%= link_to "No thanks", challenges_path, class: "btn-blue" %>
+      </div>
+      <div>
+        <% if   @challenge.challenge_type.name == "Quizz" %>
+          <%= link_to " Let's do it!", challenge_question_path(@challenge.id,@challenge.questions.first.id), class: "btn-gradient"  %>
+        <% elsif @challenge.duration == "Daily" %>
+          <%= link_to "I have completed this!", completed_challenge_path(@challenge.id), class: "btn-gradient" %>
+        <% else %>
+          <%= link_to "Let's do it !", challenge_my_challenges_path(@challenge), method: :post, class: "btn-gradient"%>
+        <% end %>
+      </div>
+    </div>
 
-<%= link_to "No thanks", challenges_path %>
-
-<% if   @challenge.challenge_type.name == "Quizz" %>
-  <%= link_to " Let's do it!", challenge_question_path(@challenge.id,@challenge.questions.first.id)  %>
-  <% elsif @challenge.duration == "Daily" %>
-  <%= link_to "I have completed this!", completed_challenge_path(@challenge.id)%>
-  <% else %>
-  <%= link_to "Let's do it !", challenge_my_challenges_path(@challenge), method: :post%>
-<% end %>
+</div>

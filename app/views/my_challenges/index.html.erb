@@ -1,57 +1,78 @@
-<h1>Here are your current challenges</h1>
-<!-- <h2>Ongoing Challenges</h2>
+<div class="container-fluid">
+  <h1 class="main-title">CHALLENGES</h1>
+  <!-- <h2>Ongoing Challenges</h2>
 
-<% @my_ongoing_challenges.each do |my_challenge| %>
-<p>
-<%= my_challenge.challenge.description %>
-</p>
-<p>
-<%= my_challenge.start_time %> - <%= my_challenge.end_time %>
-</p>
-<% today = DateTime.now.utc
-    progress_helper_total =  my_challenge.end_time - my_challenge.start_time
-    progress_helper_unique = today - my_challenge.start_time
-    @progress = (progress_helper_unique / progress_helper_total)*100
-     %>
-<p>Your progress is
-    <%= @progress.round(2) %>
-    %
-</p>
-
-<%= link_to "More info", my_challenge_path(my_challenge) %>
-
-<% end %> -->
-
-<h2 class="section-title">Ongoing Challenges</h2>
-
-  <div class="scrolling-wrapper">
-
-    <% @my_ongoing_challenges.each do |my_challenge| %>
-      <%= link_to my_challenge_path(my_challenge.id) do %>
-      <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_challenge.challenge.challenge_category.image %>)">
-      <%= my_challenge.challenge.name %>
-      <p style="font-size: 12px"><%= my_challenge.start_time.strftime('%m/%d/%Y') %> - <%= my_challenge.end_time.strftime('%m/%d/%Y')  %></p>
-      <% today = DateTime.now.utc
+  <% @my_ongoing_challenges.each do |my_challenge| %>
+  <p>
+  <%= my_challenge.challenge.description %>
+  </p>
+  <p>
+  <%= my_challenge.start_time %> - <%= my_challenge.end_time %>
+  </p>
+  <% today = DateTime.now.utc
       progress_helper_total =  my_challenge.end_time - my_challenge.start_time
       progress_helper_unique = today - my_challenge.start_time
       @progress = (progress_helper_unique / progress_helper_total)*100
-      %>
-      <p style="font-size: 15px"><%= @progress.round(2) %> %</p>
-      </div>
-    <% end %>
-    <% end %>
-  </div>
+       %>
+  <p>Your progress is
+      <%= @progress.round(2) %>
+      %
+  </p>
 
+  <%= link_to "More info", my_challenge_path(my_challenge) %>
 
-<h2 class="section-title">Completed Challenges</h2>
+  <% end %> -->
+  <h2 class="section-title">TODAY'S SELECTION</h2>
 
   <div class="scrolling-wrapper">
 
-    <% @my_completed_challenges.each do |my_challenge| %>
-      <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_challenge.challenge.challenge_category.image %>)">
-      <%= my_challenge.challenge.name %>
-      <p style="font-size: 12px">Completed at: <%= my_challenge.end_time.strftime('%m/%d/%Y') %></p>
-      </div>
-    <% end %>
+      <% @daily_challenges.each do |daily_challenge| %>
+        <%= link_to challenge_path(daily_challenge.id) do %>
+          <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= daily_challenge.challenge_category.image %>)">
+            <%= daily_challenge.name %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  <h2 class="section-title">ONGOING CHALLENGES</h2>
+
+
+
+      <% @my_ongoing_challenges.each do |my_challenge| %>
+        <%= link_to my_challenge_path(my_challenge.id) do %>
+          <div class="ongoing-challenge-card" style="url(<%= my_challenge.challenge.challenge_category.image %>)">
+            #<%= my_challenge.challenge.name%>
+            <p style="font-size: 12px"><%= my_challenge.start_time.strftime('%m/%d/%Y') %> - <%= my_challenge.end_time.strftime('%m/%d/%Y')  %></p>
+              <% today = DateTime.now.utc
+              progress_helper_total = my_challenge.end_time - my_challenge.start_time
+              progress_helper_unique = today - my_challenge.start_time
+              @progress = (progress_helper_unique / progress_helper_total)*100
+              %>
+              <div>
+                  <div class="challenge-progress">
+                    <div class="bar text-center " style="width: <%= @progress.round(2)%>%">
+                     <!--  if we want the percentage to appear we can add it here -->
+                    </div>
+                  </div>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
+
+
+  <h2 class="section-title">COMPLETED CHALLENGES</h2>
+
+
+      <% @my_completed_challenges.each do |my_challenge| %>
+        <div class="completed_challenge_card" >
+        <%= my_challenge.challenge.name %>
+        <p style="font-size: 12px">Completed on: <%= my_challenge.end_time.strftime('%m/%d/%Y') %></p>
+        </div>
+      <% end %>
+  <%= render "shared/navbar" %>
+
+  <div class="centered-element">
+    <%= link_to "Pick a new challenge", challenges_path, class: "btn-gradient" %>
   </div>
-<%= render "shared/navbar" %>
+</div>

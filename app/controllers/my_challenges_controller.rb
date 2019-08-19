@@ -1,12 +1,15 @@
 class MyChallengesController < ApplicationController
 
   def index
+    @challenges = Challenge.includes(:game_challenges).where( :game_challenges => { :challenge_id => nil } )
+    @daily_challenges = @challenges.where(duration: "Daily")
     @my_ongoing_challenges = GameChallenge.where(status: "Ongoing")
     @my_completed_challenges = GameChallenge.where(status: "Completed")
   end
 
   def show
     @my_challenge = GameChallenge.find(params[:id])
+    @challenge = Challenge.find(@my_challenge.challenge_id)
     @progress = calculate_progress(@my_challenge)
   end
 

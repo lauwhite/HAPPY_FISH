@@ -1,4 +1,4 @@
-
+// challenge index
 .challenge-card {
   background-size: cover;
   background-position: center;
@@ -8,29 +8,58 @@
   align-items: center;
   color: white;
   font-size: 24px;
-  font-weight: ExtraBold;
+  font-weight: 800;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 4px;
   box-shadow: 0 0 14px rgba(0,0,0,0.2);
   display: inline-block;
   padding: 16px;
+  margin-right:16px;
+  margin-bottom: 16px;
+  min-width: 240px;
 }
-
-.ongoing-challenge-card {
-
-}
-
-// horizontal scrolling
 
 .scrolling-wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
-  white-space: nowrap;
+  display: flex;
   -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
     display: none;
   }
 }
+
+
+
+// ongoing challenge
+
+.ongoing-challenge-card {
+  background-color: white;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  box-shadow: 1px 2px 4px 1px rgba(0,0,0,0.2);
+  color: $blue;
+  font-weight: 600;
+  font-size: 18px !important;
+}
+
+// completed challenge
+.completed_challenge_card {
+  background-color: $light-blue;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  box-shadow: 1px 2px 4px 1px rgba(0,0,0,0.2);
+  color: $dark-blue;
+  font-weight: 600;
+  font-size: 18px !important;
+}
+
+
+
+// fish show
+
 
 .fish-show-card {
   width: 100%;
@@ -47,6 +76,7 @@
 .your-fish-title {
   margin-top: 7%;
 }
+
 
 .fish-show-card-body {
   display: flex;
@@ -72,6 +102,9 @@
   padding: 0 20px;
   margin-bottom: 15px;
 }
+
+
+// fish card
 
 .fish-grid {
   display: grid;

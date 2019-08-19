@@ -1,10 +1,42 @@
-<p>
-<%= @my_challenge.challenge.description %>
-</p>
-<p>
-<%= @my_challenge.start_time %> - <%= @my_challenge.end_time %>
-</p>
-<p>
-  Your pogress: <%= @progress %>%
-</p>
-<%= link_to "Stop the challenge", my_challenge_path, method: :patch%>
+<div class="container-fluid">
+  <h1 class="main-title"><%= @challenge.name.upcase %></h1>
+  <p><%= @challenge.challenge_category.name %></p>
+  <h2 class="section-title">DESCRIPTION</h2>
+    <div>
+      <%= @my_challenge.challenge.description %>
+    </div>
+
+    <div>
+      <h2 class="section-title">SCORING</h2>
+      <% if @challenge.score_health != 0 %>
+        <%= "Health points : #{@challenge.score_health}" %>
+      <% else %>
+        <p>Health points : none</p>
+      <% end %>
+      <% if @challenge.score_happiness != 0 %>
+        <%= "Happiness points : #{@challenge.score_happiness}" %>
+      <% else %>
+        <p>Happiness points : none</p>
+      <% end %>
+    </div>
+
+    <div>
+      <h2 class="section-title">STATUS</h2>
+      <div>
+          <div class="challenge-progress">
+            <div class="bar text-center " style="width: <%= @progress.round(2)%>%">
+              <!--  if we want the percentage to appear we can add it here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="centered-element">
+    <%= link_to "Stop the challenge", my_challenge_path, method: :patch, class: "btn-blue"%>
+  </div>
+
+</div>
+
+
+
+
