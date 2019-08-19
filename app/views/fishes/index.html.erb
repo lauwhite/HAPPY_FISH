@@ -39,7 +39,7 @@
 how do I do to make the alert pop when I clic on  a blocked fish? -->
 
 <div class="alert alert-warning blocked-fish alert-dismissible fade " role="alert">
-  <span><strong>OOoops!</strong> It seems that your level does not allow you to adopt this fish</span>
+  <span><strong>Oooops!</strong> It seems that your level does not allow you to adopt this fish</span>
   <a data-dismiss="alert" aria-label="Close">
     <i class="fas fa-times"></i>
   </a>
@@ -54,4 +54,22 @@ how do I do to make the alert pop when I clic on  a blocked fish? -->
     });
   })
 </script>
+
+
+
+<% if MyFish.where(alive: true).count == 1 %>
+<%= render "shared/msg_adoption_blocked" %>
+  <script>
+    const fishes = document.querySelectorAll(".fish-index-card")
+    fishes.forEach((fish) => {
+      fish.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector('.fish-modal').classList.toggle('show-modal')
+      });
+    })
+  </script>
+<% end %>
+
+
+
 

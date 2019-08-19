@@ -51,4 +51,20 @@
 //   position: absolute;
 // }
 
+.btn-invite-friends {
+  text-align: center;
+  height: 54px;
+  min-width: 330px;
+  max-width: 450px;
+  background-color: #F7BE16;
+  border-radius: 30px;
+  margin: 16px;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 24px;
+  color: black;
+    &:hover {
+      text-decoration: none;
+    }
+}
 

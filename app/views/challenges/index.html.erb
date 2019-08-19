@@ -70,4 +70,11 @@
 
 </div>
 
-  <%= render 'shared/navbar' %>
+<% if MyFish.where(alive: true).count == 0 %>
+<%= render "shared/msg_need_to_adopt_a_fish" %>
+    <script>
+      document.querySelector('.fish-modal').classList.toggle('show-modal')
+    </script>
+<% end %>
+
+<%= render 'shared/navbar' %>

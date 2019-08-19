@@ -1,20 +1,39 @@
-<div class="container">
-  <h1>Hi <%= @user.first_name %> <%= @user.last_name  %></h1>
-  <p><%= @user.avatar %></p>
-  <p><%= @user.level_id %></p>
-  <h1>Score = <%= @user.score %></h1>
+<div class="container profile-container">
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 
-<h2 class="section-title">Your achievements</h2>
-
-  <div class="scrolling-wrapper">
-
-    <% @my_completed_challenges.each do |my_challenge| %>
-      <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_challenge.challenge.challenge_category.image %>)">
-      <%= my_challenge.challenge.name %>
-      <p style="font-size: 12px">Completed at: <%= my_challenge.end_time.strftime('%m/%d/%Y') %></p>
-      </div>
-    <% end %>
+  <div class="prfile-photo container centered" style="
+    margin-top: 10vh;">
+    <%= image_tag @my_fish.fish.fish_avatar, class: "centered", width:"50%"%>
+    <h2><%= @user.first_name %> <%= @user.last_name  %></h2>
   </div>
-<%= render "shared/navbar" %>
+
+  <div class="profile-status container" style="
+    margin-top: 8vh;">
+    <h2 class="section-title">Your level: <%= @user.level_id %></h2>
+    <br>
+    <h2 class="section-title">Your achievements: </h2>
+      <div class="scrolling-wrapper">
+        <% @my_completed_challenges.each do |my_challenge| %>
+          <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_challenge.challenge.challenge_category.image %>)">
+          <%= my_challenge.challenge.name %>
+          <p style="font-size: 12px">Completed at: <%= my_challenge.end_time.strftime('%m/%d/%Y') %></p>
+          </div>
+        <% end %>
+      </div>
+  </div>
+
+    <div class="btn-invite-friends" style="
+    margin-top: 8vh;">Invite Friends</div>
 
 </div>
+
+<%= render "shared/navbar" %>
+
+<div class="bubbles bubble-1" style="background-color: #64c4ed;"></div>
+<div class="bubbles bubble-2" style="background-color: #28C3D4;"></div>
+<div class="bubbles bubble-3" style="background-color: #28C3D4;"></div>
+<div class="bubbles bubble-4" style="background-color: #28C3D4;"></div>
+<div class="bubbles bubble-5" style="background-color: #28C3D4;"></div>
+<div class="bubbles bubble-6" style="background-color: #28C3D4;"></div>
+<div class="bubbles bubble-7" style="background-color: #28C3D4;"></div>
+<div class="bubbles bubble-8" style="background-color: #28C3D4;"></div>

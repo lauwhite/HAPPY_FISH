@@ -1,0 +1,82 @@
+
+/* Bubbles */
+.bubbles {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  margin-right: 50px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: .50;
+  width: 40px;
+  height: 40px;
+  animation: up 4s infinite;
+}
+
+.bubble-2 {
+  left: 20px;
+  opacity: .30;
+  animation: up 2s infinite;
+}
+
+.bubble-3 {
+  left: 80px;
+  opacity: .30;
+  animation: up 5s infinite;
+}
+
+.bubble-4 {
+  left: 140px;
+  opacity: .30;
+  animation: up 6s infinite;
+}
+
+.bubble-5 {
+  left: 200px;
+  opacity: .30;
+  animation: up 5s infinite;
+}
+
+.bubble-6 {
+  left: 270px;
+  opacity: .30;
+  animation: up 3s infinite;
+}
+
+.bubble-7 {
+  left: 180px;
+  opacity: .30;
+  animation: up 4s infinite;
+}
+
+.bubble-8 {
+  left: 330px;
+  opacity: .30;
+  animation: up 3s infinite;
+}
+
+/* Swim Animation */
+@keyframes swim {
+  0% {
+    transform: translateY(-50px) translateX(0) rotate(30deg);
+  }
+  25% {
+    transform: translateY(50px) translateX(250px) rotate(20deg);
+  }
+  50% {
+    transform: translateY(100px) translateX(500px);
+  }
+  75% {
+    transform: translateY(50px) translateX(850px) rotate(-20deg);
+  }
+  100% {
+    transform: translateY(-170px) translateX(1200px) rotate(-40deg);
+  }
+}
+
+/* Bubbles Animation */
+@keyframes up {
+  100% {
+    transform: translateY(-800px);
+  }
+}

@@ -5,12 +5,15 @@ class MyChallengesController < ApplicationController
     @daily_challenges = @challenges.where(duration: "Daily")
     @my_ongoing_challenges = GameChallenge.where(status: "Ongoing")
     @my_completed_challenges = GameChallenge.where(status: "Completed")
+    # @my_fish = MyFish.find_by(alive: true)
   end
 
   def show
     @my_challenge = GameChallenge.find(params[:id])
     @challenge = Challenge.find(@my_challenge.challenge_id)
     @progress = calculate_progress(@my_challenge)
+    # MyChallenge.all.length == 10
+    # Mychallenge.where(status: 'finished').length == 5
   end
 
   def create
