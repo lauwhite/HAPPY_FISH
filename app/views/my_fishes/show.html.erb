@@ -1,10 +1,37 @@
-<%= image_tag @my_fish.fish.fish_avatar %>
-<p>Species: <%= @my_fish.fish.breed %></p>
-<p>Location: <%= @my_fish.fish.location %></p>
-<p>Age: <%= @my_fish.age %></p>
+
+<div class="my-fish-container container">
+
+  <div class="my-fish-show-card card">
+    <%= image_tag @my_fish.fish.fish_avatar, class: "centered", width:"50%"%>
+    <div class="fish-show-card-body">
+      <div><p><strong>Species:</strong><br><%= @my_fish.fish.breed %></p></div>
+      <div><p><strong>Location:</strong><br><%= @my_fish.fish.location %></p></div>
+      <div><p><strong>Age:</strong><br><%= @my_fish.age %> year old</p></div>
+    </div>
+    <div class="my-fish-bar">
+      <div>
+        <p><strong>HEALTH</strong></p>
+        <div class="container">
+          <div class="progress">
+            <div class="bar text-center health-bar" style="width: <%= @my_fish.score_health %>%"><%= @my_fish.score_health %>%</div>
+          </div>
+        </div>
+      </div>
+      <div class="happiness-bar"><p><strong>HAPPINESS</strong><br><%= @my_fish.score_happiness %></p>
+        <div class="happiness-stars">
+          <% @my_fish.score_happiness.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - @my_fish.score_happiness).times do %>
+            <i class="far fa-star"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <p>Life Expectancy: <%= @my_fish.fish.max_age %></p>
-<p>HEALTH: <%= @my_fish.score_health %></p>
-<p>HAPPINESS: <%= @my_fish.score_happiness %></p>
+
 <p>Alive?: <%= @my_fish.alive %></p>
 <p>Survival Probability:
 <% if @death_probability <= 0 %>
@@ -12,5 +39,14 @@
 <% else %>
   <%=100 - @death_probability %>%</p>
   <% end %>
+  
+</div>
+
+
+<%= render "shared/navbar" %>
+
+
+
+
 
 
