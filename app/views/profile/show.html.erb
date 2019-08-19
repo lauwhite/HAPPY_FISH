@@ -1,6 +1,7 @@
 <div class="container profile-container">
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 
-  <div class="prfile-photo container centered", style="
+  <div class="prfile-photo container centered" style="
     margin-top: 10vh;">
     <%= image_tag @my_fish.fish.fish_avatar, class: "centered", width:"50%"%>
     <h2><%= @user.first_name %> <%= @user.last_name  %></h2>
