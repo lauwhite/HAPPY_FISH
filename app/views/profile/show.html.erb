@@ -3,6 +3,20 @@
   <p><%= @user.avatar %></p>
   <p><%= @user.level_id %></p>
   <h1>Score = <%= @user.score %></h1>
+
+<h2 class="section-title">Your achievements</h2>
+
+  <div class="scrolling-wrapper">
+
+    <% @my_completed_challenges.each do |my_challenge| %>
+      <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_challenge.challenge.challenge_category.image %>)">
+      <%= my_challenge.challenge.name %>
+      <p style="font-size: 12px">Completed at: <%= my_challenge.end_time.strftime('%m/%d/%Y') %></p>
+      </div>
+    <% end %>
+  </div>
+<%= render "shared/navbar" %>
+
 </div>
 
 <%= render "shared/navbar" %>
