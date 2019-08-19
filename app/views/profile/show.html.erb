@@ -1,21 +1,18 @@
 <div class="container profile-container">
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 
-  <div class="prfile-photo container centered", style="
+  <div class="prfile-photo container centered" style="
     margin-top: 10vh;">
     <%= image_tag @my_fish.fish.fish_avatar, class: "centered", width:"50%"%>
     <h2><%= @user.first_name %> <%= @user.last_name  %></h2>
   </div>
-  <p><%= @user.level_id %></p>
 
   <div class="profile-status container" style="
     margin-top: 8vh;">
     <h2 class="section-title">Your level: <%= @user.level_id %></h2>
     <br>
     <h2 class="section-title">Your achievements: </h2>
-
-
       <div class="scrolling-wrapper">
-
         <% @my_completed_challenges.each do |my_challenge| %>
           <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_challenge.challenge.challenge_category.image %>)">
           <%= my_challenge.challenge.name %>
