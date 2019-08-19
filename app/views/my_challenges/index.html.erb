@@ -1,26 +1,5 @@
 <h1>Here are your current challenges</h1>
-<!-- <h2>Ongoing Challenges</h2>
 
-<% @my_ongoing_challenges.each do |my_challenge| %>
-<p>
-<%= my_challenge.challenge.description %>
-</p>
-<p>
-<%= my_challenge.start_time %> - <%= my_challenge.end_time %>
-</p>
-<% today = DateTime.now.utc
-    progress_helper_total =  my_challenge.end_time - my_challenge.start_time
-    progress_helper_unique = today - my_challenge.start_time
-    @progress = (progress_helper_unique / progress_helper_total)*100
-     %>
-<p>Your progress is
-    <%= @progress.round(2) %>
-    %
-</p>
-
-<%= link_to "More info", my_challenge_path(my_challenge) %>
-
-<% end %> -->
 
 <h2 class="section-title">Ongoing Challenges</h2>
 
@@ -28,17 +7,17 @@
 
     <% @my_ongoing_challenges.each do |my_challenge| %>
       <%= link_to my_challenge_path(my_challenge.id) do %>
-      <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_challenge.challenge.challenge_category.image %>)">
-      <%= my_challenge.challenge.name %>
-      <p style="font-size: 12px"><%= my_challenge.start_time.strftime('%m/%d/%Y') %> - <%= my_challenge.end_time.strftime('%m/%d/%Y')  %></p>
-      <% today = DateTime.now.utc
-      progress_helper_total =  my_challenge.end_time - my_challenge.start_time
-      progress_helper_unique = today - my_challenge.start_time
-      @progress = (progress_helper_unique / progress_helper_total)*100
-      %>
-      <p style="font-size: 15px"><%= @progress.round(2) %> %</p>
-      </div>
-    <% end %>
+        <div class="challenge-card" style="width: 240px; margin-right:16px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_challenge.challenge.challenge_category.image %>)">
+          <%= my_challenge.challenge.name %>
+          <p style="font-size: 12px"><%= my_challenge.start_time.strftime('%m/%d/%Y') %> - <%= my_challenge.end_time.strftime('%m/%d/%Y')  %></p>
+          <% today = DateTime.now.utc
+          progress_helper_total =  my_challenge.end_time - my_challenge.start_time
+          progress_helper_unique = today - my_challenge.start_time
+          @progress = (progress_helper_unique / progress_helper_total)*100
+          %>
+          <p style="font-size: 15px"><%= @progress.round(2) %> %</p>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
