@@ -18,11 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def define_my_fish
-    if MyFish.where(alive: true).count == 1
     @my_fish = MyFish.find_by(alive: true)
-  else
-    @my_fish = MyFish.last
-  end
   end
 end
 
