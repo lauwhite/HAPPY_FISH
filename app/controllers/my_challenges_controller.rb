@@ -3,6 +3,7 @@ class MyChallengesController < ApplicationController
   def index
     @my_ongoing_challenges = GameChallenge.where(status: "Ongoing")
     @my_completed_challenges = GameChallenge.where(status: "Completed")
+    # @my_fish = MyFish.find_by(alive: true)
   end
 
   def show
