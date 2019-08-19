@@ -19,8 +19,8 @@ class MyFish < ApplicationRecord
     new_age = (Date.today - self.start_date.to_date).to_i + 1
     if new_age > self.age
       (new_age - self.age).times do
-        self.score_health -= 5
-        self.score_happiness -= 0.5
+        self.score_health -= 5 unless self.score_health == 0
+        self.score_happiness -= 0.5 unless self.score_happiness == 0.0
       end
       dead_or_alive
     end
