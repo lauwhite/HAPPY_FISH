@@ -36,6 +36,9 @@ MyFish.destroy_all
 Fish.destroy_all
 User.destroy_all
 Level.destroy_all
+OnboardingAnswer.destroy_all
+OnboardingQuestion.destroy_all
+
 
 
 
