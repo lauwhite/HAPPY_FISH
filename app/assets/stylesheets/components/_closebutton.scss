@@ -1,0 +1,25 @@
+.close-button {
+  height: 50px;
+  width: 50px;
+  padding : 10px;
+  margin: 16px;
+  border-radius: 50%;
+  display: flex;
+  background-color: $light-blue;
+  p {
+    margin: 0;
+    color: $dark-blue;
+    font-weight: 500;
+  }
+}
+
+.close-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn {
+  display: flex;
+  align-self: flex-end
+}

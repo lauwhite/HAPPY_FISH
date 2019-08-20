@@ -5,6 +5,11 @@
 }
 
 .navbar-lewagon .navbar-collapse .nav-item {
+  font-size: 12px;
+}
+
+.navbar-lewagon .navbar-collapse .nav-item p {
+  font-size: 12px;
 }
 
 .navbar-lewagon .navbar-collapse .nav-item a:hover {
@@ -14,6 +19,7 @@
 
 .navbar-lewagon p {
   color: #979797;
+
 }
 
 .navbar-lewagon .navbar-collapse .nav-item a:hover p {
@@ -32,24 +38,31 @@ svg {
   color: #979797;
 }
 
-// Mobile Devices
-@media (min-width: 100px) and (max-width: 767px) {
 
-}
-
-// Desktop
-@media (min-width: 768px) {
-
-}
 
 .footer-navbar {
   display: flex;
   position: fixed;
   bottom: 0px;
+  left: 0px;
   background-color: white;
   width: 100%;
+  height: 57px;
   padding: 7px 0px;
+  font-size: 18px;
 }
 
+.nav-link {
+  font-size: 12px;
+  margin: 0;
+}
 
+// Mobile Devices
+@media (min-width: 100px) and (max-width: 767px) {
+
+}
+// Desktop
+@media (min-width: 768px) {
+
+}
 

@@ -1,0 +1,27 @@
+
+.return-bar {
+  width: 100%;
+  background-color: white;
+  height: 55px;
+  top : 0px;
+  left : 0px;
+  text-decoration: none;
+  padding: 16px 48px;
+  margin-bottom: 16px;
+  p {
+    margin: 0;
+    color: $dark-blue;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+
+.blue-arrow-icon {
+  position: absolute;
+  width: 12px;
+  height: 20px;
+  top: 16px;
+  left: 16px;
+}
+
