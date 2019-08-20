@@ -892,23 +892,22 @@ onboarding_answers:
     answer: "Brave"
     score: 20
     question_slug: digital_habits_2
-
   onboarding_question_fourteen_answer_one:
     answer: "Pinterest"
     score: 5
-    question_slug: digital_habits_2
+    question_slug: digital_habits_3
   onboarding_question_fourteen_answer_two:
     answer: "Netflix"
     score: 10
-    question_slug: digital_habits_2
+    question_slug: digital_habits_3
   onboarding_question_fourteen_answer_four:
     answer: "Linkedin"
     score: 15
-    question_slug: digital_habits_2
+    question_slug: digital_habits_3
   onboarding_question_fourteen_answer_three:
     answer: "Whatsapp & Facebook"
     score: 20
-    question_slug: digital_habits_2
+    question_slug: digital_habits_3
 
   onboarding_question_fithteen_answer_one:
     answer: "pollution"

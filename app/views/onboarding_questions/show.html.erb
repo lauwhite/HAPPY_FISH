@@ -1,30 +1,42 @@
+<div class="banner-container">
+  <h1>Lifestyle</h1>
+  <p>Step 1: How green is your lifestyle</p>
+</div>
+
+<style>
+  #onboarding-form {
+    position: relative;
+  }
+
+  .centered.next-0, .centered.next-1, .centered.next-2, .centered.next-3 {
+    position: absolute;
+    bottom: -50px;
+  }
+</style>
+
 <div class="question-container">
   <div>
     <p class="question_label"><%= @question.question %></p>
   </div>
 
-  <div>
-    <fieldset class="form-group check_boxes answers">
-      <% @question.onboarding_answers.each do |answer| %>
-         <div class="form-check answer" data-id="<%= answer.id %>">
+  <div id="onboarding-form">
+    <% @question.onboarding_answers.each_with_index do |answer, index| %>
+      <form action="/click">
+        <fieldset class="form-group check_boxes">
+          <div class="form-check answer answer-onboard" data-id="<%= answer.id %>">
+            <input type="text" hidden name="question" value="<%= @question.id %>">
+            <input type="text" class="input-btn" hidden name="score" value="<%= answer.score %>" />
             <%= answer.answer %>
-          <!--<input class="form-check-input check_boxes optional hidden-checkbox" type="checkbox" value="<%= answer.status %>" name="answer" id="<%#= @challenge.name %>_answer_<%= answer.id %>"> -->
-          <!--<label class="collection_check_boxes" for="<%#= @challenge.name %>_answer_<%= answer.id %>"><%= answer.content %></label> -->
-        </div>
-      <% end %>
-    </fieldset>
-  </div>
-
-  <div class="message">
-    <p class="motivation_message centered"></p>
-  </div>
-
-  <div class="centered-element">
-    <% if @last_question_id != @question.id %>
-    <%= link_to "Next question", challenge_question_path(@challenge, @question.id + 1), class: "next-q-btn btn-gradient centered", style: "display: none"  %>
-    <% else %>
-    <%= link_to "Next", completed_challenge_path(@challenge.id), class: "next-q-btn btn-gradient centered", style: "display: none" %>
+          </div>
+          <input type="submit" class="next-q-btn btn-gradient centered next-<%= index %> d-none">
+        </fieldset>
+      </form>
     <% end %>
   </div>
-
 </div>
+
+<!-- Create a new method in the onboarding questions controller√ -->
+<!-- this method will be called when we click on next question√ -->
+<!-- to redirect to this method, we need to add a new route√ -->
+<!-- inside the method, we update the user score and we redirect to the next question -->
+<!-- if it's the last question, redirect to adoption page -->

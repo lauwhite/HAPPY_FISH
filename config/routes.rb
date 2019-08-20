@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   # resources :onboarding, only: [:show] do
     resources :onboarding_questions, only: [:show]
+    get 'click', to: 'onboarding_questions#click'
   # end
 
 
