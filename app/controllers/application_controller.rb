@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def define_my_fish
-    @my_fish = MyFish.find_by(alive: true)
+    @my_fish = MyFish.find_by(alive: true, user: current_user)
   end
 end
 
