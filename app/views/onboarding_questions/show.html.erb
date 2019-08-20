@@ -8,8 +8,8 @@
       <% @question.onboarding_answers.each do |answer| %>
          <div class="form-check answer" data-id="<%= answer.id %>">
             <%= answer.answer %>
-            <!-- <input class="form-check-input check_boxes optional hidden-checkbox" type="checkbox" value="<%#= answer.status %>" name="answer" id="<%#= @challenge.name %>_answer_<%= answer.id %>"> -->
-            <!-- <label class="collection_check_boxes" for="<%#= @challenge.name %>_answer_<%#= answer.id %>"><%#= answer.content %></label> -->
+          <!--<input class="form-check-input check_boxes optional hidden-checkbox" type="checkbox" value="<%= answer.status %>" name="answer" id="<%#= @challenge.name %>_answer_<%= answer.id %>"> -->
+          <!--<label class="collection_check_boxes" for="<%#= @challenge.name %>_answer_<%= answer.id %>"><%= answer.content %></label> -->
         </div>
       <% end %>
     </fieldset>
@@ -21,7 +21,7 @@
 
   <div class="centered-element">
     <% if @last_question_id != @question.id %>
-    <%#= link_to "Next question", challenge_question_path(@challenge, @question.id + 1), class: "next-q-btn btn-gradient centered", style: "display: none"  %>
+    <%= link_to "Next question", challenge_question_path(@challenge, @question.id + 1), class: "next-q-btn btn-gradient centered", style: "display: none"  %>
     <% else %>
     <%= link_to "Next", completed_challenge_path(@challenge.id), class: "next-q-btn btn-gradient centered", style: "display: none" %>
     <% end %>

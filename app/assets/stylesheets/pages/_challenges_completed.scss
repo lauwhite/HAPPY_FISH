@@ -3,12 +3,17 @@ body {
   color: $dark-blue
 }
 
-.congratulations-container {
-  width: 60vw;
-  height: 50vw;
-  text-align: center;
-  margin: 48px auto;
-  padding: 24px;
+.congrats-container {
+  display: flex;
+  height : calc(100vh - 164px);
+  width: 100%;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.congrats-message-container {
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 h1 {

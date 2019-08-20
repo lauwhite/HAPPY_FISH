@@ -1,4 +1,4 @@
-
+<%= render "shared/returnbar" %>
 <div class="container-fluid">
   <h1 class="main-title">CHALLENGES</h1>
   <!-- <h2>Ongoing Challenges</h2>
@@ -72,9 +72,9 @@
         <p style="font-size: 12px">Completed on: <%= my_challenge.end_time.strftime('%m/%d/%Y') %></p>
         </div>
       <% end %>
-  <%= render "shared/navbar" %>
 
   <div class="centered-element">
     <%= link_to "Pick a new challenge", challenges_path, class: "btn-gradient" %>
   </div>
 </div>
+ <%= render "shared/navbar" %>

@@ -1,0 +1,7 @@
+<div class="return-bar d-flex align-items-center">
+  <div>
+    <%= link_to "back", request.referer.present? ? request.referer : root_path %>
+    <a><%= image_tag "blue-arrow.png", class: "blue-arrow-icon"%></a>
+  </div>
+</div>
+
