@@ -18,6 +18,11 @@ class MyFishesController < ApplicationController
     @my_fish.score_health = 100
     @my_fish.alive = true
     if @my_fish.save
+      ongoing_challenges = @my_ongoing_challenges = GameChallenge.where(status: "Ongoing")
+      ongoing_challenges.each do |challenge|
+        challenge.my_fish = @my_fish
+        challenge.save!
+      end
       redirect_to @my_fish
     else
       render 'fishes/show'

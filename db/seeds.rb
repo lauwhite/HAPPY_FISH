@@ -36,6 +36,7 @@ MyFish.destroy_all
 Fish.destroy_all
 User.destroy_all
 Level.destroy_all
+EndangeredStatus.destroy_all
 
 
 
@@ -143,67 +144,130 @@ end
 
 puts "Levels done"
 
+puts "Created EndangeredStatus"
+
+endangered_status_attributes = [
+  {
+    abbreviation: "EX",
+    status: "Extinct",
+  },
+  {
+    abbreviation: "Ew",
+    status: "Extinct in the Wild",
+  },
+  {
+    abbreviation: "CR",
+    status: "Critically Endangered",
+  },
+  {
+    abbreviation: "EN",
+    status: "Endangered",
+  },
+  {
+    abbreviation: "VU",
+    status: "Vulnerable",
+  },
+  {
+    abbreviation: "NT",
+    status: "Near Threatened",
+  },
+  {
+    abbreviation: "LC",
+    status: "Least Concern",
+  },
+  {
+    abbreviation: "DD",
+    status: "Data Deficient",
+  },
+   {
+    abbreviation: "NE",
+    status: "Not Evaluated",
+  },
+]
+
+endangered_status_attributes.each do |status|
+  EndangeredStatus.create(status)
+end
+
+puts "Finished creating Endangered Status"
+
 puts "Creating Fishes"
 
-fish_attributes = [
+#api_token = ENV['IUCN_API_TOKEN']
 
+def calling_api(red_list_id)
+  fish = JSON.parse(open("https://apiv3.iucnredlist.org/api/v3/species/id/#{red_list_id}?token=938b4c92e8d965a5233602a945234aa24c303d460bbf727be240ae72f37b9540").read)
+  endangered_status_abbr = fish["result"].first["category"]
+  return EndangeredStatus.find_by(abbreviation: endangered_status_abbr).id
+end
+
+fish_attributes = [
   {
     breed: "White's Seahorse",
     location: "Pacific"  ,
-    endangered_status:"Endangered",
     fish_avatar: "https://image.flaticon.com/icons/svg/991/991819.svg" ,
     min_score: 0,
     max_age: 10,
+    red_list_id: 10088,
+    endangered_status_id: calling_api(10088),
   },
     {
     breed: "Clown Fish",
     location: "Great Barrier Reef"  ,
-    endangered_status:"Endangered",
     fish_avatar: "https://image.flaticon.com/icons/svg/1998/1998605.svg" ,
     min_score: 0,
     max_age: 8,
+    red_list_id: 188372,
+    endangered_status_id: calling_api(188372),
   },
     {
     breed: "Puffer Fish",
     location: "Great Barrier Reef"  ,
-    endangered_status:"Vulnerable",
     fish_avatar: "https://image.flaticon.com/icons/svg/1998/1998763.svg" ,
     min_score: 100,
     max_age: 10,
+    red_list_id: 193612,
+    endangered_status_id: calling_api(193612),
   },
    {
     breed: "Atlantic Bluefin Tuna" ,
     location: "Atlantic",
-    endangered_status: "Endangered" ,
     fish_avatar: "https://image.flaticon.com/icons/svg/1728/1728782.svg" ,
     min_score: 100,
     max_age: 50,
+    red_list_id: 21860,
+    endangered_status_id: calling_api(21860),
   },
 
   {
     breed: "Green Turtle",
     location: "Caribean Sea"  ,
-    endangered_status:"Endangered",
     fish_avatar: "https://image.flaticon.com/icons/svg/1998/1998805.svg" ,
     min_score: 500,
     max_age: 90,
+    red_list_id: 4615,
+    endangered_status_id: calling_api(4615),
   },
   {
     breed: "White Shark",
     location: "Pacific"  ,
-    endangered_status:"Vulnerable",
     fish_avatar: "https://image.flaticon.com/icons/svg/1998/1998785.svg" ,
     min_score: 500,
     max_age: 100,
-  }
+    red_list_id: 3855,
+    endangered_status_id: calling_api(3855),
+  },
 ]
 
 fish_attributes.each do |fish|
   Fish.create(fish)
+  puts "Fish created"
 end
 
 puts "Fishes done"
 
+
+# GameChallenge.delete_all
 # MyFish.delete_all
 # MyFish.create({
 #   user_id: 1,
@@ -215,4 +279,8 @@ puts "Fishes done"
 #  alive: true,
 #  age: 9
 # })
+
+
+
+
 
