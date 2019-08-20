@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
-  # create route for onboarding quiz
+  # create route for onboarding
+  get 'users/welcome', to: 'pages#welcome', as: :welcome
 
   # resources :onboarding, only: [:show] do
     resources :onboarding_questions, only: [:show]

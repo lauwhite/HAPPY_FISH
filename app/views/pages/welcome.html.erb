@@ -1,0 +1,78 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="false">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <div style="height: 100vh; background-color: white; display: flex; justify-content:center;">
+        <div class= "welcome-container">
+
+          <%= image_tag'adopt.svg' %>
+
+          <div>
+            <h1 class="onboarding-title">ADOPT</h1>
+            <p class="onboarding-text">You want to make your share for the environment but you don’t know where to start ?</p>
+            <p class="onboarding-text">adopt a fish !</p>
+          </div>
+
+          <div>
+            <p class="btn-pass">
+              <%= link_to "Ignore intro", fishes_path %>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div style="height: 100vh; background-color: white; display: flex; justify-content:center;">
+        <div class= "welcome-container">
+
+          <%= image_tag'tell.svg' %>
+
+          <div>
+            <h1 class="onboarding-title">TELL US</h1>
+            <p class="onboarding-text">more about your lifestyle to assess your level </p>
+          </div>
+
+          <div>
+            <p class="btn-pass">
+              <%= link_to "Ignore intro", fishes_path %>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div style="height: 100vh; background-color: white; display: flex; justify-content:center;">
+        <div  class= "welcome-container">
+
+            <%= image_tag'play.svg' %>
+
+          <div>
+            <h1 class="onboarding-title">PLAY</h1>
+            <p class="onboarding-text">Make your lifestyle greener by undertaking  concrete challenges that will make your fish happy & healthy !</p>
+          </div>
+          <div>
+            <p class="btn-ok">
+            <%= link_to "Ok let's play", fishes_path %>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" style="background: none !important" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" style="background: none !important" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
