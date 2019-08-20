@@ -1,5 +1,5 @@
 import "bootstrap";
 import { correctAnswerSearch } from "../quiz/quizAnswers";
-import { toggleModal } from "../msgBox/message-box/"
+import { toggleModal } from "../message-box/msgBox"
 
 correctAnswerSearch();
