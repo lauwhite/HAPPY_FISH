@@ -15,6 +15,7 @@ class ChallengesController < ApplicationController
 
   def completed
     @challenge = Challenge.find(params[:id])
+
     if @challenge.duration == "Daily"
       @my_challenge = GameChallenge.new
       @my_challenge.challenge = @challenge

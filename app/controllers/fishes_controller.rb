@@ -4,7 +4,7 @@ class FishesController < ApplicationController
     @user_score = current_user.score
     @available_fishes = Fish.where("min_score <= ?", @user_score)
     @blocked_fishes = Fish.where("min_score > ?", @user_score)
-    @my_fish = MyFish.find_by(alive: true)
+    @my_fish = MyFish.where(alive: true).where(user_id: current_user.id).first
   end
 
   def show
