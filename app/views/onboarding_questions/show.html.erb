@@ -1,3 +1,8 @@
+<div class="banner-container">
+  <h1>Lifestyle</h1>
+  <p>Step 1: How green is your lifestyle</p>
+</div>
+
 <style>
   #onboarding-form {
     position: relative;
@@ -28,22 +33,6 @@
       </form>
     <% end %>
   </div>
-
-
-
-  <div class="message">
-    <p class="motivation_message centered"></p>
-  </div>
-
-  <div class="centered-element">
-    <% if @last_question_id != @question.id %>
-    <%#= link_to "Next question", onboarding_question_path(@question.id + 1), class: "next-q-btn btn-gradient centered", style: "display: none"  %>
-    <%= link_to "Next question", click_path(@question,), class: "next-q-btn btn-gradient centered", style: "display: none"  %>
-    <% else %>
-    <%= link_to "Next", completed_challenge_path(@challenge.id), class: "next-q-btn btn-gradient centered", style: "display: none" %>
-    <% end %>
-  </div>
-
 </div>
 
 <!-- Create a new method in the onboarding questions controller√ -->
