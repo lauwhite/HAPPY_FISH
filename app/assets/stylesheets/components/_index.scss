@@ -11,6 +11,8 @@
 @import "progressive_bar";
 @import "modals";
 @import "main_screen";
+@import "returnbar";
+@import "closebutton";
 
 
 .centered {
@@ -21,6 +23,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+body {
+  padding-bottom: 55px;
 }
 
 a {
