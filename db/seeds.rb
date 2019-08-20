@@ -193,10 +193,10 @@ puts "Finished creating Endangered Status"
 
 puts "Creating Fishes"
 
-#api_token = ENV['IUCN_API_TOKEN']
+API_TOKEN = ENV['IUCN_API_TOKEN']
 
 def calling_api(red_list_id)
-  fish = JSON.parse(open("https://apiv3.iucnredlist.org/api/v3/species/id/#{red_list_id}?token=938b4c92e8d965a5233602a945234aa24c303d460bbf727be240ae72f37b9540").read)
+  fish = JSON.parse(open("https://apiv3.iucnredlist.org/api/v3/species/id/#{red_list_id}?token=#{API_TOKEN}").read)
   endangered_status_abbr = fish["result"].first["category"]
   return EndangeredStatus.find_by(abbreviation: endangered_status_abbr).id
 end
@@ -260,7 +260,8 @@ fish_attributes = [
 ]
 
 fish_attributes.each do |fish|
-  Fish.create(fish)
+  new_fish = Fish.new(fish)
+  new_fish.save!
   puts "Fish created"
 end
 
