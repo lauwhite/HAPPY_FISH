@@ -1,7 +1,6 @@
 <%= render "shared/returnbar" %>
 <div class="container-fluid">
   <h1 class="main-title">CHALLENGES</h1>
-
   <h2 class="section-title">TODAY'S SELECTION</h2>
 
   <div class="scrolling-wrapper">
@@ -19,7 +18,7 @@
 
 
 
-      <% @my_ongoing_challenges.each do |my_challenge| %>
+      <% @my_ongoing_challenge.each do |my_challenge| %>
         <%= link_to my_challenge_path(my_challenge.id) do %>
           <div class="ongoing-challenge-card" style="url(<%= my_challenge.challenge.challenge_category.image %>)">
             #<%= my_challenge.challenge.name%>
@@ -44,7 +43,7 @@
   <h2 class="section-title">COMPLETED CHALLENGES</h2>
 
 
-      <% @my_completed_challenges.each do |my_challenge| %>
+      <% @my_complete_challenges.each do |my_challenge| %>
         <div class="completed_challenge_card" >
         <%= my_challenge.challenge.name %>
         <p style="font-size: 12px">Completed on: <%= my_challenge.end_time.strftime('%m/%d/%Y') %></p>
