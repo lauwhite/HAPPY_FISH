@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'onboarding_question/show'
   devise_for :users, controllers: {registrations: 'users/registrations'}
   get 'profile', to: 'profile#show'
+  get 'impact', to: 'impact#index'
   root to: 'my_fishes#show'
   resources :challenges, only: [:index, :show] do
     resources :my_challenges, only: [:create]

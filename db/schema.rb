@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_070202) do
+ActiveRecord::Schema.define(version: 2019_08_20_040630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,15 +53,54 @@ ActiveRecord::Schema.define(version: 2019_08_19_070202) do
     t.index ["challenge_type_id"], name: "index_challenges_on_challenge_type_id"
   end
 
+  create_table "criteria_by_countries", force: :cascade do |t|
+    t.bigint "fish_id"
+    t.bigint "regional_criteria_id"
+    t.string "country"
+    t.string "country_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fish_id"], name: "index_criteria_by_countries_on_fish_id"
+    t.index ["regional_criteria_id"], name: "index_criteria_by_countries_on_regional_criteria_id"
+  end
+
+  create_table "criteria_by_years", force: :cascade do |t|
+    t.bigint "fish_id"
+    t.integer "year"
+    t.bigint "endangered_status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["endangered_status_id"], name: "index_criteria_by_years_on_endangered_status_id"
+    t.index ["fish_id"], name: "index_criteria_by_years_on_fish_id"
+  end
+
+  create_table "endangered_statuses", force: :cascade do |t|
+    t.string "abbreviation"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "fish", force: :cascade do |t|
     t.string "breed"
     t.string "location"
-    t.string "endangered_status"
     t.string "fish_avatar"
     t.integer "min_score"
     t.integer "max_age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "red_list_id"
+    t.bigint "endangered_status_id"
+    t.index ["endangered_status_id"], name: "index_fish_on_endangered_status_id"
+  end
+
+  create_table "fish_threats", force: :cascade do |t|
+    t.bigint "fish_id"
+    t.bigint "threat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fish_id"], name: "index_fish_threats_on_fish_id"
+    t.index ["threat_id"], name: "index_fish_threats_on_threat_id"
   end
 
   create_table "game_challenges", force: :cascade do |t|
@@ -121,6 +160,23 @@ ActiveRecord::Schema.define(version: 2019_08_19_070202) do
     t.index ["challenge_id"], name: "index_questions_on_challenge_id"
   end
 
+  create_table "regional_criteria", force: :cascade do |t|
+    t.string "distribution_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "threats", force: :cascade do |t|
+    t.string "code"
+    t.string "title"
+    t.string "timing"
+    t.string "scope"
+    t.string "severity"
+    t.string "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -146,6 +202,13 @@ ActiveRecord::Schema.define(version: 2019_08_19_070202) do
   add_foreign_key "answers", "questions"
   add_foreign_key "challenges", "challenge_categories"
   add_foreign_key "challenges", "challenge_types"
+  add_foreign_key "criteria_by_countries", "fish"
+  add_foreign_key "criteria_by_countries", "regional_criteria", column: "regional_criteria_id"
+  add_foreign_key "criteria_by_years", "endangered_statuses"
+  add_foreign_key "criteria_by_years", "fish"
+  add_foreign_key "fish", "endangered_statuses"
+  add_foreign_key "fish_threats", "fish"
+  add_foreign_key "fish_threats", "threats"
   add_foreign_key "game_challenges", "challenges"
   add_foreign_key "game_challenges", "my_fishes"
   add_foreign_key "my_fishes", "fish"

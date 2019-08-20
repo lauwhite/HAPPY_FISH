@@ -1,29 +1,6 @@
-
+<%= render "shared/returnbar" %>
 <div class="container-fluid">
   <h1 class="main-title">CHALLENGES</h1>
-  <!-- <h2>Ongoing Challenges</h2>
-
-  <% @my_ongoing_challenges.each do |my_challenge| %>
-  <p>
-  <%= my_challenge.challenge.description %>
-  </p>
-  <p>
-  <%= my_challenge.start_time %> - <%= my_challenge.end_time %>
-  </p>
-  <% today = DateTime.now.utc
-      progress_helper_total =  my_challenge.end_time - my_challenge.start_time
-      progress_helper_unique = today - my_challenge.start_time
-      @progress = (progress_helper_unique / progress_helper_total)*100
-       %>
-  <p>Your progress is
-      <%= @progress.round(2) %>
-      %
-  </p>
-
-
-  <%= link_to "More info", my_challenge_path(my_challenge) %>
-
-  <% end %> -->
   <h2 class="section-title">TODAY'S SELECTION</h2>
 
   <div class="scrolling-wrapper">
@@ -41,7 +18,7 @@
 
 
 
-      <% @my_ongoing_challenges.each do |my_challenge| %>
+      <% @my_ongoing_challenge.each do |my_challenge| %>
         <%= link_to my_challenge_path(my_challenge.id) do %>
           <div class="ongoing-challenge-card" style="url(<%= my_challenge.challenge.challenge_category.image %>)">
             #<%= my_challenge.challenge.name%>
@@ -66,15 +43,23 @@
   <h2 class="section-title">COMPLETED CHALLENGES</h2>
 
 
-      <% @my_completed_challenges.each do |my_challenge| %>
+      <% @my_complete_challenges.each do |my_challenge| %>
         <div class="completed_challenge_card" >
         <%= my_challenge.challenge.name %>
         <p style="font-size: 12px">Completed on: <%= my_challenge.end_time.strftime('%m/%d/%Y') %></p>
         </div>
       <% end %>
-  <%= render "shared/navbar" %>
 
   <div class="centered-element">
     <%= link_to "Pick a new challenge", challenges_path, class: "btn-gradient" %>
   </div>
+
+<% if MyFish.where(alive: true).count == 0 %>
+<%= render "shared/msg_need_to_adopt_a_fish" %>
+    <script>
+      document.querySelector('.fish-modal').classList.toggle('show-modal')
+    </script>
+<% end %>
+
 </div>
+ <%= render "shared/navbar" %>

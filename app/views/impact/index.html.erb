@@ -1,0 +1,19 @@
+<div class="banner-container">
+  <h1>Find out more about <%= @my_fish.breed %></h1>
+</div>
+
+
+<div class="container-fluid">
+
+
+
+  <div class="fish-grid">
+        <div class="fish-index-card">
+          <div class="fish-wrapper">
+            <%= @my_fish.breed %>
+            <%= cl_image_tag "Happy_Fish/fish_#{@my_fish.id}", class: "fish-img" %>
+          </div>
+        </div>
+        <h2 class="section-title">Current Status</h2>
+  </div>
+</div>
