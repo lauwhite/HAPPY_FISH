@@ -8,18 +8,21 @@
         opacity: 0;
         visibility: hidden;
         transform: scale(1.1);
+        // display: flex;
+
     }
 
 .fish-modal-content {
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 45%;
+        width: 89%;
         transform: translate(-50%, -50%);
         background-color: white;
-        padding: 1rem 1.5rem;
-        width: 24rem;
+        padding: 45px 17px;
         border-radius: 0.5rem;
         text-align: center;
+        margin: 16px;
     }
 
 .fish-modal-content .btn-gradient {
@@ -32,3 +35,9 @@
         transform: scale(1.0);
         transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
     }
+
+// modal content styling
+
+.modal-title {
+  font-size: 24px;
+}
