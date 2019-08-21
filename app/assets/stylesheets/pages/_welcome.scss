@@ -1,6 +1,10 @@
 .carousel-indicators .active {
   background-color: #28C3D4;
 }
+
+.carousel-indicators {
+  padding-bottom: 15px;
+}
 .carousel-indicators li {
   background-color: grey;
   width: 10px;

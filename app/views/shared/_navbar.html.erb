@@ -3,31 +3,31 @@
     <% if MyFish.where(alive: true).count == 0 %>
     <%= link_to fishes_path , class: "#{ controller_name == "fishes" ? 'active-tab' : "inactive-tab" } yo d-flex justify-content-center align-items-center flex-column" do %>
     <i class="fas fa-fish"></i>
-    <p class="nav-link py-0">Adopt a Fish</p>
+    <p class="nav-link-footer py-0">Adopt a Fish</p>
     <% end %>
     <% else %>
     <%= link_to my_fish_path(@my_fish), class: "#{ controller_name == "my_fishes" ? 'active-tab' : "inactive-tab" } yo d-flex justify-content-center align-items-center flex-column" do %>
     <i class="fas fa-fish"></i>
-    <p class="nav-link py-0">MyFish</p>
+    <p class="nav-link-footer py-0">MyFish</p>
     <% end %>
     <% end %>
   </div>
   <div class="nav-item">
     <%= link_to my_challenges_path, class: "#{ controller_name == "my_challenges" ? 'active-tab' : "inactive-tab" } d-flex justify-content-center align-items-center flex-column" do %>
     <i class="fas fa-tasks"></i>
-    <p class="nav-link py-0">Challenges</p>
+    <p class="nav-link-footer py-0">Challenges</p>
     <% end %>
   </div>
   <div class="nav-item">
     <%= link_to "/impact", class: "#{ controller_name == "impact" ? 'active-tab' : "inactive-tab" } d-flex justify-content-center align-items-center flex-column" do %>
     <i class="fas fa-tree"></i>
-    <p class="nav-link py-0">Impact</p>
+    <p class="nav-link-footer py-0">Impact</p>
     <% end %>
   </div>
   <div class="nav-item">
     <%= link_to profile_path, class: "#{ controller_name == "profile" ? 'active-tab' : "inactive-tab" } d-flex justify-content-center align-items-center flex-column" do %>
     <i class="fas fa-user"></i>
-    <p class="nav-link py-0">Profile</p>
+    <p class="nav-link-footer py-0">Profile</p>
     <% end %>
   </div>
 </div>
