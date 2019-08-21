@@ -1,0 +1,56 @@
+.carousel-indicators .active {
+  background-color: #28C3D4;
+}
+.carousel-indicators li {
+  background-color: grey;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.welcome-container {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 16px;
+  text-align: center;
+  align-self: flex-end;
+  padding-bottom: 8vh;
+}
+
+// titles & text of welcome carousel
+
+.onboarding-title {
+  color: $blue;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.onboarding-text {
+  color: $blue;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+// buttons
+
+.btn-ok {
+  border: 2px solid $blue;
+  border-radius: 4px;
+  color: $blue;
+  padding: 8px 16px;
+}
+
+.btn-pass {
+  border: 1px solid #5c636e;
+  border-radius: 4px;
+  padding: 4px 8px;
+  a {
+    color: #5c636e;
+    font-size: 16px;
+  }
+}

@@ -1,10 +1,10 @@
 <div class="container">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Sign In</a>
+      <a class="nav-link tab-text active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">LOGIN</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Sign Up</a>
+      <a class="nav-link tab-text" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">SIGN UP</a>
     </li>
   </ul>
 
@@ -17,41 +17,52 @@
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-inputs">
+        <div class="form-container">
+          <div class="form-inputs">
           <%= f.input :first_name,
                       required: true,
                       autofocus: true,
-                      input_html: {autocomplete: "First Name"} %>
+                      input_html: {autocomplete: "First Name"},
+                      placeholder: ' FIRST NAME',
+                      label: false %>
           <%= f.input :last_name,
                       required: true,
                       autofocus: true,
-                      input_html: {autocomplete: "Last Name"} %>
-          <%= f.input :country,
-                      required: true,
-                      autofocus: true,
-                      input_html: {autocomplete: "country"} %>
+                      input_html: {autocomplete: "Last Name"},
+                      placeholder: 'LAST NAME',
+                      label: false %>
           <%= f.input :email,
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "email" }%>
+                      input_html: { autocomplete: "email" },
+                      placeholder: 'EMAIL',
+                      label: false %>
+           <%= f.input :country,
+                      required: true,
+                      autofocus: true,
+                      input_html: {autocomplete: "country"},
+                      placeholder: 'COUNTRY' %>
           <%= f.input :avatar %>
           <%= f.input :avatar_cache, as: :hidden %>
           <%= f.input :password,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      input_html: { autocomplete: "new-password" } %>
+                      input_html: { autocomplete: "new-password" },
+                      placeholder: 'PASSWORD',
+                      label: false %>
           <%= f.input :password_confirmation,
                       required: true,
-                      input_html: { autocomplete: "new-password" } %>
+                      input_html: { autocomplete: "new-password" },
+                      placeholder: 'PASSWORD CONFIRMATION',
+                      label: false %>
+        </div>
+        <div class="form-actions centered-element">
+          <%= f.button :submit, "Sign up", class: "btn-gradient"%>
+        </div>
         </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
-        </div>
       <% end %>
     </div>
   </div>
 </div>
 
-
-<%= render "devise/shared/links" %>
