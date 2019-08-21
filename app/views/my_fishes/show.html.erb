@@ -1,7 +1,8 @@
 
-<div class="my-fish-container container" style="height: 100vh">
+<div class="my-fish-container container" style=" height: calc(100vh - 57px);
+">
   <div class="my-fish-show-card card">
-    <%= image_tag @my_fish.fish.fish_avatar, class: "centered", width:"50%"%>
+    <%= cl_image_tag @my_fish.fish.fish_avatar, class: "centered", width:"50%"%>
     <div class="fish-show-card-body">
       <div>
         <p><strong>Species:</strong><br><%= @my_fish.fish.breed %></p>
@@ -55,8 +56,6 @@
 <div class="bubbles bubble-6"></div>
 <div class="bubbles bubble-7"></div>
 <div class="bubbles bubble-8"></div>
-
-
 
 
 <% if MyFish.where(alive: true).count == 0 %>
