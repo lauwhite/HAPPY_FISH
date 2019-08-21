@@ -4,37 +4,39 @@
 
 
 <div class="container-fluid">
-    <div class="fish-index-card" style="width: 250px !important; margin: 16px auto;">
-      <div class="fish-wrapper" >
-        <%= @my_fish.breed %>
-        <%= cl_image_tag "Happy_Fish/fish_#{@my_fish.id}", class: "fish-img" %>
-      </div>
+  <div class="fish-index-card" style="width: 250px !important; margin: 16px auto;">
+    <div class="fish-wrapper" >
+      <%= @my_fish.breed %>
+      <%= cl_image_tag "Happy_Fish/fish_#{@my_fish.id}", class: "fish-img" %>
     </div>
-      </div>
-      <ul>
-      <li><strong>Red List Status: </strong><%= @status %></li>
-      <li><strong>Population Trend: </strong><%= @population_trend %></li>
-      <li><strong>Threats: </strong> <%= @threats.first %>
-        <% if @threats.count > 1 %>
-        <i class="fas fa-chevron-down"></i></br>
-        <% end %>
-        <span class="read-more" style>
-        <% @threats.each do |threat| %>
-          <%= threat unless @threats.index(threat) == 0 %>
-           </br>
-        <% end %>
-        </span>
-      </li>
-      </ul>
-    </div>
+  </div>
+</div>
+<div class="container">
+<ul>
+  <li><strong>Red List Status: </strong><%= @status %></li>
+  <li><strong>Population Trend: </strong><%= @population_trend %></li>
+  <li><strong>Threats: </strong> <%= @threats.first %>
+    <% if @threats.count > 1 %>
+    <i class="fas fa-chevron-down"></i></br>
+    <% end %>
+    <span class="read-more" style>
+      <% @threats.each do |threat| %>
+      <%= threat unless @threats.index(threat) == 0 %>
+    </br>
+    <% end %>
+  </span>
+</li>
+</ul>
+</div>
+</div>
 </div>
 
 <script>
   const arrowDown = document.querySelector(".fa-chevron-down")
   const readMore = document.querySelector(".read-more")
-    arrowDown.addEventListener("click", (e) => {
-      readMore.classList.toggle("read-more")
-    });
+  arrowDown.addEventListener("click", (e) => {
+    readMore.classList.toggle("read-more")
+  });
 
 </script>
 
@@ -42,32 +44,43 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <%= javascript_tag do -%>
-  google.charts.load('current', {
-    'packages':['geochart'],
-    'mapsApiKey': 'AIzaSyDBo3veNnvPCoNh-mj_p4oM5wDdeFUO1vs'
-  });
-  google.charts.setOnLoadCallback(drawRegionsMap);
+google.charts.load('current', {
+'packages':['geochart'],
+'mapsApiKey': 'AIzaSyDBo3veNnvPCoNh-mj_p4oM5wDdeFUO1vs'
+});
+google.charts.setOnLoadCallback(drawRegionsMap);
 
-  function drawRegionsMap() {
-    var data = JSON.parse('<%= @country_info.to_json.html_safe -%>');
-    var data = google.visualization.arrayToDataTable(data);
+function drawRegionsMap() {
+var data = JSON.parse('<%= @country_info.to_json.html_safe -%>');
+var data = google.visualization.arrayToDataTable(data);
 
-    var options = {
-      title: 'Habitat',
-      colorAxis: {colors: ['#E3F7F7', '#28C3D4', '#248EA9']},
-      legend : 'none'
-    };
+var options = {
+title: 'Habitat',
+colorAxis: {colors: ['#E3F7F7', '#28C3D4', '#248EA9']},
+legend: 'none',
+tooltip: {trigger: 'none'},
+};
 
-    var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-    chart.draw(data, options);
-  }
+var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+chart.draw(data, options);
+}
 <% end -%>
-
-<div class="map_container">
-  <div id="regions_div" class="chart">
-  </div>
+<div class="container">
+  <h2>Habitat of the <%= @my_fish.breed %></h2>
+</div>
+<div id="regions_div" class="chart">
 </div>
 
+<div class="map_legend">
+  <div><p><i class="fas fa-circle" style="color: #248EA9"></i> Native</p></div>
+  <div><p><i class="fas fa-circle" style="color: #28C3D4"></i> Reintroduced</p></div>
+  <div><p><i class="fas fa-circle" style="color: #E3F7F7"></i> Regionally Extinct</p></div>
+</div>
+
+
+<div class="container">
+  <h2>Historic Evolution</h2>
+</div>
 <div class="timeline">
   <% @timeline.each do |year| %>
   <% if @timeline.index(year).odd? %>
@@ -82,5 +95,7 @@
     </div>
     <% end %>
   </div>
+
+  <%= render 'shared/navbar' %>
 
 

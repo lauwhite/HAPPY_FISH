@@ -1,8 +1,8 @@
 .chart {
-  width: 90%;
-  margin: 0;
+  width: 90vw;
+  margin: 16px auto;
   padding: 16px 0;
-  border: 2px solid $dark-blue;
+  border: 1px solid $dark-blue;
 }
 
 .map_container {
@@ -12,4 +12,18 @@
 
 .read-more {
   display: none;
+}
+
+.map_legend {
+  width: 90vw;
+  margin: 16px auto;
+  border: 1px solid $dark-blue;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px;
+}
+
+.map_legend p {
+  font-size: 12px;
+  margin-bottom: 0;
 }

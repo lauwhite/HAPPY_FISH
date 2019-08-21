@@ -1,47 +1,54 @@
 <%= render "shared/returnbar" %>
+<div style="display: flex; flex-direction: column; justify-content: space-between; height: calc(100vh - 85px);">
 <div class="container-fluid">
   <h1 class="main-title"><%= @challenge.name.upcase %></h1>
   <p><%= @challenge.challenge_category.name %></p>
   <h2 class="section-title">DESCRIPTION</h2>
 
+  <div>
+    <%= @challenge.description %>
+  </div>
+  <div>
+    <h2 class="section-title">SCORING</h2>
+    <p>
+    <% if @challenge.score_health != 0 %>
+    <%= "Health points : #{@challenge.score_health}" %>
+    <% else %>
+    Health points : none
+    <% end %>
+    </p>
+    <p>
+    <% if @challenge.score_happiness != 0 %>
+    <%= "Happiness points : #{@challenge.score_happiness}" %>
+    <% else %>
+    Happiness points : none
+    <% end %>
+    </p>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class ="d-flex flex-column centered-element">
     <div>
-      <%= @challenge.description %>
+     <%= link_to "No thanks", challenges_path, class: "btn-blue" %>
     </div>
-    <div>
-      <h2 class="section-title">SCORING</h2>
-      <% if @challenge.score_health != 0 %>
-        <%= "Health points : #{@challenge.score_health}" %>
-      <% else %>
-        <p>Health points : none</p>
-      <% end %>
+   <div>
+    <% if   @challenge.challenge_type.name == "Quizz" %>
+    <%= link_to " Let's do it!", challenge_question_path(@challenge.id,@challenge.questions.first.id), class: "btn-gradient"  %>
+    <% elsif @challenge.duration == "Daily" %>
+    <%= link_to "I have completed this!", completed_challenge_path(@challenge.id), class: "btn-gradient" %>
+    <% else %>
+    <%= link_to "Let's do it !", challenge_my_challenges_path(@challenge), method: :post, class: "btn-gradient"%>
+    <% end %>
+  </div>
+</div>
+</div>
 
-      <% if @challenge.score_happiness != 0 %>
-        <%= "Happiness points : #{@challenge.score_happiness}" %>
-      <% else %>
-        <p>Happiness points : none</p>
-      <% end %>
-    </div>
-
-    <div class ="d-flex flex-column centered-element">
-      <div>
-         <%= link_to "No thanks", challenges_path, class: "btn-blue" %>
-      </div>
-      <div>
-        <% if   @challenge.challenge_type.name == "Quizz" %>
-          <%= link_to " Let's do it!", challenge_question_path(@challenge.id,@challenge.questions.first.id), class: "btn-gradient"  %>
-        <% elsif @challenge.duration == "Daily" %>
-          <%= link_to "I have completed this!", completed_challenge_path(@challenge.id), class: "btn-gradient" %>
-        <% else %>
-          <%= link_to "Let's do it !", challenge_my_challenges_path(@challenge), method: :post, class: "btn-gradient"%>
-        <% end %>
-      </div>
-    </div>
 
 <% if MyFish.where(alive: true).count == 0 %>
 <%= render "shared/msg_need_to_adopt_a_fish" %>
-    <script>
-      document.querySelector('.fish-modal').classList.toggle('show-modal')
-    </script>
+<script>
+  document.querySelector('.fish-modal').classList.toggle('show-modal')
+</script>
 <% end %>
 
-</div>
+
