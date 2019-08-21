@@ -1,0 +1,49 @@
+.form-container {
+  max-width: 350px;
+  margin: 16px auto;
+}
+
+.form-control {
+  background-color: $light-gray;
+  height: 50px;
+  border: none;
+  border-radius: 4px;
+  }
+
+.tab-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: $blue;
+}
+
+.nav-item {
+  width: 50%;
+  border: none;
+  a {
+    display: block;
+  }
+}
+
+// .nav-item .active {
+//   border-top: 2px solid $dark-blue;
+// }
+
+.nav-link {
+  height: 50px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  // text-align: center;
+  padding: 8px 16px;
+}
+
+.nav-tabs .nav-link {
+    border-top: 2px solid $dark-blue;
+    border-radius: none;
+}
+
+
+
+
