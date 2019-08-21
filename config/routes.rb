@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   # create route for onboarding quiz
+  get 'lifestyle', to: 'onboarding#lifestyle'
 
   # resources :onboarding, only: [:show] do
     resources :onboarding_questions, only: [:show]
