@@ -13,5 +13,19 @@ class ImpactController < ApplicationController
     @status = EndangeredStatus.find(@my_fish.endangered_status_id).status
     @population_trend = fish_info["population_trend"]
     @threats = fish_threats
+
+    @timeline = JSON.parse(open("https://apiv3.iucnredlist.org/api/v3/species/history/id/#{red_list_id}?token=#{token}").read)["result"]
+
+    @country_info_raw = JSON.parse(open("https://apiv3.iucnredlist.org/api/v3/species/countries/id/#{red_list_id}?token=#{token}").read)["result"]
+        @country_info = [['Country', 'Status']]
+        country_attibute_helper = {
+          "Native" => 3,
+          "Reintroduced" => 2,
+          "Regionally Extinct" => 1
+        }
+    @country_info_raw.each do |country|
+        helper_array = [country["country"], country_attibute_helper[country['distribution_code']]]
+        @country_info << helper_array
+    end
   end
 end
