@@ -1,5 +1,7 @@
 import "bootstrap";
 import { correctAnswerSearch } from "../quiz/quizAnswers";
-// import { toggleModal } from "..msgBox/message-box/"
 
 correctAnswerSearch();
+import { onboardingScoreCalc, onboarding } from "../onboarding-quiz/onboardingQuiz";
+onboardingScoreCalc();
+onboarding();

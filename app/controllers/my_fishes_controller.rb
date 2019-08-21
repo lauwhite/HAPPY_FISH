@@ -4,9 +4,11 @@ class MyFishesController < ApplicationController
   end
 
   def show
-    @my_fish = MyFish.find(current_user.my_fishes.find_by(alive: true).id)
-    @my_fish.update_fish_stats
-    @death_probability = @my_fish.death_probability
+    @my_fish = current_user.my_fishes.find_by(alive: true)
+    if @my_fish
+      @my_fish.update_fish_stats
+      @death_probability = @my_fish.death_probability
+    end
   end
 
   def create
@@ -18,6 +20,11 @@ class MyFishesController < ApplicationController
     @my_fish.score_health = 100
     @my_fish.alive = true
     if @my_fish.save
+      ongoing_challenges = @my_ongoing_challenges = GameChallenge.where(status: "Ongoing")
+      ongoing_challenges.each do |challenge|
+        challenge.my_fish = @my_fish
+        challenge.save!
+      end
       redirect_to @my_fish
     else
       render 'fishes/show'

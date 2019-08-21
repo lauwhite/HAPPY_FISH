@@ -57,7 +57,7 @@ how do I do to make the alert pop when I clic on  a blocked fish? -->
 
 
 
-<% if MyFish.where(alive: true).count == 1 %>
+<% if MyFish.where(alive: true).where(user_id: current_user.id).count == 1 %>
 <%= render "shared/msg_adoption_blocked" %>
   <script>
     const fishes = document.querySelectorAll(".fish-index-card")
