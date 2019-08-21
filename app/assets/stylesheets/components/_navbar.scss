@@ -49,12 +49,17 @@ svg {
   width: 100%;
   padding: 7px 0px;
   font-size: 18px;
+  z-index: 1;
+}
+
+.footer-navbar .nav-item .nav-link {
   padding: 15px 5px;
 }
 
 .nav-link-footer {
   font-size: 12px;
   margin: 0;
+  height: 25px;
 }
 
 // Mobile Devices
