@@ -1,10 +1,11 @@
 class MyFishesController < ApplicationController
+
   def index
-    @my_fishes = MyFish.all
+    @my_fishes = MyFish.where(user: current_user)
   end
 
   def show
-    @my_fish = current_user.my_fishes.find_by(alive: true)
+    @my_fish = MyFish.find_by(alive: true, user: current_user)
     if @my_fish
       @my_fish.update_fish_stats
       @death_probability = @my_fish.death_probability
@@ -17,10 +18,14 @@ class MyFishesController < ApplicationController
     @my_fish.user = current_user
     @my_fish.fish = Fish.find(params[:fish_id])
     @my_fish.start_date = DateTime.now
-    @my_fish.score_health = fish_health(current_user.score)
+    if MyFish.where(user: current_user).count == 0
+      @my_fish.score_health = fish_health(current_user.score)
+    else
+      @my_fish.score_health = (MyFish.where(user: current_user).last.score_happiness * 20).to_i
+    end
     @my_fish.alive = true
     if @my_fish.save
-      ongoing_challenges = @my_ongoing_challenges = GameChallenge.where(status: "Ongoing")
+      ongoing_challenges = GameChallenge.where(status: "Ongoing", user: current_user)
       ongoing_challenges.each do |challenge|
         challenge.my_fish = @my_fish
         challenge.save!

@@ -17,7 +17,7 @@
           <div class="fish-index-card">
             <div class="fish-wrapper">
               <%= available_fish.breed %>
-              <%= image_tag "myfish_#{available_fish.id}", class: "fish-img" %>
+              <%= image_tag "myfish_#{available_fish.red_list_id}", class: "fish-img" %>
             </div>
 
           </div>
@@ -32,7 +32,7 @@
           <div class="blocked-fish-index-card">
             <div class="fish-wrapper">
               <%= blocked_fish.breed %>
-              <%= image_tag "myfish_#{blocked_fish.id}", class: "fish-img" %>
+              <%= image_tag "myfish_#{blocked_fish.red_list_id}", class: "fish-img" %>
             </div>
           </div>
       <% end %>

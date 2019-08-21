@@ -6,6 +6,8 @@ class ChallengesController < ApplicationController
     @monthly_challenges = @challenges.where(duration: "Monthly")
     @abandoned_challenges = Challenge.joins(:game_challenges).where("game_challenges.status = ?", "Abandoned")
     @repeatable_challenges = Challenge.joins(:game_challenges).where("game_challenges.status = ? AND challenges.repeatable = ? ", "Completed", true)
+    @repeatable_challenges = @repeatable_challenges.uniq
+    @abandoned_challenges = @abandoned_challenges.uniq
   end
 
   def show
@@ -25,7 +27,7 @@ class ChallengesController < ApplicationController
       @my_challenge.status = "Completed"
       @my_challenge.save!
       current_user.score += (@my_challenge.challenge.score_health)
-      my_fish = current_user.my_fishes.first
+      my_fish = current_user.my_fishes.where(alive: true).first
       my_fish.score_health += (@my_challenge.challenge.score_health)
     else
       current_user.score += (@my_challenge.challenge.score_health) / 2

@@ -50,11 +50,13 @@ svg {
   height: 57px;
   padding: 7px 0px;
   font-size: 18px;
+  z-index: 1;
 }
 
-.nav-link {
+.footer-navbar .nav-item .nav-link {
   font-size: 12px;
   margin: 0;
+  height: 25px;
 }
 
 // Mobile Devices
