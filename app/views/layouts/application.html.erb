@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -10,7 +11,10 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <!-- <link rel="manifest" href="/manifest.json" /> -->
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
-<meta name="apple-mobile-web-app-capable" content="yes"></head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="<%= image_path 'icons/apple-icon-180x180.png' %>">
+  </head>
+
   <body>
     <%= yield %>
     <%= javascript_include_tag 'application' %>

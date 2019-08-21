@@ -11,10 +11,14 @@ Rails.application.routes.draw do
       get 'completed'
     end
   end
-
+ 
   # route for onboarding slider DO NOT DELETE !
     get 'welcome', to:'pages#welcome', as: :welcome
   # route for onboarding questions DO NOT DELETE !
+
+  get 'lifestyle', to: 'onboarding#lifestyle'
+  # resources :onboarding, only: [:show] do
+
     resources :onboarding_questions, only: [:show]
   # route
     get 'click', to: 'onboarding_questions#click'
