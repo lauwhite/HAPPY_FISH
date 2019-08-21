@@ -10,6 +10,27 @@
       <div style="height: 100vh; background-color: white; display: flex; justify-content:center;">
         <div class= "welcome-container">
 
+          <%= image_tag'tell.svg' %>
+
+          <div>
+            <h1 class="onboarding-title">TELL US</h1>
+            <p class="onboarding-text">more about your lifestyle to assess your level </p>
+          </div>
+
+          <div>
+            <p class="btn-pass">
+              <%= link_to "Ignore intro", onboarding_question_path(OnboardingQuestion.all.first.id) %>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item ">
+      <div style="height: 100vh; background-color: white; display: flex; justify-content:center;">
+        <div class= "welcome-container">
+
           <%= image_tag'adopt.svg' %>
 
           <div>
@@ -20,28 +41,7 @@
 
           <div>
             <p class="btn-pass">
-              <%= link_to "Ignore intro", fishes_path %>
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <div style="height: 100vh; background-color: white; display: flex; justify-content:center;">
-        <div class= "welcome-container">
-
-          <%= image_tag'tell.svg' %>
-
-          <div>
-            <h1 class="onboarding-title">TELL US</h1>
-            <p class="onboarding-text">more about your lifestyle to assess your level </p>
-          </div>
-
-          <div>
-            <p class="btn-pass">
-              <%= link_to "Ignore intro", fishes_path %>
+              <%= link_to "Ignore intro", onboarding_question_path(OnboardingQuestion.all.first.id) %>
             </p>
           </div>
 
@@ -61,7 +61,7 @@
           </div>
           <div>
             <p class="btn-ok">
-            <%= link_to "Ok let's play", fishes_path %>
+            <%= link_to "Ok let's play", onboarding_question_path(OnboardingQuestion.all.first.id) %>
             </p>
           </div>
         </div>
