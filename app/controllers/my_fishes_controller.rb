@@ -17,7 +17,7 @@ class MyFishesController < ApplicationController
     @my_fish.user = current_user
     @my_fish.fish = Fish.find(params[:fish_id])
     @my_fish.start_date = DateTime.now
-    @my_fish.score_health = 100
+    @my_fish.score_health = fish_health(current_user.score)
     @my_fish.alive = true
     if @my_fish.save
       ongoing_challenges = @my_ongoing_challenges = GameChallenge.where(status: "Ongoing")
@@ -48,5 +48,15 @@ class MyFishesController < ApplicationController
 
   def my_fish_params
     params.require(:my_fish).permit(:name)
+  end
+
+  def fish_health(score)
+    if score <= 150 && score >= 75
+      return 50
+    elsif score <= 225 && score > 150
+      return 75
+    elsif score <= 300 && score > 225
+      return 100
+    end
   end
 end
