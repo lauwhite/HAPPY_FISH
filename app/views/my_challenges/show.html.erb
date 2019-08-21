@@ -1,38 +1,46 @@
-<div class="container-fluid">
-  <h1 class="main-title"><%= @challenge.name.upcase %></h1>
-  <p><%= @challenge.challenge_category.name %></p>
-  <h2 class="section-title">DESCRIPTION</h2>
+<%= render "shared/returnbar" %>
+<div style="display: flex; flex-direction: column; justify-content: space-between; height: calc(100vh - 85px);">
+  <div class="container-fluid">
+    <h1 class="main-title"><%= @challenge.name.upcase %></h1>
+    <p><%= @challenge.challenge_category.name %></p>
+    <h2 class="section-title">DESCRIPTION</h2>
     <div>
       <%= @my_challenge.challenge.description %>
     </div>
 
     <div>
       <h2 class="section-title">SCORING</h2>
-      <% if @challenge.score_health != 0 %>
+      <p>
+        <% if @challenge.score_health != 0 %>
         <%= "Health points : #{@challenge.score_health}" %>
-      <% else %>
-        <p>Health points : none</p>
-      <% end %>
-      <% if @challenge.score_happiness != 0 %>
+        <% else %>
+        Health points : none
+        <% end %>
+      </p>
+      <p>
+        <% if @challenge.score_happiness != 0 %>
         <%= "Happiness points : #{@challenge.score_happiness}" %>
-      <% else %>
-        <p>Happiness points : none</p>
-      <% end %>
+        <% else %>
+        Happiness points : none
+        <% end %>
+      </p>
     </div>
 
     <div>
       <h2 class="section-title">STATUS</h2>
       <div>
-          <div class="challenge-progress">
-            <div class="bar text-center " style="width: <%= @progress.round(2)%>%">
-              <!--  if we want the percentage to appear we can add it here -->
+        <div class="challenge-progress">
+          <div class="bar text-center " style="width: <%= @progress.round(2)%>%">
+            <!--  if we want the percentage to appear we can add it here -->
           </div>
         </div>
       </div>
     </div>
-
-  <div class="centered-element">
-    <%= link_to "Stop the challenge", my_challenge_path, method: :patch, class: "btn-blue"%>
+  </div>
+  <div class="container-fluid">
+    <div class="centered-element">
+      <%= link_to "Stop the challenge", my_challenge_path, method: :patch, class: "btn-blue"%>
+    </div>
   </div>
 
 </div>
