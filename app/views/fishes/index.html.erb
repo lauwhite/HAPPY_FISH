@@ -6,34 +6,38 @@
 
 <div class="container-fluid">
 
-  <h2 class="section-title">AVAILABLE FISH</h2>
 
-  <div class="fish-grid">
-    <% @available_fishes.each do |available_fish| %>
-      <%= link_to fish_path(available_fish.id) do %>
-        <div class="fish-index-card">
-          <div class="fish-wrapper">
-            <%= available_fish.breed %>
-            <%= cl_image_tag "Happy_Fish/fish_#{available_fish.id}", class: "fish-img" %>
+
+
+    <h2 class="section-title">AVAILABLE FISH</h2>
+
+    <div class="fish-grid">
+      <% @available_fishes.each do |available_fish| %>
+        <%= link_to fish_path(available_fish.id) do %>
+          <div class="fish-index-card">
+            <div class="fish-wrapper">
+              <%= available_fish.breed %>
+              <%= image_tag "myfish_#{available_fish.id}", class: "fish-img" %>
+            </div>
+
           </div>
-
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <h2 class="section-title">LOCKED FISH</h2>
+    <h2 class="section-title">LOCKED FISH</h2>
 
-  <div class="fish-grid">
-    <% @blocked_fishes.each do |blocked_fish| %>
-        <div class="blocked-fish-index-card">
-          <div class="fish-wrapper">
-            <%= blocked_fish.breed %>
-            <%= cl_image_tag "Happy_Fish/fish_#{blocked_fish.id}", class: "fish-img" %>
+    <div class="fish-grid">
+      <% @blocked_fishes.each do |blocked_fish| %>
+          <div class="blocked-fish-index-card">
+            <div class="fish-wrapper">
+              <%= blocked_fish.breed %>
+              <%= image_tag "myfish_#{blocked_fish.id}", class: "fish-img" %>
+            </div>
           </div>
-        </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+
 </div>
 <!--
 how do I do to make the alert pop when I clic on  a blocked fish? -->
