@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  # get 'onboarding_question/show'
-  devise_for :users, controllers: {registrations: 'users/registrations'}
+
+  get 'onboarding_question/show'
+  devise_for :users, controllers: {registrations: 'users/registrations',  omniauth_callbacks: 'users/omniauth_callbacks'}
   get 'profile', to: 'profile#show'
   get 'impact', to: 'impact#index'
   root to: 'my_fishes#show'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
     member do
       get 'completed'
     end
+
   end
  
   # route for onboarding slider DO NOT DELETE !
