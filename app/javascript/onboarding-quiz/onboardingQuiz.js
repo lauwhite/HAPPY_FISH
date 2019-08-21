@@ -7,7 +7,8 @@ const onboardingScoreCalc = () => {
   if (nextQuestionButton) {
     answers.forEach((answer) => {
       answer.addEventListener("click", (e) => {
-        nextQuestionButton.style.display = "block";
+        nextQuestionButton.classList.remove("d-none");
+        // nextQuestionButton.style.display = "block";
         e.currentTarget.classList.remove("answer");
         e.currentTarget.classList.add("right-answer");
         console.log(e)

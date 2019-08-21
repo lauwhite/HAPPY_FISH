@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   def home
   end
+  def welcome
+    # raise
+  end
 end
 
 # profile only: show

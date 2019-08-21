@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'onboarding_question/show'
+  # get 'onboarding_question/show'
   devise_for :users, controllers: {registrations: 'users/registrations'}
   get 'profile', to: 'profile#show'
   get 'impact', to: 'impact#index'
@@ -11,15 +11,17 @@ Rails.application.routes.draw do
       get 'completed'
     end
   end
+ 
+  # route for onboarding slider DO NOT DELETE !
+    get 'welcome', to:'pages#welcome', as: :welcome
+  # route for onboarding questions DO NOT DELETE !
 
-  # create route for onboarding quiz
   get 'lifestyle', to: 'onboarding#lifestyle'
-
   # resources :onboarding, only: [:show] do
-    resources :onboarding_questions, only: [:show]
-    get 'click', to: 'onboarding_questions#click'
-  # end
 
+    resources :onboarding_questions, only: [:show]
+  # route
+    get 'click', to: 'onboarding_questions#click'
 
   resources :my_challenges, only: [:index, :show, :update]
 
