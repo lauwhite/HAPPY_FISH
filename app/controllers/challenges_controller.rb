@@ -1,11 +1,11 @@
 class ChallengesController < ApplicationController
   def index
-    @challenges = Challenge.includes(:game_challenges).where( :game_challenges => { :challenge_id => nil } )
+    @challenges = current_user.never_started_challenges
     @daily_challenges = @challenges.where(duration: "Daily")
     @weekly_challenges = @challenges.where(duration: "Weekly")
     @monthly_challenges = @challenges.where(duration: "Monthly")
-    @abandoned_challenges = Challenge.joins(:game_challenges).where("game_challenges.status = ?", "Abandoned")
-    @repeatable_challenges = Challenge.joins(:game_challenges).where("game_challenges.status = ? AND challenges.repeatable = ? ", "Completed", true)
+    @abandoned_challenges = current_user.started_challenges_abandoned
+    @repeatable_challenges = current_user.started_challenges_repeatable.where(repeatable: true)
     @repeatable_challenges = @repeatable_challenges.uniq
     @abandoned_challenges = @abandoned_challenges.uniq
   end
