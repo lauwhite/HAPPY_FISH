@@ -3,7 +3,8 @@
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #248EA9;
+  background-color: $blue;
+  padding-bottom: 70px;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -34,7 +35,7 @@
   height: 25px;
   right: -12px;
   background-color: white;
-  border: 4px solid #FFB531;
+  border: 4px solid $dark-blue;
   top: 15px;
   border-radius: 50%;
   z-index: 1;
@@ -88,7 +89,11 @@
   padding: 20px 30px;
   background-color: white;
   position: relative;
-  border-radius: 6px;
+  border-radius: 4px;
+  height: 100px;
+  h2, p {
+    margin:0;
+  }
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -122,4 +127,8 @@
   .right {
     left: 0%;
   }
+}
+
+ol, ul, dl {
+  list-style: none;
 }

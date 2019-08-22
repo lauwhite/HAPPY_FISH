@@ -1,9 +1,8 @@
-<div class="banner-container">
-  <h1>Find out more about <%= @my_fish.breed %></h1>
-</div>
-
-
 <div class="container-fluid">
+
+  <h1 class="main-title"><%= @my_fish.breed.upcase %> IN REAL LIFE</h1>
+
+  <h2 class="section-title">GENERALITIES</h2>
   <div class="fish-index-card" style="width: 250px !important; margin: 16px auto;">
     <div class="fish-wrapper" >
       <%= @my_fish.breed %>
@@ -11,7 +10,7 @@
     </div>
   </div>
 </div>
-<div class="container">
+    <div class="container">
 <ul>
   <li><strong>Red List Status: </strong><%= @status %></li>
   <li><strong>Population Trend: </strong><%= @population_trend %></li>
@@ -66,7 +65,7 @@ chart.draw(data, options);
 }
 <% end -%>
 <div class="container">
-  <h2>Habitat of the <%= @my_fish.breed %></h2>
+  <h2 class="section-title">HABITAT</h2>
 </div>
 <div id="regions_div" class="chart">
 </div>
@@ -79,7 +78,7 @@ chart.draw(data, options);
 
 
 <div class="container">
-  <h2>Historic Evolution</h2>
+  <h2 class="section-title">HISTORIC EVOLUTION</h2>
 </div>
 <div class="timeline">
   <% @timeline.each do |year| %>
