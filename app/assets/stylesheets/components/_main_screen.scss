@@ -55,6 +55,31 @@
   animation: up 3s infinite;
 }
 
+.octopus {
+  left: 260px;
+  opacity: .30;
+  animation: up 8s infinite;
+}
+
+.starfish {
+  left: 90px;
+  opacity: .30;
+  animation: up 3s infinite;
+}
+
+.crab {
+  left: 10px;
+  opacity: .30;
+  animation: up 5s infinite;
+}
+
+.shark {
+  left: 160px;
+  opacity: .30;
+  animation: up 9s infinite;
+}
+
+
 /* Swim Animation */
 @keyframes swim {
   0% {
