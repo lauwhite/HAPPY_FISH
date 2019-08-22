@@ -39,11 +39,30 @@
   </div>
   <div class="container-fluid">
     <div class="centered-element">
-      <%= link_to "Stop the challenge", my_challenge_path, method: :patch, class: "btn-blue"%>
+      <%= link_to "Stop the challenge", my_challenges_path, class: "btn-blue"%>
     </div>
   </div>
 
 </div>
+
+
+
+
+
+<%= render "shared/msg_challenge_ending" %>
+  <script>
+    const button = document.querySelector(".btn-blue")
+       button.addEventListener("click", function(e){
+        e.preventDefault();
+        document.querySelector('.fish-modal').classList.toggle('show-modal')
+      });
+    const buttonClose = document.querySelector(".btn-blue no")
+       buttonClose.addEventListener("click", function(e){
+        e.preventDefault();
+        document.querySelector('.fish-modal').classList.toggle('show-modal')
+      });
+  </script>
+
 
 
 

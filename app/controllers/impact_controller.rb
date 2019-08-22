@@ -24,8 +24,15 @@ class ImpactController < ApplicationController
           "Regionally Extinct" => 1
         }
     @country_info_raw.each do |country|
-        helper_array = [country["country"], country_attibute_helper[country['distribution_code']]]
+        helper_array = [country["code"], country_attibute_helper[country['distribution_code']]]
         @country_info << helper_array
     end
+
+    url = "https://apiv3.iucnredlist.org/api/v3/taxonredirect/#{red_list_id}"
+    url = "https://apiv3.iucnredlist.org/api/v3/taxonredirect/61608"
+    html_file = open(url).read
+    html_doc = Nokogiri::HTML(html_file)
+    html_doc.search('.featherlight__gallery img')
+
   end
 end

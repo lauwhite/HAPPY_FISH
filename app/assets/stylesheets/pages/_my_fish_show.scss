@@ -1,6 +1,10 @@
 .my-fish-container {
-  // background-image: image-url("background.jpeg");
+
   background-color: #28C3D4;
-  height: 92vh;
-  padding-top: 10vh;
+  height: calc(100vh - 57px);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-image: image-url("ocean11.png");
+  background-size: 233% 107%;
 }

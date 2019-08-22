@@ -1,11 +1,11 @@
 
-  <div class="close-btn-container">
-    <div class="close-button d-flex justify-content-center">
-      <%= link_to my_fish_path do %>
-        <p class="centered-element">X</p>
-      <% end %>
-    </div>
+<div class="close-btn-container">
+  <div class="close-button d-flex justify-content-center">
+    <%= link_to my_fish_path do %>
+    <p class="centered-element">X</p>
+    <% end %>
   </div>
+</div>
 
 
 <div class="congrats-container">
@@ -13,11 +13,50 @@
     <div>
       <h1>Congratulations !</h1>
       <% if @challenge.score_health > 0 %>
-        <p class="centered-element"> You won <%= @challenge.score_health %> health points for <%= @my_fish %> and made it happier ! </p>
+      <p class="centered-element"> You won <%= @challenge.score_health %> health points for <%= @my_fish %> and made it happier ! </p>
       <% else %>
-        <p class="centered-element"> You made <%= @my_fish %> happier ! </p>
+      <p class="centered-element"> You made <%= @my_fish %> happier ! </p>
       <% end %>
     </div>
   </div>
 </div>
+
+<%= render 'shared/alert' %>
+
+<script>
+  function moveIn() {
+    var elem = document.querySelector('.game-alert')
+    var pos = -180;
+    var id = setInterval(frame, 0.5);
+    function frame() {
+      if (pos == 16) {
+        clearInterval(id);
+      } else {
+        pos++;
+        elem.style.right = pos + 'px';
+      }
+    }
+  }
+
+  function moveOut() {
+    var elem = document.querySelector('.game-alert')
+    var pos = 16;
+    var id = setInterval(frame, 0.5);
+    function frame() {
+      if (pos == -200) {
+        clearInterval(id);
+      } else {
+        pos--;
+        elem.style.right = pos + 'px';
+      }
+    }
+  }
+
+setTimeout(function(){
+  moveOut();
+}, 4000);
+moveIn();
+
+</script>
+
 

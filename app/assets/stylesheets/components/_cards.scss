@@ -70,7 +70,9 @@
   box-shadow: 1px 2px 4px 1px rgba(0,0,0,0.2);
   img{
     margin: 20px auto;
+    max-height: 150px;
   }
+  opacity: 0.92;
 }
 
 .your-fish-title {
@@ -92,10 +94,15 @@
   border-radius: 4px;
   box-shadow: 1px 2px 4px 1px rgba(0,0,0,0.2);
   font-size: 12px;
+  min-width: 90vw;
   img{
     margin: 20px auto;
+    max-height: 150px;
   }
+  p{
+    font-size: 14px ;
     }
+  }
 
 
 .my-fish-bar {
