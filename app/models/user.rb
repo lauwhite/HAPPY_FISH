@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :my_fishes
   has_many :game_challenges, through: :my_fishes
-  validates :first_name, :last_name, :country, presence: true
-  devise :omniauthable, omniauth_providers: %i[facebook]
+  validates :first_name, :last_name, presence: true
+  devise :omniauthable, omniauth_providers: [:facebook]
   after_create :default_score, :default_level
   mount_uploader :avatar, PhotoUploader
 

@@ -3,8 +3,8 @@
   text-align: center;
   height: 54px;
   width: 100%;
-  min-width: 330px;
   max-width: 450px;
+  min-width: 330px;
   border-radius: 30px;
   background-image: linear-gradient(to right, $dark-blue 0%, $gradient-blue 100%);
   margin: 8px 0;
@@ -37,16 +37,23 @@
 }
 
 .btn-fb {
-  display: inline-block;
   text-align: center;
   height: 54px;
+  width: 100%;
   min-width: 330px;
   max-width: 450px;
   border-radius: 30px;
   background-color: #4266B2;
+  font-size: 24px;
+  margin: 8px 0;
+  padding: 8px;
+  font-weight: 600;
   color: white;
-  font-size: 14px;
-  position: relative;
+  border: none;
+    &:hover {
+      text-decoration: none;
+      color: gray;
+    }
 }
 
 // #fblogo {

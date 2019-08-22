@@ -1,80 +1,84 @@
 
-  <div class="banner-container" id="banner-sign-in">
-    <h1>Welcome back</h1>
-    <p>Log In and let´s play!</p>
+<div class="banner-container" id="banner-sign-in">
+  <h1>Welcome back</h1>
+  <p>Log In and let´s play!</p>
+</div>
+
+<div class="banner-container d-none" id="banner-sign-up">
+  <h1>Welcome</h1>
+  <p>Sign Up and let´s play!</p>
+</div>
+<ul class="nav nav-tabs" id="banner-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link tab-text active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">LOGIN</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link tab-text" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">SIGN UP</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <%= render 'devise/sessions/new' %>
   </div>
 
-  <div class="banner-container d-none" id="banner-sign-up">
-    <h1>Welcome</h1>
-    <p>Sign Up and let´s play!</p>
-  </div>
-  <ul class="nav nav-tabs" id="banner-tab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link tab-text active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">LOGIN</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link tab-text" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">SIGN UP</a>
-    </li>
-  </ul>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <%= render 'devise/sessions/new' %>
-    </div>
+    <div class="form-container">
+      <div class="form-inputs">
+        <%= f.input :first_name,
+        required: true,
+        autofocus: true,
+        input_html: {autocomplete: "First Name"},
+        placeholder: ' FIRST NAME',
+        label: false %>
+        <%= f.input :last_name,
+        required: true,
+        autofocus: true,
+        input_html: {autocomplete: "Last Name"},
+        placeholder: 'LAST NAME',
+        label: false %>
+        <%= f.input :email,
+        required: true,
+        autofocus: true,
+        input_html: { autocomplete: "email" },
+        placeholder: 'EMAIL',
+        label: false %>
+        <%= f.input :country,
+        required: true,
+        autofocus: true,
+        input_html: {autocomplete: "country"},
+        placeholder: 'COUNTRY' %>
+        <%= f.input :avatar %>
+        <%= f.input :avatar_cache, as: :hidden %>
+        <%= f.input :password,
+        required: true,
+        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+        input_html: { autocomplete: "new-password" },
+        placeholder: 'PASSWORD',
+        label: false %>
+        <%= f.input :password_confirmation,
+        required: true,
+        input_html: { autocomplete: "new-password" },
+        placeholder: 'PASSWORD CONFIRMATION',
+        label: false %>
+      </div>
 
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
+      <div class="form-actions centered-element">
+        <%= f.button :submit, "Sign up", class: "btn-gradient"%>
+      </div>
 
-        <div class="form-container">
-          <div class="form-inputs">
-          <%= f.input :first_name,
-                      required: true,
-                      autofocus: true,
-                      input_html: {autocomplete: "First Name"},
-                      placeholder: ' FIRST NAME',
-                      label: false %>
-          <%= f.input :last_name,
-                      required: true,
-                      autofocus: true,
-                      input_html: {autocomplete: "Last Name"},
-                      placeholder: 'LAST NAME',
-                      label: false %>
-          <%= f.input :email,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" },
-                      placeholder: 'EMAIL',
-                      label: false %>
-           <%= f.input :country,
-                      required: true,
-                      autofocus: true,
-                      input_html: {autocomplete: "country"},
-                      placeholder: 'COUNTRY' %>
-          <%= f.input :avatar %>
-          <%= f.input :avatar_cache, as: :hidden %>
-          <%= f.input :password,
-                      required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      input_html: { autocomplete: "new-password" },
-                      placeholder: 'PASSWORD',
-                      label: false %>
-          <%= f.input :password_confirmation,
-                      required: true,
-                      input_html: { autocomplete: "new-password" },
-                      placeholder: 'PASSWORD CONFIRMATION',
-                      label: false %>
-        </div>
+        <p class=" form-actions centered-element">or Sign In using</p>
 
-        <div class="form-actions centered-element">
-          <%= f.button :submit, "Sign up", class: "btn-gradient"%>
+      <div class="form-actions centered-element">
+        <%= link_to "Log In with Facebook", user_facebook_omniauth_authorize_path, class: "btn-fb" %>
+      </div>
 
-        </div>
-        </div>
-
-      <% end %>
-    </div>
-  </div>
+  <% end %>
+</div>
+</div>
 
 <div class="bubbles bubble-1" style="background-color: #64c4ed;"></div>
 <div class="bubbles bubble-2" style="background-color: #28C3D4;"></div>
