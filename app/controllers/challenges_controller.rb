@@ -39,6 +39,7 @@ class ChallengesController < ApplicationController
     my_fish.score_health = 100 if my_fish.score_health > 100
     my_fish.save!
     @my_fish = my_fish.name
+    @my_challenge = current_user.my_fishes.where(alive: true).first.game_challenges.where(challenge: @challenge).last
   end
 
   def ongoing

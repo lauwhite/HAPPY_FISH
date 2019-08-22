@@ -13,7 +13,7 @@
     <div>
       <h1>Congratulations !</h1>
       <% if @challenge.score_health > 0 %>
-      <p class="centered-element"> You won <%= @challenge.score_health %> health points for <%= @my_fish %> and made it happier ! </p>
+      <p class="centered-element"> You won <%= @challenge.score_health %> health points in total for <%= @my_fish %> and made it happier ! </p>
       <% else %>
       <p class="centered-element"> You made <%= @my_fish %> happier ! </p>
       <% end %>
