@@ -40,4 +40,23 @@ class User < ApplicationRecord
 
     return user
   end
+  def never_started_challenges
+    fishes_id = self.my_fishes.pluck(:id)
+    played_games  = GameChallenge.where(my_fish_id: fishes_id).pluck(:challenge_id)
+    Challenge.where.not(id: played_games)
+  end
+
+  def started_challenges_abandoned
+    fishes_id = self.my_fishes.pluck(:id)
+    played_games = GameChallenge.where(my_fish_id: fishes_id)
+    played_games = played_games.where(status: "Abandoned").pluck(:challenge_id)
+    Challenge.where(id: played_games)
+  end
+
+  def started_challenges_repeatable
+    fishes_id = self.my_fishes.pluck(:id)
+    played_games = GameChallenge.where(my_fish_id: fishes_id)
+    played_games = played_games.where(status: "Completed").pluck(:challenge_id)
+    Challenge.where(id: played_games)
+  end
 end

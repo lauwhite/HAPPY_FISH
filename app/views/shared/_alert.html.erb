@@ -1,0 +1,21 @@
+<div class="game-alert">
+<p>Health: +
+  <% if @challenge.duration == "Daily" %>
+  <%= @my_challenge.challenge.score_health %>
+  <% else %>
+  <%= (@challenge.score_health) / 2  %>
+  <% end %>
+</p>
+<p>Happiness: +
+  <% @challenge.score_happiness.to_i.times do %>
+  <i class="fas fa-star"></i>
+  <% end %>
+</p>
+<p>User Score: +
+  <% if @challenge.duration == "Daily" %>
+  <%= @my_challenge.challenge.score_health %>
+  <% else %>
+  <%= (@challenge.score_health) / 2  %>
+  <% end %>
+</p>
+</div>

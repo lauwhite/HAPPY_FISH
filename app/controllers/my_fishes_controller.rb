@@ -28,6 +28,7 @@ class MyFishesController < ApplicationController
         challenge.save!
       end
     end
+
     @my_fish.alive = true
 
     if @my_fish.save
@@ -67,7 +68,7 @@ class MyFishesController < ApplicationController
       return 50
     elsif score <= 225 && score > 150
       return 75
-    elsif score <= 300 && score > 225
+    elsif score > 225
       return 100
     end
   end
