@@ -41,9 +41,10 @@ class MyChallengesController < ApplicationController
       if my_fish.score_health > 100
         my_fish.score_health = 100
       end
+
       current_user.save!
       my_fish.save!
-      redirect_to my_challenges_path
+      redirect_to ongoing_challenge_path(@my_challenge.challenge_id)
     else
       redirect_to challenge_path(@my_challenge.challenge_id)
     end
