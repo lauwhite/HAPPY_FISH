@@ -2,10 +2,17 @@
   <div class="mt-3">
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
   </div>
-
+  
   <div class="profile-photo container centered">
-    <%= cl_image_tag @user.avatar, class: "avatar-large centered", width:"50%"%>
+    
+    <% if current_user.facebook_picture_url %>
+      <%= image_tag current_user.facebook_picture_url, class: "centered", width:"50%" %>
+    <% elsif current_user.avatar %>
+      <%= cl_image_tag @user.avatar, class: "avatar-large centered", width:"50%"%>
+    <% end %>
+    
     <h2><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize  %></h2>
+
   </div>
 
   <div class="profile-status container" style="

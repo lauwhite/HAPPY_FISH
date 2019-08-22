@@ -26,8 +26,19 @@
   </div>
   <div class="nav-item">
     <%= link_to profile_path, class: "#{ controller_name == "profile" ? 'active-tab' : "inactive-tab" } d-flex justify-content-center align-items-center flex-column" do %>
+
+      <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+      <% if current_user.facebook_picture_url %>
+        <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu" %>
+    <p class="nav-link-footer py-0" style="font-weight: 700;">PROFILE</p>
+      <% elsif current_user.avatar %>
+        <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbar-wagon-menu" %>
+    <p class="nav-link-footer py-0" style="font-weight: 700;">PROFILE</p>
+      <% else %>
     <i class="fas fa-user"></i>
     <p class="nav-link-footer py-0" style="font-weight: 700;">PROFILE</p>
+      <% end %>
+
     <% end %>
   </div>
 </div>
