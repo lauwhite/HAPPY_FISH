@@ -25,5 +25,5 @@ Rails.application.configure do
     # anonymous glob exposes `paths` variable for interpolation
     # match "/*/serviceworker.js" => "%{paths}/serviceworker.js"
   end
-  config.serviceworker.headers["Service-Worker-Allowed"] = "/"
+  # config.serviceworker.headers["Service-Worker-Allowed"] = "/"
 end
