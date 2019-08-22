@@ -38,6 +38,9 @@ class MyChallengesController < ApplicationController
     if @my_challenge.save
       current_user.score += (@my_challenge.challenge.score_health) / 2
       my_fish.score_health += (@my_challenge.challenge.score_health) / 2
+      if my_fish.score_health > 100
+        my_fish.score_health = 100
+      end
       current_user.save!
       my_fish.save!
       redirect_to my_challenges_path
