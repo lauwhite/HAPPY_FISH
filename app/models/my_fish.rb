@@ -2,7 +2,7 @@
 class MyFish < ApplicationRecord
   belongs_to :user
   belongs_to :fish
-  has_many :game_challenges
+  has_many :game_challenges, dependent: :destroy
   validates :score_happiness, numericality: true, inclusion: { in: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5] }
   validates :score_health, numericality: true, inclusion: { in: (0..100) }
   validates :user_id, :fish_id, :name, :start_date, :score_health, :score_happiness, presence: true
