@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     if fish
       my_fish_path(fish)
     else
-     fishes_path
+      fishes_path
     end
   end
 

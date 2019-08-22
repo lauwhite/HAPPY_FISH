@@ -26,6 +26,8 @@
   </div>
   <div class="nav-item">
     <%= link_to profile_path, class: "#{ controller_name == "profile" ? 'active-tab' : "inactive-tab" } d-flex justify-content-center align-items-center flex-column" do %>
+    <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+    <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
     <i class="fas fa-user"></i>
     <p class="nav-link-footer py-0">Profile</p>
     <% end %>
