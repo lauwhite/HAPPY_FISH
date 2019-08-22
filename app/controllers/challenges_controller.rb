@@ -17,6 +17,7 @@ class ChallengesController < ApplicationController
 
   def completed
     @challenge = Challenge.find(params[:id])
+    my_fish = current_user.my_fishes.where(alive: true).first
 
     if @challenge.duration == "Daily"
       @my_challenge = GameChallenge.new
@@ -27,7 +28,6 @@ class ChallengesController < ApplicationController
       @my_challenge.status = "Completed"
       @my_challenge.save!
       current_user.score += (@my_challenge.challenge.score_health)
-      my_fish = current_user.my_fishes.where(alive: true).first
       my_fish.score_health += (@my_challenge.challenge.score_health)
     else
       current_user.score += (@challenge.score_health) / 2

@@ -51,7 +51,7 @@ class MyChallengesController < ApplicationController
 
   def update
     @my_challenge = GameChallenge.find(params[:id])
-    if @my_challenge.end_time.to_datetime >= DateTime.now
+    if @my_challenge.end_time.to_datetime > DateTime.now
       @my_challenge.status = "Abandoned"
       current_user.score -= (@my_challenge.challenge.score_health) / 2
       current_user.score = 0 if current_user.score.negative?
