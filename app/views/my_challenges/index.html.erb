@@ -54,6 +54,8 @@
     <%= link_to "Pick a new challenge", challenges_path, class: "btn-gradient" %>
   </div>
 
+
+
 <% if MyFish.where(alive: true).count == 0 %>
 <%= render "shared/msg_need_to_adopt_a_fish" %>
     <script>

@@ -203,7 +203,7 @@ fish_attributes = [
   {
     breed: "White's Seahorse",
     location: "Pacific"  ,
-    fish_avatar: "https://image.flaticon.com/icons/svg/991/991819.svg" ,
+    fish_avatar: "https://cdn0.wideopenpets.com/wp-content/uploads/2017/05/seahorse-1568020_1920-1-768x1024.jpg" ,
     min_score: 0,
     max_age: 10,
     red_list_id: 10088,
@@ -212,7 +212,7 @@ fish_attributes = [
     {
     breed: "Clown Fish",
     location: "Great Barrier Reef"  ,
-    fish_avatar: "https://image.flaticon.com/icons/svg/1998/1998605.svg" ,
+    fish_avatar: "https://cdn.shopify.com/s/files/1/0855/3388/products/6302_grande.jpeg?v=1441100973" ,
     min_score: 0,
     max_age: 8,
     red_list_id: 188372,
