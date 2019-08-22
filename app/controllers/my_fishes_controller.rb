@@ -23,6 +23,8 @@ class MyFishesController < ApplicationController
     else
       @my_fish.score_health = (MyFish.where(user: current_user).last.score_happiness * 20).to_i
       ongoing_challenges = current_user.game_challenges.where(status: "Ongoing")
+      @my_fish.alive = true
+      @my_fish.save
       ongoing_challenges.each do |challenge|
         challenge.my_fish = @my_fish
         challenge.save!

@@ -266,18 +266,57 @@ end
 puts "Fishes done"
 
 
-GameChallenge.delete_all
-MyFish.delete_all
-MyFish.create({
-  user_id: 2,
- fish_id: 14,
- name: "Sushi",
- start_date: DateTime.now - 14,
- score_health: 95,
- score_happiness: 4.5,
- alive: true,
- age: 9
+puts "Creating presentation user"
+
+User.create ({
+  id: 100,
+  email: "ilovetheocean@web.com",
+  password: "Test123",
+  created_at: DateTime.now - 45,
+  first_name: "John",
+  last_name: "Smith",
+  country: "ID",
+  avatar: nil,
+  level_id: Level.find_by(name: "Gold Ocean Warrior"),
+  score: 1500,
 })
+
+puts "Creating users done"
+
+MyFish.create ({
+  id: 500,
+  user_id: 100,
+  fish: Fish.first,
+  name: "Klaus",
+  start_date: DateTime.now - 32,
+  score_health: 80,
+  score_happiness: 3.5,
+  alive: true,
+  age: 1,
+})
+
+puts "Creating MyFish done"
+
+game_challenge_attributes = [
+{ my_fish_id: 500,
+  challenge: Challenge.find_by(duration: "Weekly"),
+  start_time: DateTime.now - 10,
+  end_time: DateTime.now - 3,
+  status: "Ongoing"
+},
+{ my_fish_id: 500,
+  challenge: Challenge.find_by(duration: "Monthly"),
+  start_time: DateTime.now - 31,
+  end_time: DateTime.now - 1,
+  status: "Ongoing"
+},
+]
+
+game_challenge_attributes.each do |challenge|
+  new_game_challenge = GameChallenge.new(challenge)
+  new_game_challenge.save!
+  puts "Test GameChallenges created"
+end
 
 
 
