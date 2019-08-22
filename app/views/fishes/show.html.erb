@@ -9,20 +9,28 @@
   <div class="container">
     <div class="your-fish-title" style="color: #28C3D4"><h5>Your Fish</h5></div>
       <div class="fish-show-card card">
-        <%= image_tag @fish.fish_avatar, class: "centered", width:"50%"%>
+        <%= image_tag "myfish_#{@fish.red_list_id.to_s}.svg", class: "centered", width:"50%"%>
+        <!-- myfish_#{@my_fish.fish.red_list_id.to_s}.svg -->
         <div class="fish-show-card-body">
-          <div><p><strong>Species:</strong><br><%= @fish.breed %></p></div>
-          <div><p><strong>Location:</strong><br><%= @fish.location %></p></div>
-          <div><p><strong>Age:</strong><br>1 year old</p></div>
+          <div><p><strong style="font-weight: 700;">Species:</strong><br><%= @fish.breed %></p></div>
+          <div><p><strong style="font-weight: 700;">Location:</strong><br><%= @fish.location %></p></div>
+          <div><p><strong style="font-weight: 700;">Age:</strong><br>1 year old</p></div>
         </div>
       </div>
-  </div>
-      <div id="your-fish-form">
+
+
+    <div id="your-fish-form">
         <%= simple_form_for [@fish, @my_fish] do |f| %>
           <%= f.input :name, label:"Fish Name"%>
-          <%= f.button :submit, "Next", class: "btn-gradient" %>
+          <div class="container">
+            <%= f.button :submit, "Next", class: "btn-gradient" %>
+          </div>
+
         <% end %>
       </div>
+
+
+
 
 </div>
 
