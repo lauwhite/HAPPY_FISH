@@ -26,7 +26,7 @@
 <script>
   function moveIn() {
     var elem = document.querySelector('.game-alert')
-    var pos = -150;
+    var pos = -180;
     var id = setInterval(frame, 0.5);
     function frame() {
       if (pos == 16) {
@@ -54,15 +54,8 @@
 
 setTimeout(function(){
   moveOut();
-  console.log('sleeping');
 }, 4000);
-moveIn()
-
-
-// wait(14000);
-// moveOut();
-
-
+moveIn();
 
 </script>
 
