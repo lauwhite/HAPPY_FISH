@@ -192,11 +192,11 @@ ActiveRecord::Schema.define(version: 2019_08_21_045653) do
     t.bigint "level_id"
     t.boolean "admin"
     t.integer "score"
-    t.string "provider"
-    t.string "uid"
     t.string "facebook_picture_url"
     t.string "token"
     t.datetime "token_expiry"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["level_id"], name: "index_users_on_level_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

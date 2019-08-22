@@ -17,8 +17,14 @@
 
   <div class="form-actions  centered-element">
     <%= f.button :submit, "Log in", class: "btn-gradient"%>
-
   </div>
+
+  <p class=" form-actions centered-element">or Sign In using</p>
+
+  <div class="form-actions centered-element">
+    <%= link_to "Log In with Facebook", user_facebook_omniauth_authorize_path, class: "btn-fb" %>
+  </div>
+
 <% end %>
 
 </div>

@@ -5,7 +5,14 @@
 
   <div class="profile-photo container centered" style="
     margin-top: 10vh;">
-    <%= cl_image_tag @user.avatar, class: "centered", width:"50%"%>
+    <%#= cl_image_tag @user.avatar, class: "centered", width:"50%"%>
+
+    <% if current_user.facebook_picture_url %>
+      <%= image_tag current_user.facebook_picture_url, class: "centered", width:"50%" %>
+    <% elsif current_user.avatar %>
+      <%= cl_image_tag current_user.avatar, class: "centered", width:"50%" %>
+    <% end %>
+
     <h2><%= @user.first_name %> <%= @user.last_name  %></h2>
   </div>
 
