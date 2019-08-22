@@ -2,24 +2,58 @@
   <div class="mt-3">
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
   </div>
-  
+
   <div class="profile-photo container centered">
-    
+
     <% if current_user.facebook_picture_url %>
       <%= image_tag current_user.facebook_picture_url, class: "centered", width:"50%" %>
     <% elsif current_user.avatar %>
       <%= cl_image_tag @user.avatar, class: "avatar-large centered", width:"50%"%>
     <% end %>
-    
+
     <h2><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize  %></h2>
 
   </div>
 
   <div class="profile-status container" style="
     margin-top: 8vh;">
-    <h2 class="section-title">LEVEL:</h2>
-   <!--  <br> -->
-    <%= @level.name %>
+
+
+
+
+<div class="container">
+  <h2 class="section-title">LEVEL:</h2>
+</div>
+<div class="timeline-profile">
+  <% @levels.reverse.each do |level| %>
+  <% if @levels.index(level).odd? %>
+  <% if level[1] <= current_user.score %>
+  <div class="timeline-profile-container profile-right" id="activated">
+  <% else %>
+  <div class="timeline-profile-container profile-right">
+    <% end %>
+    <% else %>
+      <% if level[1] <= current_user.score %>
+        <div class="timeline-profile-container profile-left" id="activated">
+      <% else %>
+        <div class="timeline-profile-container profile-left">
+      <% end %>
+      <% end %>
+
+        <% if level[1] <= current_user.score %>
+        <div class="profile-content-activated">
+        <h2 class="section-title"><%= level[0] %></h2>
+        <p><%= level[1] %></p>
+        <% else %>
+        <div class="profile-content">
+        <h2 class="section-title" style="color: #d2c8c8"><%= level[0] %></h2>
+        <p style="color: #d2c8c8"><%= level[1] %></p>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
     <h2 class="section-title">ACHIEVEMENTS: </h2>
       <div class="scrolling-wrapper">
         <% @my_completed_challenges.each do |my_challenge| %>
