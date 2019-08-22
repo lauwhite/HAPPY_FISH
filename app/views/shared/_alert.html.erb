@@ -6,11 +6,13 @@
   <%= (@challenge.score_health) / 2  %>
   <% end %>
 </p>
+<% if @my_challenge.status == "Completed" %>
 <p>Happiness: +
   <% @challenge.score_happiness.to_i.times do %>
   <i class="fas fa-star"></i>
   <% end %>
 </p>
+<% end %>
 <p>User Score: +
   <% if @challenge.duration == "Daily" %>
   <%= @my_challenge.challenge.score_health %>

@@ -41,6 +41,12 @@ class ChallengesController < ApplicationController
     @my_fish = my_fish.name
   end
 
+  def ongoing
+    @challenge = Challenge.find(params[:id])
+    @my_fish = current_user.my_fishes.where(alive: true).first.name
+    @my_challenge = current_user.my_fishes.where(alive: true).first.game_challenges.last
+  end
+
   def onboarding_challenge
     # use params to get the score from each question
     # sum them
