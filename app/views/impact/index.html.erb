@@ -1,8 +1,9 @@
 <div class="container-fluid">
 
-  <h1 class="main-title"><%= @my_fish.breed.upcase %> IN REAL LIFE</h1>
+  <h1 class="main-title"><%= @my_fish.breed.upcase %> : LIVE REPORT</h1>
 
   <h2 class="section-title">GENERALITIES</h2>
+
   <div class="fish-index-card" style="width: 250px !important; margin: 16px auto;">
     <div class="fish-wrapper" >
       <%= @my_fish.breed %>
@@ -93,6 +94,25 @@ chart.draw(data, options);
       </div>
     </div>
     <% end %>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">AKNOWLEDGEMENT</h2>
+    <div class="aknowledgement">
+        <p>The data on this page is provided by the IUCN</p>
+        <p> IUCN (2019). <a href="https://www.iucnredlist.org">IUCN Red List</a> of Threatened Species. V2019-2
+      <div class="d-flex align-items-center">
+        <div >
+          <%= image_tag 'IUCN_logo.png', id: "iucn-logo" %>
+        </div>
+
+        <div>
+          <p>Created in 1948, IUCN has evolved into the world’s largest and most diverse environmental network. Composed of of 15,000 experts. IUCN is the global authority on the status of the natural world and the measures needed to safeguard it.</p>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 
   <%= render 'shared/navbar' %>
