@@ -25,3 +25,23 @@
   border: 2px solid #FD1015;
 }
 
+.game-alert {
+  border: 1px solid $dark-blue;
+  position: fixed;
+  bottom: 16px;
+  right: -150px;
+  z-index: 1000;
+  align-items: center;
+  border-radius: 4px;
+  margin: 8px;
+  padding: 8px 16px;
+  background: white;
+  transition: bottom 2s;
+  transition: right 2s;
+}
+
+.game-alert p {
+  font-size: 14px;
+  margin: 3px;
+}
+

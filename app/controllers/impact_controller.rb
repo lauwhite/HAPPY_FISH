@@ -24,7 +24,7 @@ class ImpactController < ApplicationController
           "Regionally Extinct" => 1
         }
     @country_info_raw.each do |country|
-        helper_array = [country["country"], country_attibute_helper[country['distribution_code']]]
+        helper_array = [country["code"], country_attibute_helper[country['distribution_code']]]
         @country_info << helper_array
     end
 

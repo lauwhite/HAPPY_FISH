@@ -30,11 +30,12 @@ class ChallengesController < ApplicationController
       my_fish = current_user.my_fishes.where(alive: true).first
       my_fish.score_health += (@my_challenge.challenge.score_health)
     else
-      current_user.score += (@my_challenge.challenge.score_health) / 2
-      my_fish.score_health += (@my_challenge.challenge.score_health) / 2
+      current_user.score += (@challenge.score_health) / 2
+      my_fish.score_health += (@challenge.score_health) / 2
     end
     current_user.save!
-    my_fish.score_happiness += (@my_challenge.challenge.score_happiness) unless my_fish.score_happiness == 5.0
+    my_fish.score_happiness += @challenge.score_happiness
+    my_fish.score_happiness = 5.0 if my_fish.score_happiness > 5.0
     my_fish.score_health = 100 if my_fish.score_health > 100
     my_fish.save!
     @my_fish = my_fish.name
