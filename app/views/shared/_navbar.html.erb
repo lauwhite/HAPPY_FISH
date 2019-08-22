@@ -1,15 +1,15 @@
 <div class="footer-navbar d-flex justify-content-around align-items-center">
   <div class="nav-item">
-    <% if MyFish.where(alive: true).count == 0 %>
-    <%= link_to fishes_path , class: "#{ controller_name == "fishes" ? 'active-tab' : "inactive-tab" } yo d-flex justify-content-center align-items-center flex-column" do %>
-    <i class="fas fa-fish"></i>
-    <p class="nav-link-footer py-0">Adopt a Fish</p>
-    <% end %>
+    <% if MyFish.where(alive: true).empty? %>
+      <%= link_to fishes_path , class: "#{ controller_name == "fishes" ? 'active-tab' : "inactive-tab" } yo d-flex justify-content-center align-items-center flex-column" do %>
+      <i class="fas fa-fish"></i>
+      <p class="nav-link-footer py-0">Adopt a Fish</p>
+      <% end %>
     <% else %>
-    <%= link_to my_fish_path(@my_fish), class: "#{ controller_name == "my_fishes" ? 'active-tab' : "inactive-tab" } yo d-flex justify-content-center align-items-center flex-column" do %>
-    <i class="fas fa-fish"></i>
-    <p class="nav-link-footer py-0">MyFish</p>
-    <% end %>
+      <%= link_to my_fish_path(@my_fish), class: "#{ controller_name == "my_fishes" ? 'active-tab' : "inactive-tab" } yo d-flex justify-content-center align-items-center flex-column" do %>
+      <i class="fas fa-fish"></i>
+      <p class="nav-link-footer py-0">MyFish</p>
+      <% end %>
     <% end %>
   </div>
   <div class="nav-item">
