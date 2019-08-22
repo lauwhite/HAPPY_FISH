@@ -1,8 +1,8 @@
 
-<div class="my-fish-container container" style=" height: calc(100vh - 57px);
+<div class="my-fish-container" style=" height: calc(100vh - 57px);
 ">
   <div class="my-fish-show-card card">
-    <%= cl_image_tag @my_fish.fish.fish_avatar, class: "centered", width:"50%"%>
+    <%= image_tag "myfish_#{@my_fish.fish.red_list_id.to_s}.svg", class: "centered", width:"50%"%>
     <div class="fish-show-card-body">
       <div>
         <p><strong>Species:</strong><br><%= @my_fish.fish.breed %></p>
