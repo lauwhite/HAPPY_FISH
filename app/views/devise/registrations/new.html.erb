@@ -50,7 +50,7 @@
           autofocus: true,
           input_html: {autocomplete: "country"},
           placeholder: 'COUNTRY' %>
-          <%= f.input :avatar %>
+          <%= f.input :avatar , input_html: { class: 'd-none' }, label_html: { class: 'upload-photo' }, label: '📷 Upload a photo' %>
           <%= f.input :avatar_cache, as: :hidden %>
           <%= f.input :password,
           required: true,
@@ -68,10 +68,14 @@
           <%= f.button :submit, "Sign Up", class: "btn-gradient"%>
         </div>
 
-        <p class=" form-actions centered-element">or Sign In using</p>
+       <div class= "d-flex justify-content-center align-items-center w-100">
+          <div class= "w-100 border"></div>
+          <p class= "mx-2 mb-0">or</p>
+          <div class= "w-100 border"></div>
+       </div>
 
         <div class="form-actions centered-element">
-          <%= link_to "Log In with Facebook", user_facebook_omniauth_authorize_path, class: "btn-fb" %>
+          <%= link_to "Sign Up with Facebook", user_facebook_omniauth_authorize_path, class: "btn-fb" %>
         </div>
 
       <% end %>
