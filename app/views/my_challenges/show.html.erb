@@ -42,7 +42,7 @@
       <% if @my_challenge.end_time.to_datetime <= DateTime.now %>
       <%= link_to "Complete the challenge", my_challenge_path, method: :patch, class: "btn-blue"%>
       <% else %>
-      <%= link_to "Stop the challenge", my_challenges_path, class: "btn-blue stop-challenges"%>
+      <%= link_to "Stop the challenge", my_challenges_path, class: "btn-stop-challenges"%>
       <% end %>
     </div>
   </div>
@@ -55,7 +55,7 @@
 
 <%= render "shared/msg_challenge_ending" %>
   <script>
-    const button = document.querySelector(".btn-blue .stop-challenges")
+    const button = document.querySelector(".btn-stop-challenges")
        button.addEventListener("click", function(e){
         e.preventDefault();
         document.querySelector('.fish-modal').classList.toggle('show-modal')
