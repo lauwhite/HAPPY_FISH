@@ -116,15 +116,15 @@ level_attributes = [
   },
     {
     name: "Bronze Ocean Warrior",
-    min_score: 100,
-  },
-    {
-    name: "Silver Ocean Warrior",
     min_score: 500,
   },
     {
-    name: "Gold Ocean Warrior",
+    name: "Silver Ocean Warrior",
     min_score: 1000,
+  },
+    {
+    name: "Gold Ocean Warrior",
+    min_score: 1500,
   },
    {
     name: "Ocean Ninja",
@@ -222,7 +222,7 @@ fish_attributes = [
     breed: "Puffer Fish",
     location: "Great Barrier Reef"  ,
     fish_avatar: "https://image.flaticon.com/icons/svg/1998/1998763.svg" ,
-    min_score: 100,
+    min_score: 500,
     max_age: 10,
     red_list_id: 193612,
     endangered_status_id: calling_api(193612),
@@ -231,7 +231,7 @@ fish_attributes = [
     breed: "Atlantic Bluefin Tuna" ,
     location: "Atlantic",
     fish_avatar: "https://image.flaticon.com/icons/svg/1728/1728782.svg" ,
-    min_score: 100,
+    min_score: 500,
     max_age: 50,
     red_list_id: 21860,
     endangered_status_id: calling_api(21860),
@@ -241,7 +241,7 @@ fish_attributes = [
     breed: "Green Turtle",
     location: "Caribean Sea"  ,
     fish_avatar: "https://image.flaticon.com/icons/svg/1998/1998805.svg" ,
-    min_score: 500,
+    min_score: 1000,
     max_age: 90,
     red_list_id: 4615,
     endangered_status_id: calling_api(4615),
@@ -250,7 +250,7 @@ fish_attributes = [
     breed: "White Shark",
     location: "Pacific"  ,
     fish_avatar: "https://image.flaticon.com/icons/svg/1998/1998785.svg" ,
-    min_score: 500,
+    min_score: 1000,
     max_age: 100,
     red_list_id: 3855,
     endangered_status_id: calling_api(3855),
@@ -278,7 +278,21 @@ User.create ({
   country: "ID",
   avatar: nil,
   level_id: Level.find_by(name: "Gold Ocean Warrior"),
-  score: 1500,
+  score: 1800,
+})
+
+
+User.create ({
+  id: 200,
+  email: "happyfishaddict@web.com",
+  password: "Test123",
+  created_at: DateTime.now - 45,
+  first_name: "George",
+  last_name: "Clooney",
+  country: "ID",
+  avatar: nil,
+  level_id: Level.find_by(name: "Gold Ocean Warrior"),
+  score: 1800,
 })
 
 puts "Creating users done"
@@ -286,6 +300,18 @@ puts "Creating users done"
 MyFish.create ({
   id: 500,
   user_id: 100,
+  fish: Fish.first,
+  name: "Klaus",
+  start_date: DateTime.now - 32,
+  score_health: 80,
+  score_happiness: 3.5,
+  alive: true,
+  age: 1,
+})
+
+MyFish.create ({
+  id: 600,
+  user_id: 200,
   fish: Fish.first,
   name: "Klaus",
   start_date: DateTime.now - 32,
@@ -305,6 +331,18 @@ game_challenge_attributes = [
   status: "Ongoing"
 },
 { my_fish_id: 500,
+  challenge: Challenge.find_by(duration: "Monthly"),
+  start_time: DateTime.now - 31,
+  end_time: DateTime.now - 1,
+  status: "Ongoing"
+},
+{ my_fish_id: 600,
+  challenge: Challenge.find_by(duration: "Weekly"),
+  start_time: DateTime.now - 10,
+  end_time: DateTime.now - 3,
+  status: "Ongoing"
+},
+{ my_fish_id: 600,
   challenge: Challenge.find_by(duration: "Monthly"),
   start_time: DateTime.now - 31,
   end_time: DateTime.now - 1,
