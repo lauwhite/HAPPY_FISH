@@ -62,7 +62,7 @@
 <div class="bubbles bubble-8"></div>
 
 
-<% if MyFish.where(alive: true).count == 0 %>
+<% if current_user.my_fishes.where(alive: true).count == 0 %>
   <%= render "shared/msg_your_fish_died" %>
   <script>
     document.querySelector('.fish-modal').classList.toggle('show-modal')
