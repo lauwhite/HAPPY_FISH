@@ -6,7 +6,7 @@
   <div class="profile-photo container centered">
 
     <% if current_user.facebook_picture_url %>
-      <%= image_tag current_user.facebook_picture_url, class: "centered", width:"50%" %>
+      <%= image_tag current_user.facebook_picture_url, class: "avatar-large centered", width:"50%" %>
     <% elsif current_user.avatar %>
       <%= cl_image_tag @user.avatar, class: "avatar-large centered", width:"50%"%>
     <% end %>
