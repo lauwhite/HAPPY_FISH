@@ -7,7 +7,7 @@
     <p><strong>User Score: -
       <%= (@my_challenge.challenge.score_health) / 2  %></strong>
     </p>
-    <%= link_to "Yes", my_challenge_path, method: :patch, class: "btn-yes" %>
+    <%= link_to "Yes", my_challenge_path(@my_challenge), method: :patch, class: "btn-yes" %>
     <%= link_to "No", my_challenge_path, class: "btn-no" %>
   </div>
 </div>

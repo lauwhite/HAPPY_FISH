@@ -42,7 +42,7 @@ class MyFishesController < ApplicationController
       # end
       redirect_to @my_fish
     else
-      render 'fishes/show'
+      redirect_to fish_path(@my_fish.fish)
     end
   end
 

@@ -14,7 +14,7 @@
       <h1>Congratulations for starting a challenge!</h1>
       <p>Doing the first step is the most important, so you win already some points at this point!</p>
       <% if @challenge.score_health > 0 %>
-      <p class="centered-element"> You won <%= @challenge.score_health %> health points for <%= @my_fish %> and made it happier ! </p>
+      <p class="centered-element"> You won <%= @challenge.score_health / 2 %> health points for <%= @my_fish %> and made it happier ! </p>
       <% else %>
       <p class="centered-element"> You made <%= @my_fish %> happier ! </p>
       <% end %>
