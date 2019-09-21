@@ -7,8 +7,10 @@ class ApplicationController < ActionController::Base
     fish = resource.my_fishes.find_by(alive: true)
     if fish
       my_fish_path(fish)
+    elsif resource.my_fishes.find_by(alive: false)
+      fishes_path
     else
-     fishes_path
+       welcome_path
     end
   end
 

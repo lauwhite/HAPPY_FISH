@@ -3,8 +3,8 @@
   text-align: center;
   height: 54px;
   width: 100%;
-  min-width: 330px;
   max-width: 450px;
+  min-width: 330px;
   border-radius: 30px;
   background-image: linear-gradient(to right, $dark-blue 0%, $gradient-blue 100%);
   margin: 8px 0;
@@ -36,17 +36,42 @@
     }
 }
 
-.btn-fb {
+.btn-stop-challenges {
   display: inline-block;
   text-align: center;
   height: 54px;
   min-width: 330px;
   max-width: 450px;
   border-radius: 30px;
+  margin: 8px;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 24px;
+  border: 2px solid $dark-blue;
+  color: $dark-blue;
+    &:hover {
+      text-decoration: none;
+    }
+}
+
+.btn-fb {
+  text-align: center;
+  height: 54px;
+  width: 100%;
+  min-width: 330px;
+  max-width: 450px;
+  border-radius: 30px;
   background-color: #4266B2;
+  font-size: 24px;
+  margin: 8px 0;
+  padding: 8px;
+  font-weight: 600;
   color: white;
-  font-size: 14px;
-  position: relative;
+  border: none;
+    &:hover {
+      text-decoration: none;
+      color: gray;
+    }
 }
 
 // #fblogo {
@@ -68,3 +93,39 @@
     }
 }
 
+.btn-yes {
+  display: inline-block;
+  text-align: center;
+  height: 54px;
+  min-width: 240px;
+  max-width: 450px;
+  border-radius: 30px;
+  background-image: linear-gradient(to right, $dark-blue 0%, $gradient-blue 100%);
+  margin: 8px 0;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 24px;
+  color: white;
+  border: none;
+    &:hover {
+      text-decoration: none;
+    }
+}
+
+.btn-no  {
+  display: inline-block;
+  text-align: center;
+  height: 54px;
+  max-width: 450px;
+  min-width: 240px;
+  border-radius: 30px;
+  margin: 8px;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 24px;
+  border: 2px solid $dark-blue;
+  color: $dark-blue;
+    &:hover {
+      text-decoration: none;
+    }
+}

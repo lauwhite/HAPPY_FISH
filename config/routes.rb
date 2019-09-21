@@ -10,10 +10,11 @@ Rails.application.routes.draw do
     resources :questions, only: [:show]
     member do
       get 'completed'
+      get 'ongoing'
     end
 
   end
- 
+
   # route for onboarding slider DO NOT DELETE !
     get 'welcome', to:'pages#welcome', as: :welcome
   # route for onboarding questions DO NOT DELETE !

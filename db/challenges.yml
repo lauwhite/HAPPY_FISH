@@ -75,7 +75,7 @@ challenges:
       duration: "Daily"
       challenge_category_slug: overfishing
       description: |
-        Nowadays less than 2 % of the ocean surface is protected despite the fact that it covers 70 % of the planet. In comparison 7 % of the earth surface is protected. By signing the petition to support the creation of an antarctic marine sanctuary you are making an impact : https://act.greenpeace.org/page/18001/petition/1
+        Nowadays less than 2% of the ocean surface is protected despite the fact that it covers 70% of the planet. In comparison 7% of the earth surface is protected. By signing the petition to support the creation of an antarctic marine sanctuary you are making an impact : https://act.greenpeace.org/page/18001/petition/1
       score_health: 30
       score_happiness: 1.0
       challenge_type_slug: others
@@ -97,7 +97,7 @@ challenges:
       duration: "Weekly"
       challenge_category_slug: pollution
       description: |
-        Replace your plastic toothbrush with a bamboo toothbrush. Make sure you compost the handle after removing the nylon bristles or find a way to upcycle them, for example as a plant marker
+        Cigarette butt is real chemical bombs, it contains more than 2500 chemical polutants and can pollute 500 liters of water, having a short break could be nice for the ocean and your health.
       score_health: 80
       score_happiness: 2.0
       challenge_type_slug: others
@@ -263,7 +263,7 @@ questions:
   quizz_one_question_five:
           slug: tunasustainablycaught
           content: |
-            What percentage of tuna is sutainably caught?
+            What percentage of tuna is sustainably caught?
           challenge_slug: tunaquizz
   quizz_two_question_one:
           slug: whiteseahorsethreat

@@ -23,11 +23,14 @@ class MyFishesController < ApplicationController
     else
       @my_fish.score_health = (MyFish.where(user: current_user).last.score_happiness * 20).to_i
       ongoing_challenges = current_user.game_challenges.where(status: "Ongoing")
+      @my_fish.alive = true
+      @my_fish.save
       ongoing_challenges.each do |challenge|
         challenge.my_fish = @my_fish
         challenge.save!
       end
     end
+
     @my_fish.alive = true
 
     if @my_fish.save
@@ -39,7 +42,7 @@ class MyFishesController < ApplicationController
       # end
       redirect_to @my_fish
     else
-      render 'fishes/show'
+      redirect_to fish_path(@my_fish.fish)
     end
   end
 
@@ -67,7 +70,7 @@ class MyFishesController < ApplicationController
       return 50
     elsif score <= 225 && score > 150
       return 75
-    elsif score <= 300 && score > 225
+    elsif score > 225
       return 100
     end
   end

@@ -3,29 +3,32 @@
 ">
   <div class="my-fish-show-card card">
     <%= image_tag "myfish_#{@my_fish.fish.red_list_id.to_s}.svg", class: "centered", width:"50%"%>
+    <div class="centered-element">
+     <h2><%= @my_fish.name.upcase%></h2>
+    </div>
     <div class="fish-show-card-body">
       <div>
-        <p><strong>Species:</strong><br><%= @my_fish.fish.breed %></p>
+        <p><strong style="font-weight: 700";>Species:</strong><br><%= @my_fish.fish.breed %></p>
       </div>
       <div>
-        <p><strong>Location:</strong><br><%= @my_fish.fish.location %></p>
+        <p><strong style="font-weight: 700";>Location:</strong><br><%= @my_fish.fish.location %></p>
       </div>
       <div>
-        <p><strong>Age:</strong><br><%= pluralize(@my_fish.age, 'year') %> old</p>
+        <p><strong style="font-weight: 700";>Age:</strong><br><%= pluralize(@my_fish.age, 'year') %> old</p>
       </div>
     </div>
     <div class="my-fish-bar">
+    <div class="container">
       <div>
-        <p><strong>HEALTH</strong></p>
-        <div class="container">
-          <div class="progress">
-            <div class="bar text-center health-bar" style="width: <%= @my_fish.score_health %>%">
-               <%= @my_fish.score_health %> %
-            </div>
+        <p><strong style="font-weight: 700";>HEALTH</strong></p>
+        <div class="progress">
+          <div class="bar text-center health-bar" style="width: <%= @my_fish.score_health %>%">
+            <%= @my_fish.score_health %> %
           </div>
         </div>
       </div>
-      <div class="happiness-bar"><p><strong>HAPPINESS</strong><br></p><div class="happiness-stars">
+      <div class="happiness-bar"><p>
+        <strong style="font-weight: 700";>HAPPINESS</strong><br></p><div class="happiness-stars">
           <% @my_fish.score_happiness.to_i.times do %>
             <i class="fas fa-star"></i>
           <% end %>
@@ -37,6 +40,7 @@
           <% end %>
         </div>
       </div>
+    </div>
     </div>
   </div>
 
@@ -58,7 +62,7 @@
 <div class="bubbles bubble-8"></div>
 
 
-<% if MyFish.where(alive: true).count == 0 %>
+<% if current_user.my_fishes.where(alive: true).count == 0 %>
   <%= render "shared/msg_your_fish_died" %>
   <script>
     document.querySelector('.fish-modal').classList.toggle('show-modal')

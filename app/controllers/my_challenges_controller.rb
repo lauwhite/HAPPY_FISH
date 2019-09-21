@@ -41,9 +41,10 @@ class MyChallengesController < ApplicationController
       if my_fish.score_health > 100
         my_fish.score_health = 100
       end
+
       current_user.save!
       my_fish.save!
-      redirect_to my_challenges_path
+      redirect_to ongoing_challenge_path(@my_challenge.challenge_id)
     else
       redirect_to challenge_path(@my_challenge.challenge_id)
     end
@@ -51,7 +52,7 @@ class MyChallengesController < ApplicationController
 
   def update
     @my_challenge = GameChallenge.find(params[:id])
-    if @my_challenge.end_time.to_datetime >= DateTime.now
+    if @my_challenge.end_time.to_datetime > DateTime.now
       @my_challenge.status = "Abandoned"
       current_user.score -= (@my_challenge.challenge.score_health) / 2
       current_user.score = 0 if current_user.score.negative?

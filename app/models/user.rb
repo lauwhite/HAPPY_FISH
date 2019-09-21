@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :my_fishes
   has_many :game_challenges, through: :my_fishes
-  validates :first_name, :last_name, :country, presence: true
-  devise :omniauthable, omniauth_providers: %i[facebook]
+  validates :first_name, :last_name, presence: true
+  devise :omniauthable, omniauth_providers: [:facebook]
   after_create :default_score, :default_level
   mount_uploader :avatar, PhotoUploader
 
@@ -39,5 +39,24 @@ class User < ApplicationRecord
     end
 
     return user
+  end
+  def never_started_challenges
+    fishes_id = self.my_fishes.pluck(:id)
+    played_games  = GameChallenge.where(my_fish_id: fishes_id).pluck(:challenge_id)
+    Challenge.where.not(id: played_games)
+  end
+
+  def started_challenges_abandoned
+    fishes_id = self.my_fishes.pluck(:id)
+    played_games = GameChallenge.where(my_fish_id: fishes_id)
+    played_games = played_games.where(status: "Abandoned").pluck(:challenge_id)
+    Challenge.where(id: played_games)
+  end
+
+  def started_challenges_repeatable
+    fishes_id = self.my_fishes.pluck(:id)
+    played_games = GameChallenge.where(my_fish_id: fishes_id)
+    played_games = played_games.where(status: "Completed").pluck(:challenge_id)
+    Challenge.where(id: played_games)
   end
 end

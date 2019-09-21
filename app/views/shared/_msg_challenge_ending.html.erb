@@ -1,0 +1,13 @@
+<div class="fish-modal">
+  <div class="fish-modal-content">
+    <h1 class="modal-title">Hold your seahorses!</h1>
+    <p>Are you sure you want to stop this challenge? You will lose:</p>
+    <p><strong>Health: - <%= (@my_challenge.challenge.score_health) / 2  %></strong>
+    </p>
+    <p><strong>User Score: -
+      <%= (@my_challenge.challenge.score_health) / 2  %></strong>
+    </p>
+    <%= link_to "Yes", my_challenge_path(@my_challenge), method: :patch, class: "btn-yes" %>
+    <%= link_to "No", my_challenge_path, class: "btn-no" %>
+  </div>
+</div>
