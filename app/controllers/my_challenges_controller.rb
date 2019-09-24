@@ -1,6 +1,9 @@
 class MyChallengesController < ApplicationController
 
   def index
+    if MyFish.where(alive: true, user_id: current_user.id).empty?
+      redirect_to fishes_path
+    end
     @challenges = Challenge.includes(:game_challenges)
     # Causing daily challenges to be empty
     # .where(game_challenges: { challenge_id: nil })
