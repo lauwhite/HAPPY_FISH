@@ -1,5 +1,9 @@
 class ImpactController < ApplicationController
   def index
+    if MyFish.where(alive: true, user_id: current_user.id).empty?
+      redirect_to fishes_path
+    else
+
     @my_fish = current_user.my_fishes.find_by(alive: true).fish
     red_list_id = @my_fish.red_list_id
     token = ENV["IUCN_API_TOKEN"]
@@ -35,4 +39,5 @@ class ImpactController < ApplicationController
     html_doc.search('.featherlight__gallery img')
 
   end
+end
 end

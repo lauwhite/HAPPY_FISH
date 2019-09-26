@@ -1,6 +1,6 @@
 <div class="footer-navbar d-flex justify-content-around align-items-center">
   <div class="nav-item">
-    <% if MyFish.where(alive: true).empty? %>
+    <% if MyFish.where(alive: true, user_id: current_user.id).empty? %>
       <%= link_to fishes_path , class: "#{ controller_name == "fishes" ? 'active-tab' : "inactive-tab" } yo d-flex justify-content-center align-items-center flex-column" do %>
       <i class="fas fa-fish"></i>
       <p class="nav-link-footer py-0">ADOPT</p>
