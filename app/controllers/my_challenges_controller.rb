@@ -12,12 +12,32 @@ class MyChallengesController < ApplicationController
       @my_ongoing_challenge << oc if oc.my_fish.user == current_user
     end
 
+    @my_last_ongoing_challenge = @my_ongoing_challenge.reverse.take(2)
+
     @my_complete_challenges = []
     my_completed_challenges = GameChallenge.where(status: "Completed")
     my_completed_challenges.each do |cc|
       @my_complete_challenges << cc if cc.my_fish.user == current_user
     end
+
+    @my_last_complete_challenges = @my_complete_challenges.reverse.take(2)
     # @my_fish = MyFish.find_by(alive: true)
+  end
+
+  def ongoing
+    @my_ongoing_challenge = []
+    my_ongoing_challenges = GameChallenge.where(status: "Ongoing")
+    my_ongoing_challenges.each do |oc|
+      @my_ongoing_challenge << oc if oc.my_fish.user == current_user
+    end
+  end
+
+  def completed
+    @my_complete_challenges = []
+    my_completed_challenges = GameChallenge.where(status: "Completed")
+    my_completed_challenges.each do |cc|
+      @my_complete_challenges << cc if cc.my_fish.user == current_user
+    end
   end
 
   def show
@@ -93,4 +113,6 @@ class MyChallengesController < ApplicationController
     @progress = (progress_helper_unique / progress_helper_total)*100
     @progress.round(2)
   end
+
+
 end

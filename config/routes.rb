@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'profile', to: 'profile#show'
   get 'impact', to: 'impact#index'
   root to: 'my_fishes#show'
+
+  # CHALLENGES
+
   resources :challenges, only: [:index, :show] do
     resources :my_challenges, only: [:create]
     resources :questions, only: [:show]
@@ -12,19 +15,20 @@ Rails.application.routes.draw do
       get 'completed'
       get 'ongoing'
     end
-
   end
 
-  # route for onboarding slider DO NOT DELETE !
-    get 'welcome', to:'pages#welcome', as: :welcome
-  # route for onboarding questions DO NOT DELETE !
+  get 'my_challenges/ongoing', to: 'my_challenges#ongoing', as: :ongoing_challenges
+  get 'my_challenges/completed', to: 'my_challenges#completed', as: :completed_challenges
 
+  #ONBOARDING
+  # route for onboarding slider DO NOT DELETE !
+  get 'welcome', to:'pages#welcome', as: :welcome
+  # route for onboarding questions DO NOT DELETE !
   get 'lifestyle', to: 'onboarding#lifestyle'
   # resources :onboarding, only: [:show] do
-
-    resources :onboarding_questions, only: [:show]
+  resources :onboarding_questions, only: [:show]
   # route
-    get 'click', to: 'onboarding_questions#click'
+  get 'click', to: 'onboarding_questions#click'
 
   resources :my_challenges, only: [:index, :show, :update]
 

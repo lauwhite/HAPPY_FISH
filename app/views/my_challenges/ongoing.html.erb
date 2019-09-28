@@ -1,0 +1,25 @@
+<%= render "shared/returnbar" %>
+<div class="container-fluid" >
+  <h2 class="section-title">ONGOING CHALLENGES</h2>
+      <% @my_ongoing_challenge.each do |my_challenge| %>
+        <%= link_to my_challenge_path(my_challenge.id) do %>
+          <div class="ongoing-challenge-card" style="url(<%= my_challenge.challenge.challenge_category.image %>)">
+            #<%= my_challenge.challenge.name%>
+            <p style="font-size: 12px"><%= my_challenge.start_time.strftime('%m/%d/%Y') %> - <%= my_challenge.end_time.strftime('%m/%d/%Y')  %></p>
+              <% today = DateTime.now.utc
+              progress_helper_total = my_challenge.end_time - my_challenge.start_time
+              progress_helper_unique = today - my_challenge.start_time
+              @progress = (progress_helper_unique / progress_helper_total)*100
+              %>
+              <div>
+                  <div class="challenge-progress">
+                    <div class="bar text-center " style="width: <%= @progress.round(2)%>%">
+                     <!--  if we want the percentage to appear we can add it here -->
+                    </div>
+                  </div>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
+</div>
+

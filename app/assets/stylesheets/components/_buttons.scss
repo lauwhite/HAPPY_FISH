@@ -129,3 +129,17 @@
       text-decoration: none;
     }
 }
+
+
+.btn-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.btn-all {
+  padding:4px 8px;
+  border: 1px solid $blue;
+  border-radius: 4px;
+}

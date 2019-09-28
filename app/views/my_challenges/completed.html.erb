@@ -1,0 +1,10 @@
+<%= render "shared/returnbar" %>
+  <div class="container-fluid" >
+  <h2 class="section-title">COMPLETED CHALLENGES</h2>
+    <% @my_complete_challenges.each do |my_challenge| %>
+      <div class="completed_challenge_card" >
+        <%= my_challenge.challenge.name %>
+        <p style="font-size: 12px">Completed on: <%= my_challenge.end_time.strftime('%m/%d/%Y') %></p>
+      </div>
+    <% end %>
+  </div>
