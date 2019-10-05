@@ -14,11 +14,11 @@
       <% end %>
     </div>
 
-  <h2 class="section-title">ONGOING CHALLENGES</h2>
+  <h2 class="section-title">ONGOING CHALLENGES (<%= @my_ongoing_challenge.count %>)</h2>
 
 
 
-      <% @my_ongoing_challenge.each do |my_challenge| %>
+      <% @my_last_ongoing_challenge.each do |my_challenge| %>
         <%= link_to my_challenge_path(my_challenge.id) do %>
           <div class="ongoing-challenge-card" style="url(<%= my_challenge.challenge.challenge_category.image %>)">
             #<%= my_challenge.challenge.name%>
@@ -39,16 +39,24 @@
         <% end %>
       <% end %>
 
+      <div class="btn-right">
+        <%= link_to "See all >>", ongoing_challenges_path, class: "btn-all" %>
+      </div>
 
-  <h2 class="section-title">COMPLETED CHALLENGES</h2>
+
+  <h2 class="section-title">COMPLETED CHALLENGES (<%= @my_complete_challenges.count %>)</h2>
 
 
-      <% @my_complete_challenges.each do |my_challenge| %>
+      <% @my_last_complete_challenges.each do |my_challenge| %>
         <div class="completed_challenge_card" >
         <%= my_challenge.challenge.name %>
         <p style="font-size: 12px">Completed on: <%= my_challenge.end_time.strftime('%m/%d/%Y') %></p>
         </div>
       <% end %>
+
+      <div class="btn-right">
+        <%= link_to "See all >>", completed_challenges_path, class: "btn-all" %>
+      </div>
 
   <div class="centered-element">
     <%= link_to "Pick a new challenge", challenges_path, class: "btn-gradient" %>
