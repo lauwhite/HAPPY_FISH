@@ -18,7 +18,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'country_select', '~> 4.0'
 gem 'omniauth-facebook'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'geocoder'
 group :development do
   gem 'web-console', '>= 3.3.0'
